@@ -1,0 +1,51 @@
+/*GENERAL*/
+:root {
+    --rojo-oscuro: #F90000;
+    --rojo-claro: #F34F51;
+    --negro-claro: #1E1E1E;
+    --texto-grande: 24px;
+    --texto-mediano: 16px;
+    --texto-chico: 12px;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*CUSTOMIZACIONES*/
+.costum-button{
+    color: var(--negro-claro);
+    font-size: 48px;
+}
+
+.costum-carousel{
+    margin-top: 56px;
+}
+
+.costum-navbar{
+    background-color: var(--rojo-oscuro);
+    width: 100%;
+    display: flex;
+    top: 0px;
+    align-items: end;
+    z-index: 10;
+}
+
+/*TIPOGRAFIAS*/
+.jaro {
+  font-family: "Jaro", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(texto-grande);
+}
+
+.varela-round-regular {
+    font-family: "Varela Round", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(texto-grande);
+  }
+
+/*CLASES*/
