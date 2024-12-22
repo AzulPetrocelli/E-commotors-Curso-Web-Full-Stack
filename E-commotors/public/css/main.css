@@ -3,9 +3,12 @@
     --rojo-oscuro: #F90000;
     --rojo-claro: #F34F51;
     --negro-claro: #1E1E1E;
-    --texto-grande: 24px;
-    --texto-mediano: 16px;
+    --texto-color: #FFFFFF;
     --texto-chico: 12px;
+    --texto-mediano: 16px;
+    --texto-grande: 24px;
+    --fuente-principal: 'Jaro', serif;
+    --fuente-secundaria: "Varela Round", serif;
   }
 
 *{
@@ -20,7 +23,7 @@
 }
 
 .costum-carousel{
-    margin-top: 56px;
+    margin-top: 75px;
 }
 
 .costum-navbar{
@@ -34,7 +37,7 @@
 
 /*TIPOGRAFIAS*/
 .jaro {
-  font-family: "Jaro", serif;
+  font-family: var(--fuente-principal);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -42,10 +45,83 @@
 }
 
 .varela-round-regular {
-    font-family: "Varela Round", serif;
+    font-family: var(--fuente-secundaria);
     font-weight: 400;
     font-style: normal;
     font-size: var(texto-grande);
   }
 
-/*CLASES*/
+/*CLASES DEL FOOTER*/
+footer{
+  background-color: var(--negro-claro);
+}
+
+footer > .footer-content {
+  display: flex;
+}
+
+footer > .footer-content .container-image {
+  width: 25%;
+  height: 25%;
+  padding: 0;
+  width: auto;
+}
+
+footer > .footer-content .container-info {
+  width: 100%;
+  padding: 12px 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+footer > .footer-content div h4 {
+  color: var(--rojo-claro);
+}
+
+footer > .footer-content div ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer > .footer-content div ul li {
+  list-style-type: none;
+  color: var(--texto-color);
+  font-family: var(--fuente-secundaria);
+  margin-bottom: 12px;
+}
+
+footer > .footer-content div ul li a {
+  color: var(--texto-color);
+  text-decoration: none;
+}
+
+footer > .footer-content div ul li a:hover {
+  color: var(--rojo-claro);
+  text-decoration: underline;
+}
+
+.icons-redes{
+  display: flex;
+  width: 100%;
+}
+
+.icons-redes a i{
+  color: var(--rojo-claro);
+  font-size: 48px;
+}
+
+footer > .footer-autor{
+  color: var(--texto-color);
+  border-top: 2px solid var(--texto-color);
+  padding: 12px;
+  text-align: center;
+}
+
+/*MEDIA QUERYS*/
+@media (width < 680px) {
+  footer > .footer-content .container-image {
+    display: none;
+  }
+}

@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Varela+Round&display=swap" rel="stylesheet">
     
+    <!--ICONOS-->
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    
     <!--Estilos CSS-->
     <link rel="stylesheet" href="css/main.css">
 
@@ -27,11 +30,11 @@
     <!--CARRUSEL-->
     <div id="carouselExample" class="carousel slide costum-carousel">
         <div class="carousel-inner">
-            <!--ACA VA UN FOREACH PARA CADA IMAGEN DE LAS PROMOS-->
             <div class="carousel-item active">
-                <img src="images/promo.png" class="d-block w-100" alt="...">
+                <img src="images/promo.png" class="img-fluid w-100" alt="...">
             </div>
-            <div class="carousel-item active">
+            <!--ACA VA UN FOREACH PARA CADA IMAGEN DE LAS PROMOS-->
+            <div class="carousel-item">
                 <img src="images/promo.png" class="d-block w-100" alt="...">
             </div>
         </div>
