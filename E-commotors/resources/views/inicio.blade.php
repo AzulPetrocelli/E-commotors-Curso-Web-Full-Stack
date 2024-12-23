@@ -48,6 +48,96 @@
         </button>
     </div>
 
+    <!--LISTADO DE PRODUCTOS-->
+
+    <section class="container-productos">
+        <!--CONTENEDOR DE CARDS-->
+        <div class="container-cards">
+            
+            <!--CARD-->
+            <div class="card costum-card" style="width: 200px;">
+                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
+                <div class="card-body pb-4">
+                  <h5 class="card-title">Moto</h5>
+                  <p class="card-text">$Precio</p>
+                  <div class="d-flex justify-content-end w-100">
+                      <a href="#" class="boton-principal align-bottom">Comprar</a>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card costum-card" style="width: 200px;">
+                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
+                <div class="card-body pb-4">
+                  <h5 class="card-title">Moto</h5>
+                  <p class="card-text">$Precio</p>
+                  <div class="d-flex justify-content-end w-100">
+                      <a href="#" class="boton-principal align-bottom">Comprar</a>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card costum-card" style="width: 200px;">
+                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
+                <div class="card-body pb-4">
+                  <h5 class="card-title">Moto</h5>
+                  <p class="card-text">$Precio</p>
+                  <div class="d-flex justify-content-end w-100">
+                      <a href="#" class="boton-principal align-bottom">Comprar</a>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card costum-card" style="width: 200px;">
+                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
+                <div class="card-body pb-4">
+                  <h5 class="card-title">Moto</h5>
+                  <p class="card-text">$Precio</p>
+                  <div class="d-flex justify-content-end w-100">
+                      <a href="#" class="boton-principal align-bottom">Comprar</a>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card costum-card" style="width: 200px;">
+                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
+                <div class="card-body pb-4">
+                  <h5 class="card-title">Moto</h5>
+                  <p class="card-text">$Precio</p>
+                  <div class="d-flex justify-content-end w-100">
+                      <a href="#" class="boton-principal align-bottom">Comprar</a>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card costum-card" style="width: 200px;">
+                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
+                <div class="card-body pb-4">
+                  <h5 class="card-title">Moto</h5>
+                  <p class="card-text">$Precio</p>
+                  <div class="d-flex justify-content-end w-100">
+                      <a href="#" class="boton-principal align-bottom">Comprar</a>
+                  </div>
+                </div>
+            </div>
+
+            <div class="card costum-card" style="width: 200px;">
+                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
+                <div class="card-body pb-4">
+                  <h5 class="card-title">Moto</h5>
+                  <p class="card-text">$Precio</p>
+                  <div class="d-flex justify-content-end w-100">
+                      <a href="#" class="boton-principal align-bottom">Comprar</a>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--BOTON DE CARGAR MAS-->
+        <a href="#" class="boton-principal m-auto">Cargar mas</a>
+    </section>
+
     <!--FOOTER-->
     @include('footer')
 

@@ -41,15 +41,47 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: var(texto-grande);
+  font-size: var(--texto-grande);
 }
 
 .varela-round-regular {
     font-family: var(--fuente-secundaria);
     font-weight: 400;
     font-style: normal;
-    font-size: var(texto-grande);
+    font-size: var(--texto-grande);
   }
+
+/*CLASES DE LOS PRODUCTOS*/
+
+.container-productos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-productos .container-cards {
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.container-productos .container-cards .costum-card{
+  box-shadow: 0px 2px 8px #000000;
+}
+
+.boton-principal{
+  width: fit-content;
+  padding: 12px 12px;
+  font-family: var(--fuente-principal);
+  background-color: var(--rojo-claro);
+  color: white;
+  text-decoration: none;
+  border: var(--rojo-oscuro) solid 3px;
+  border-radius: 10px;
+}
 
 /*CLASES DEL FOOTER*/
 footer{
@@ -120,6 +152,12 @@ footer > .footer-autor{
 }
 
 /*MEDIA QUERYS*/
+@media (width < 680px) {
+  footer > .footer-content .container-image {
+    display: none;
+  }
+}
+
 @media (width < 680px) {
   footer > .footer-content .container-image {
     display: none;
