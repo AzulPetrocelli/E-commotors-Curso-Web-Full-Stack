@@ -7,7 +7,7 @@
     <div>
         <h1 class="jaro fs-1">Nombre</h1>
         <h2 class="jaro fs-2">Descripcion</h2>
-        <p class="varela-round-regular">
+        <p class="varela">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ex quisquam debitis voluptates, maiores nesciunt. Temporibus eius rerum aut, excepturi debitis officiis quam doloribus neque, nobis molestias laboriosam natus cumque.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ex quisquam debitis voluptates, maiores nesciunt. Temporibus eius rerum aut, excepturi debitis officiis quam doloribus neque, nobis molestias laboriosam natus cumque.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. In fugit, odit esse aliquam facere quis doloremque, pariatur ea iste, excepturi id nobis maxime at commodi eligendi ad. Ratione, natus consequuntur.</p>

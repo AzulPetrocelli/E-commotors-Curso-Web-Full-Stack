@@ -10,3 +10,7 @@ Route::get('/', function () {
 Route::get('/card', function () {
     return view('card');
 });
+
+Route::get('/message', function () {
+    return view('message');
+});
