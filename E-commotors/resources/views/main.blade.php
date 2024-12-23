@@ -24,12 +24,12 @@
 
     <!--LISTADO DE PRODUCTOS-->
 
-    <section class="container-productos mb-4">
+    <section class="container-productos my-4">
         <!--CONTENEDOR DE CARDS-->
         <div class="container-cards">
             
             <!--CARD-->
-            <div class="card costum-card" style="width: 200px;">
+            <div class="card costum-card">
                 <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
                 <div class="card-body pb-4">
                   <h5 class="card-title">Moto</h5>

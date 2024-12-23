@@ -1,0 +1,149 @@
+/*GENERAL*/
+:root {
+    --color-primario: #F90000;
+    --color-secundario: #F34F51;
+    --negro-claro: #1E1E1E;
+    --texto-color: #FFFFFF;
+    --texto-chico: 12px;
+    --texto-mediano: 16px;
+    --texto-grande: 24px;
+    --fuente-principal: 'Jaro', serif;
+    --fuente-secundaria: "Varela Round", serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*TIPOGRAFIAS*/
+.jaro {
+    font-family: var(--fuente-principal);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+} 
+  
+.varela-round-regular {
+    font-family: var(--fuente-secundaria);
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*BOTON*/
+.boton-principal{
+    width: fit-content;
+    padding: 12px 12px;
+    font-family: var(--fuente-principal);
+    background-color: var(--color-secundario);
+    color: white;
+    text-decoration: none;
+    border: var(--color-primario) solid 3px;
+    border-radius: 10px;
+}
+
+/*ESTILOS DEL SCROLL*/
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--negro-claro);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-secundario);
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primario);
+}
+  
+/*CUSTOMIZACION DEL MENU*/
+.costum-navbar{
+    background-color: var(--color-primario);
+    width: 100%;
+    display: flex;
+    top: 0px;
+    align-items: end;
+    z-index: 10;
+}
+
+
+/*CLASES DEL FOOTER*/
+footer{
+    background-color: var(--negro-claro);
+}
+  
+footer > .footer-content {
+    display: flex;
+}
+  
+footer > .footer-content .container-image {
+    width: 25%;
+    height: 25%;
+    padding: 0;
+    width: auto;
+}
+  
+footer > .footer-content .container-info {
+    width: 100%;
+    padding: 12px 32px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+  
+footer > .footer-content div h4 {
+    color: var(--color-secundario);
+}
+  
+footer > .footer-content div ul {
+    margin: 0;
+    padding: 0;
+}
+  
+footer > .footer-content div ul li {
+    list-style-type: none;
+    color: var(--texto-color);
+    font-family: var(--fuente-secundaria);
+    margin-bottom: 12px;
+}
+  
+footer > .footer-content div ul li a {
+    color: var(--texto-color);
+    text-decoration: none;
+}
+  
+footer > .footer-content div ul li a:hover {
+    color: var(--color-secundario);
+    text-decoration: underline;
+}
+  
+.icons-redes{
+    display: flex;
+    width: 100%;
+}
+  
+.icons-redes a i{
+    color: var(--color-secundario);
+    font-size: 48px;
+}
+  
+footer > .footer-autor{
+    color: var(--texto-color);
+    border-top: 2px solid var(--texto-color);
+    padding: 12px;
+    text-align: center;
+}
+
+  /*MEDIA QUERYS*/
+@media (width < 680px) {
+    footer > .footer-content .container-image {
+        display: none;
+    }
+}

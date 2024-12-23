@@ -18,6 +18,7 @@
     
     <!--Estilos CSS-->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/card.css">
 
     <title>Document</title>
 
@@ -33,12 +34,12 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
 
                   <img src="images/logo.png" alt="Logo" width="60px">
-                  <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                      <a class="nav-link jaro" href="#">Motos</a>
+                  <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="">
+                      <a class="text-white nav-link jaro" href="#">Motos</a>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle jaro" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="dropdown">
+                      <a class="text-white nav-link dropdown-toggle jaro" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Accesorios
                       </a>
                       <ul class="dropdown-menu">
@@ -47,8 +48,8 @@
                         <li><a class="dropdown-item jaro" href="#">Another action</a></li>
                       </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle jaro" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="dropdown">
+                      <a class="text-white nav-link dropdown-toggle jaro" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Repuestos
                       </a>
                       <ul class="dropdown-menu">
