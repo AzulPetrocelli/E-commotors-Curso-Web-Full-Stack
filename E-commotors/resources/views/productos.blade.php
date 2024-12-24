@@ -100,7 +100,7 @@
   </main>
 
 
-  <aside class="filter-sidebar w-50 m-auto my-3">
+  <aside class="filter-sidebar aside-oculto w-75">
     <h2 class="jaro">Filtros</h2>
   
     <!-- Categorías -->
