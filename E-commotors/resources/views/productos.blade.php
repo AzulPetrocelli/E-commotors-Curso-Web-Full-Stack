@@ -6,7 +6,7 @@
         <h1 class="jaro">Motos</h1>
         <div class="d-flex justify-content-end gap-2">
             <input type="text" placeholder="Buscar..." class="input-form jaro w-100"/>
-            <button class="boton-principal">Filtrar</button>
+            <button class="boton-principal filtrar">Filtrar</button>
         </div>
     </section>
   
@@ -99,5 +99,52 @@
     </nav>
   </main>
 
+
+  <aside class="filter-sidebar w-50 m-auto my-3">
+    <h2 class="jaro">Filtros</h2>
+  
+    <!-- Categorías -->
+    <section class="filter-group">
+      <h3 class="jaro fs-4 mb-2">Categorías:</h3>
+      <div class="d-flex flex-wrap gap-2">
+        <button class="varela fw-bold filter-btn">Calle</button>
+        <button class="varela fw-bold filter-btn">Enduro</button>
+        <button class="varela fw-bold filter-btn">Scooters</button>
+        <button class="varela fw-bold filter-btn">Touring</button>
+        <button class="varela fw-bold filter-btn">Naked</button>
+        <button class="varela fw-bold filter-btn">Retro</button>
+      </div>
+    </section>
+  
+    <!-- Marca -->
+    <section class="filter-group">
+      <h3 class="jaro fs-4 mb-2">Marca:</h3>
+      <div class="d-flex flex-wrap gap-2">
+        <button class="varela fw-bold filter-btn">Zanella</button>
+        <button class="varela fw-bold filter-btn">Motomel</button>
+        <button class="varela fw-bold filter-btn">Gilera</button>
+        <button class="varela fw-bold filter-btn">Yamaha</button>
+        <button class="varela fw-bold filter-btn">Honda</button>
+        <button class="varela fw-bold filter-btn">BMW</button>
+        <button class="varela fw-bold filter-btn">Kawasaki</button>
+      </div>
+    </section>
+  
+    <!-- Kilómetros -->
+    <section class="filter-group">
+      <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
+      <div class="d-flex flex-wrap gap-2">
+        <button class="varela fw-bold filter-btn">0 km</button>
+        <button class="varela fw-bold filter-btn">0 a 4.500 km</button>
+        <button class="varela fw-bold filter-btn">4.500 a 20.000 km</button>
+        <button class="varela fw-bold filter-btn">20.000 a 100.000 km</button>
+      </div>
+    </section>
+    
+    <section class="d-flex justify-content-end">
+      <button class="boton-principal filtrar">Filtrar</button>
+    </section>
+  </aside>
+  
 
 @include('footer')

@@ -216,6 +216,42 @@ textarea {
     border-radius: 20px;
 }
 
+/*CLASES DEL ASIDE DEL FILTRO*/
+.filter-sidebar {
+    padding: 16px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+  
+.aside-oculto{
+    display: none;
+}
+  
+.filter-group {
+    margin-bottom: 16px;
+    padding: 8px;
+    border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+}
+  
+.filter-btn {
+    padding: 8px 16px;
+    border: 3px solid red;
+    border-radius: 30px;
+    background-color: white;
+    color: red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+  
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: red;
+    color: white;
+}
+
 /*MEDIA QUERYS*/
 
 @media(width <= 580px){
