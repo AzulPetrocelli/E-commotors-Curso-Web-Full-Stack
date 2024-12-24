@@ -14,3 +14,7 @@ Route::get('/card', function () {
 Route::get('/message', function () {
     return view('message');
 });
+
+Route::get('/productos-motos', function () {
+    return view('productos');
+});

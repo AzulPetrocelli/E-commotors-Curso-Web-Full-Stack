@@ -135,7 +135,7 @@ form.agregar-margin {
     margin-top: 100px;
 }
 
-form .input-form {
+.input-form {
     width: 100%;
     border-radius: 10px;
     border: var(--color-secundario) solid 2px;
@@ -147,7 +147,7 @@ form .input-form::placeholder{
     color: var(--color-secundario);
 } 
 
-form .input-form:focus {
+.input-form:focus {
     outline: none; 
     border: var(--color-primario) solid 3px;
 }
@@ -165,6 +165,11 @@ textarea {
     text-decoration: none;
     border: var(--color-primario) solid 3px;
     border-radius: 10px;
+}
+
+.boton-principal:focus{
+    background-color: var(--texto-color);
+    color: var(--color-secundario);
 }
 
 

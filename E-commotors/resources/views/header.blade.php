@@ -35,10 +35,10 @@
                   <img src="images/logo.png" alt="Logo" width="60px">
                   <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="">
-                      <a class="text-white nav-link jaro" href="#">Motos</a>
+                      <a class="text-white nav-link jaro fs-3" href="#">Motos</a>
                     </li>
                     <li class="dropdown">
-                      <a class="text-white nav-link dropdown-toggle jaro" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="text-white nav-link dropdown-toggle jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Accesorios
                       </a>
                       <ul class="dropdown-menu">
@@ -48,7 +48,7 @@
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a class="text-white nav-link dropdown-toggle jaro" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="text-white nav-link dropdown-toggle jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Repuestos
                       </a>
                       <ul class="dropdown-menu">
