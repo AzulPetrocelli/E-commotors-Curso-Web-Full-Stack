@@ -31,11 +31,12 @@
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-
-                  <img src="images/logo.png" alt="Logo" width="60px">
+                  <a href="{{route('/')}}">
+                    <img src="images/logo.png" alt="Logo" width="60px">
+                  </a>                  
                   <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="">
-                      <a class="text-white nav-link jaro fs-3" href="#">Motos</a>
+                      <a class="text-white nav-link jaro fs-3" href="{{'productos-motos'}}">Motos</a>
                     </li>
                     <li class="dropdown">
                       <a class="text-white nav-link dropdown-toggle jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

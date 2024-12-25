@@ -8,10 +8,10 @@
             <div>
                 <h4 class="jaro">Atencion al cliente</h4>
                 <ul>
-                    <li><a href="#">¿Como ayudarte?</a></li>
+                    <li><a href="{{route('message')}}">¿Como ayudarte?</a></li>
                     <li><a href="#">Privacidad y Cookies</a></li>
                     <li><a href="#">Preguntas frecuentes</a></li>
-                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="{{ route('descargarPDF')}}">Devoluciones</a></li>
                 </ul>
             </div>
             
@@ -29,9 +29,9 @@
             <div>
                 <h4 class="jaro">Sobre E-commotors</h4>
                 <ul>
-                    <li><a href="#">Terminos y condiciones</a></li>
-                    <li><a href="#">Politicas de envio</a></li>
-                    <li><a href="#">Locales</a></li>
+                    <li><a href="{{route('terminosYcondiciones')}}">Terminos y condiciones</a></li>
+                    <li><a href="{{route('politicas')}}">Politicas de envio</a></li>
+                    <li><a href="{{route('locales')}}">Locales</a></li>
                     <li>
                         <h4 class="jaro">mail</h4>
                         <a href="#">e-comotors@gmail.com</a>
@@ -39,10 +39,10 @@
                     <li>
                         <h4 class="jaro">Redes</h4>
                         <div class="icons-redes">
-                            <a href="#"><i class="lab la-facebook"></i></a>
-                            <a href="#"><i class="lab la-instagram"></i></a>
-                            <a href="#"><i class="lab la-twitter"></i></a>
-                            <a href="#"><i class="lab la-youtube"></i></a>         
+                            <a href="https://www.facebook.com/"><i class="lab la-facebook"></i></a>
+                            <a href="https://www.instagram.com/"><i class="lab la-instagram"></i></a>
+                            <a href="https://x.com/"><i class="lab la-twitter"></i></a>
+                            <a href="https://www.youtube.com/"><i class="lab la-youtube"></i></a>         
                         </div>
                     </li>
                 </ul>

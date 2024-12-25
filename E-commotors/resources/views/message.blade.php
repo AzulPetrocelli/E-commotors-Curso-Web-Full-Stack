@@ -7,7 +7,7 @@
     <label for=""><textarea name="" id="" cols="30" rows="10" class="input-form" placeholder="Mensaje..."></textarea></label>
 
     <div class="d-flex justify-content-end gap-2">
-        <a href="#" class="boton-principal">Cancelar</a>
+        <a href="javascript:window.history.back()"class="boton-principal">Cancelar</a>
         <button class="boton-principal">Enviar Mensaje</button>
     </div>
 </form>
