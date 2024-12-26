@@ -115,3 +115,38 @@ CREATE INDEX idx_nombre_marca ON marca(nombre_marca);
 CREATE INDEX idx_nombre_accesorio ON accesorio(nombre_accesorio);
 CREATE INDEX idx_accesorio_tipo ON accesorio(tipo_de_accesorio);
 CREATE INDEX idx_modelo_nombre ON modelo(nombre);
+
+
+-- CODIGO DED EJEMPLO PARA PROBAR UNA MOTO EN LAS VIEWS
+
+-- Insertar una marca Honda si no existe
+INSERT INTO marca (nombre_marca, descripcion_marca, estado_marca) 
+SELECT 'Honda', 'Una marca reconocida de motocicletas', 'activo'
+WHERE NOT EXISTS (
+    SELECT 1 FROM marca WHERE nombre_marca = 'Honda'
+);
+
+-- Insertar una categoría Deportiva si no existe
+INSERT INTO categoria (nombre_categoria, estado_categoria, network_categoria) 
+SELECT 'Deportiva', 'activo', 'Sport bikes description'
+WHERE NOT EXISTS (
+    SELECT 1 FROM categoria WHERE nombre_categoria = 'Deportiva'
+);
+
+-- Insertar una moto Honda CBR
+INSERT INTO moto (nombre, estado, precio_base, precio_noche, foto_moto, id_categoria, id_marca, knowledge_node, descripcion_node, imagenes, color) 
+VALUES (
+    'Honda CBR', 
+    'nuevo', 
+    18000.00, 
+    130.00, 
+    'hondaCBR.jpg', 
+    (SELECT id_categoria FROM categoria WHERE nombre_categoria = 'Deportiva' LIMIT 1), 
+    (SELECT id_marca FROM marca WHERE nombre_marca = 'Honda' LIMIT 1), 
+    'Conocimiento sobre Honda CBR', 
+    'Descripción detallada de la Honda CBR', 
+    'honda_cbr.jpg', 
+    'rojo'
+);
+
+

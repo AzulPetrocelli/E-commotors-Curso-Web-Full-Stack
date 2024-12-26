@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Moto;
 
 class MotosController extends Controller
 {
@@ -12,7 +13,8 @@ class MotosController extends Controller
      */
     public function index()
     {
-        return view('Productos.motos');
+        $motos = Moto::all(); // Paginación de 5 motos por página 
+        return view('Productos.motos', ['motos' => $motos]);
     }
 
     /**

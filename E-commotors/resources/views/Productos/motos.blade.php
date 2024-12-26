@@ -7,6 +7,7 @@
         <div class="d-flex justify-content-end gap-2">
             <input type="text" placeholder="Buscar..." class="input-form jaro w-100"/>
             <button class="boton-principal filtrar">Filtrar</button>
+            <button class="boton-principal filtrar">Modificar</button>
         </div>
     </section>
   
@@ -14,74 +15,15 @@
 
     <section class="container-productos my-4 w-75">
         <div class="container-cards">
-            
-            <!--CARD-->
-            <div class="card costum-card">
-                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
-                <div class="card-body pb-4">
-                  <h5 class="card-title">Moto</h5>
-                  <p class="card-text">$Precio</p>
-                  <div class="d-flex justify-content-end w-100">
-                      <a href="#" class="boton-principal align-bottom">Comprar</a>
-                  </div>
-                </div>
-            </div>
-
-            <div class="card costum-card">
-                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
-                <div class="card-body pb-4">
-                  <h5 class="card-title">Moto</h5>
-                  <p class="card-text">$Precio</p>
-                  <div class="d-flex justify-content-end w-100">
-                      <a href="#" class="boton-principal align-bottom">Comprar</a>
-                  </div>
-                </div>
-            </div>
-
-            <div class="card costum-card">
-                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
-                <div class="card-body pb-4">
-                  <h5 class="card-title">Moto</h5>
-                  <p class="card-text">$Precio</p>
-                  <div class="d-flex justify-content-end w-100">
-                      <a href="#" class="boton-principal align-bottom">Comprar</a>
-                  </div>
-                </div>
-            </div>
-
-            <div class="card costum-card" style="width: 200px;">
-                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
-                <div class="card-body pb-4">
-                  <h5 class="card-title">Moto</h5>
-                  <p class="card-text">$Precio</p>
-                  <div class="d-flex justify-content-end w-100">
-                      <a href="#" class="boton-principal align-bottom">Comprar</a>
-                  </div>
-                </div>
-            </div>
-
-            <div class="card costum-card" style="width: 200px;">
-                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
-                <div class="card-body pb-4">
-                  <h5 class="card-title">Moto</h5>
-                  <p class="card-text">$Precio</p>
-                  <div class="d-flex justify-content-end w-100">
-                      <a href="#" class="boton-principal align-bottom">Comprar</a>
-                  </div>
-                </div>
-            </div>
-
-            <div class="card costum-card" style="width: 200px;">
-                <img src="images/moto1.jpg" class="card-img-top shadow-sm" alt="moto">
-                <div class="card-body pb-4">
-                  <h5 class="card-title">Moto</h5>
-                  <p class="card-text">$Precio</p>
-                  <div class="d-flex justify-content-end w-100">
-                      <a href="#" class="boton-principal align-bottom">Comprar</a>
-                  </div>
-                </div>
-            </div>
-
+        @foreach($motos as $moto) <!-- CARD --> 
+          <div class="card costum-card"> 
+            <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" alt="{{ $moto->nombre }}"> 
+            <div class="card-body pb-4"> 
+              <h5 class="card-title">{{ $moto->nombre }}</h5> 
+              <p class="card-text">${{ $moto->precio_base }}</p> 
+             <div class="d-flex justify-content-end w-100"> <a href="#" class="boton-principal align-bottom">Comprar</a> </div> 
+          </div> </div> 
+          @endforeach   
         </div>
     </section>
   
