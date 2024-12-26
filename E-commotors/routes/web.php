@@ -17,10 +17,10 @@ Route::get('/card', function () {
 });
 
 
-/* Route::get('/message', function () {
-    return view('message');
+Route::get('/hola', function () {
+    return view('welcome');
 });
- */
+ 
 
  //ROUTE -> vista de enviar un mensaje
  Route::get('/message', [MensajeController::class, 'index'])->name('message');
