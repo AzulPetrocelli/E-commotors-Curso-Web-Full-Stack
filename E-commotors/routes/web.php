@@ -7,10 +7,10 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\AdminController;
 
-Route::get('/', function () {
+Route::get('/main', function () {
     $motosAleatorias = Moto::inRandomOrder()->take(3)->get();
     return view('main',['motosAleatorias' => $motosAleatorias]);
-}) -> name("/");
+}) -> name("/main");
 
 
 Route::get('/card', function () {
