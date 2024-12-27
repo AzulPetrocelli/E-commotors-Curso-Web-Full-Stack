@@ -18,6 +18,7 @@
     
     <!--Estilos CSS-->
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    
 
     <title>Document</title>
 

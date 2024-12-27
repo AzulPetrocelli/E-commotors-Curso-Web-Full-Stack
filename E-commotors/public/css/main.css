@@ -1,4 +1,6 @@
 /*GENERAL*/
+
+
 :root {
     --color-primario: #740707;
     --color-secundario: #F34F51;
@@ -307,4 +309,48 @@ textarea {
     footer > .footer-content .container-image {
         display: none;
     }
+}
+
+
+img{
+    user-select: none;
+    pointer-events: none;
+}
+
+.container-productos .custom-pagination .page-item {
+    margin: 0 5px;
+}
+
+.container-productos .custom-pagination .page-link {
+    color: #fff;
+    background-color: #a83232;
+    border: 1px solid #a83232;
+    border-radius: 5px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.container-productos .custom-pagination .page-link:hover {
+    background-color: #8c2b2b;
+    border-color: #8c2b2b;
+}
+
+.container-productos .custom-pagination .page-item.active .page-link {
+    background-color: #fff;
+    color: #a83232;
+    border-color: #a83232;
+    font-weight: bold;
+}
+
+.container-productos .custom-pagination .page-item.disabled .page-link {
+    background-color: #e9ecef;
+    color: #6c757d;
+    border-color: #e9ecef;
+}
+
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
