@@ -7,22 +7,25 @@
         <div class="d-flex justify-content-end gap-2">
             <input type="text" placeholder="Buscar..." class="input-form jaro w-100"/>
             <button class="boton-principal filtrar">Filtrar</button>
-            <button class="boton-principal filtrar">Modificar</button>
         </div>
     </section>
 
     <!--LISTADO DE PRODUCTOS-->
+    {{-- Agregamos etiqueta <a> para que el producto sea focuseable ¡¡HAY QUE JUSTIFICAR TAMAÑO DE LAS IMAGENES!! --}} 
     <section class="container-productos my-4 w-75">
         <div class="container-cards">
-        @foreach($motos as $moto) <!-- CARD -->
-          <div class="card costum-card">
-            <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" alt="{{ $moto->nombre }}">
-            <div class="card-body pb-4">
-              <h5 class="card-title">{{ $moto->nombre }}</h5>
-              <p class="card-text">${{ $moto->precio_base }}</p>
-             <div class="d-flex justify-content-end w-100"> <a href="#" class="boton-principal align-bottom">Comprar</a> </div>
-          </div> </div>
-          @endforeach
+          @foreach($motos as $moto) <!-- CARD -->
+          <a href="{{ route('motos.show', ['id' => $moto->id_moto]) }}" style="text-decoration: none; font-weight: bold; text-align: center; color: inherit;">
+              <div class="card costum-card">
+                {{-- El asset crea una url para q bbusque la imagen en la carpeta--}}
+                  <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" alt="{{ $moto->nombre }}">
+                  <div class="card-body pb-4">
+                      <p class="card-text">${{ $moto->precio_base }}</p>
+                      <h5 class="card-title">{{ $moto->nombre }}</h5>
+                  </div> 
+              </div>
+          </a>
+      @endforeach
         </div>
     </section>
 

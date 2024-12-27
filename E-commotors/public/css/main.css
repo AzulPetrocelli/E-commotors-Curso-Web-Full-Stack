@@ -1,6 +1,6 @@
 /*GENERAL*/
 :root {
-    --color-primario: #F90000;
+    --color-primario: #740707;
     --color-secundario: #F34F51;
     --negro-claro: #1E1E1E;
     --texto-color: #FFFFFF;
@@ -23,7 +23,7 @@
     font-weight: 400;
     font-style: normal;
 } 
-  
+
 .varela {
     font-family: var(--fuente-secundaria);
     font-weight: 400;
@@ -45,11 +45,11 @@
     background: var(--color-secundario);
     border-radius: 10px;
 }
-  
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primario);
 }
- 
+
 /*Clases de inicio de sesion*/
 .form-welcome {
     display: flex;
@@ -225,6 +225,7 @@ textarea {
   flex: 1 1 calc(25% - 20px);
   max-width: 300px;
   min-width: 200px;
+    height: 350px;
 }
 
 /*CLASES DE LA CARD*/

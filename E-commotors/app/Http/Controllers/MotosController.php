@@ -22,7 +22,7 @@ class MotosController extends Controller
      */
     public function create()
     {
-        //
+        return view('Productos.crearProducto');
     }
 
     /**
@@ -36,10 +36,15 @@ class MotosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
+    public function show($id)
+{
+    // Encuentra la moto por ID o tira error
+    $moto = Moto::findOrFail($id);
+
+    // Pasa los datos de la moto a la vista de las cards
+    return view('card', compact('moto')); // Usa `compact` para pasar la variable
+}
+
 
     /**
      * Show the form for editing the specified resource.

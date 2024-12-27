@@ -21,7 +21,7 @@ class FooterController extends Controller
     }
 
     public function descargarDevoluciones(){
-         $path = public_path('pdf/Devoluciones_Ecommotors.pdf'); 
-         return Response::download($path); 
+        $path = public_path('pdf/Devoluciones_Ecommotors.pdf'); 
+        return Response::download($path); 
     }
 }
