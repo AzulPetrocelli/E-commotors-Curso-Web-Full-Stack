@@ -17,7 +17,7 @@
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     
     <!--Estilos CSS-->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
     <title>Document</title>
 
@@ -32,7 +32,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
                   <a href="{{route('/')}}">
-                    <img src="images/logo.png" alt="Logo" width="60px">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" width="60px">
                   </a>                  
                   <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="">

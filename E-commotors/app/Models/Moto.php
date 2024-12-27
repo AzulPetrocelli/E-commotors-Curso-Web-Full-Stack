@@ -3,15 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Moto extends Model
 {
-    //
-    use HasFactory; 
     
     // Define el nombre de la tabla asociada al modelo 
     protected $table = 'moto'; 
+
+    protected $primaryKey = 'id_moto';
     
     // Define los atributos que se pueden asignar en masa 
     protected $fillable = [ 'nombre', 
@@ -32,6 +31,6 @@ class Moto extends Model
     } 
     
     public function categoria() {
-         return $this->belongsTo(Categoria::class, 'id_categoria'); 
+        return $this->belongsTo(Categoria::class, 'id_categoria'); 
     }
 }
