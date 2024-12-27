@@ -11,7 +11,7 @@
     </section>
 
     <!--LISTADO DE PRODUCTOS-->
-    {{-- Agregamos etiqueta <a> para que el producto sea focuseable ¡¡HAY QUE JUSTIFICAR TAMAÑO DE LAS IMAGENES!! --}} 
+    {{-- Agregamos etiqueta <a> para que el producto sea focuseable ¡¡HAY QUE JUSTIFICAR TAMAÑO DE LAS IMAGENES!! --}}
     <section class="container-productos my-4 w-75">
         <div class="container-cards">
           @foreach($motos as $moto) <!-- CARD -->
@@ -22,7 +22,7 @@
                   <div class="card-body pb-4">
                       <p class="card-text">${{ $moto->precio_base }}</p>
                       <h5 class="card-title">{{ $moto->nombre }}</h5>
-                  </div> 
+                  </div>
               </div>
           </a>
       @endforeach
@@ -31,6 +31,7 @@
 
     <!-- Paginación FALTA HACER QUE AUMENTE ON JS-->
     <nav class="paginacion d-flex flex-wrap justify-content-start gap-1">
+      <button class="boton-principal fs-3 px-4"><i class="las la-angle-double-left"></i></button>
       <button class="boton-principal fs-3 px-4">1</button>
       <button class="boton-principal fs-3 px-4">2</button>
       <button class="boton-principal fs-3 px-4">3</button>
@@ -39,7 +40,7 @@
       <button class="boton-principal fs-3 px-4">6</button>
       <button class="boton-principal fs-3 px-4">7</button>
       <button class="boton-principal fs-3 px-4">8</button>
-      <button class="boton-principal fs-3 px-4">...</button>
+      <button class="boton-principal fs-3 px-4"><i class="las la-angle-double-right"></i></button>
     </nav>
   </main>
 
