@@ -22,8 +22,8 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-} 
-  
+}
+
 .varela {
     font-family: var(--fuente-secundaria);
     font-weight: 400;
@@ -45,11 +45,11 @@
     background: var(--color-secundario);
     border-radius: 10px;
 }
-  
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primario);
 }
- 
+
 /*Clases de inicio de sesion*/
 .form-welcome {
     display: flex;
@@ -79,18 +79,18 @@
 footer{
     background-color: var(--negro-claro);
 }
-  
+
 footer > .footer-content {
     display: flex;
 }
-  
+
 footer > .footer-content .container-image {
     width: 25%;
     height: 25%;
     padding: 0;
     width: auto;
 }
-  
+
 footer > .footer-content .container-info {
     width: 100%;
     padding: 12px 32px;
@@ -99,43 +99,43 @@ footer > .footer-content .container-info {
     gap: 8px;
     flex-wrap: wrap;
 }
-  
+
 footer > .footer-content div h4 {
     color: var(--color-secundario);
 }
-  
+
 footer > .footer-content div ul {
     margin: 0;
     padding: 0;
 }
-  
+
 footer > .footer-content div ul li {
     list-style-type: none;
     color: var(--texto-color);
     font-family: var(--fuente-secundaria);
     margin-bottom: 12px;
 }
-  
+
 footer > .footer-content div ul li a {
     color: var(--texto-color);
     text-decoration: none;
 }
-  
+
 footer > .footer-content div ul li a:hover {
     color: var(--color-secundario);
     text-decoration: underline;
 }
-  
+
 .icons-redes{
     display: flex;
     width: 100%;
 }
-  
+
 .icons-redes a i{
     color: var(--color-secundario);
     font-size: 48px;
 }
-  
+
 footer > .footer-autor{
     color: var(--texto-color);
     border-top: 2px solid var(--texto-color);
@@ -159,10 +159,10 @@ form.agregar-margin {
 
 form .input-form::placeholder{
     color: var(--color-secundario);
-} 
+}
 
 .input-form:focus {
-    outline: none; 
+    outline: none;
     border: var(--color-primario) solid 3px;
 }
 
@@ -206,7 +206,7 @@ textarea {
 
 .container-productos {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -217,7 +217,7 @@ textarea {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px; 
+  gap: 20px;
 }
 
 .container-productos .container-cards .costum-card{
@@ -260,17 +260,17 @@ textarea {
     height: 80vh;
     overflow-y: auto;
 }
-  
+
 .aside-oculto{
     display: none;
 }
-  
+
 .filter-group {
     margin-bottom: 16px;
     padding: 8px;
     border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
 }
-  
+
 .filter-btn {
     padding: 8px 16px;
     border: 3px solid red;
@@ -280,7 +280,7 @@ textarea {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-  
+
 .filter-btn:hover,
 .filter-btn.active {
     background-color: red;
@@ -293,7 +293,7 @@ textarea {
     .container-card-view{
         display: block !important;
     }
-    
+
     .container-images-card-view{
         display: flex;
         flex-direction: column;
