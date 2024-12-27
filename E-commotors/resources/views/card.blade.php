@@ -1,14 +1,14 @@
 @include('header')
 
-<section class="d-flex mt-5 mx-2 pt-5 gap-3 container-card-view justify-content-center">
+<section class="container-card-view">
     <div class="container-images-card-view">
-        <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-image" alt="{{ $moto->nombre }}" style="width: 70%;">
+        <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-image img-fluid" alt="{{ $moto->nombre }}">
     </div>
-    <div>
+    <div class="p-2 w-auto">
         <h1 class="jaro fs-1">{{ $moto->nombre }}</h1>
-        <h2 class="jaro fs-2">{{ $moto->descripcion_node }}</h2>
+        <h2 class="jaro fs-2">Descripcion</h2>
         <p class="varela">
-            {{ $moto->descripcion_node }} 
+            {{ $moto->descripcion_node }}
         </p>
         <p class="jaro fs-2">Precio ${{ $moto->precio_base }}</p>
         <div class="d-flex justify-content-end">
