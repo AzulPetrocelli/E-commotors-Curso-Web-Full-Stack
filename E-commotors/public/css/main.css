@@ -181,7 +181,12 @@ textarea {
     border-radius: 10px;
 }
 
-.boton-principal:focus{
+.boton-principal:hover{
+    background-color: var(--negro-claro);
+    color: var(--color-primario);
+}
+
+.paginacion .boton-principal:focus{
     background-color: var(--texto-color);
     color: var(--color-secundario);
 }

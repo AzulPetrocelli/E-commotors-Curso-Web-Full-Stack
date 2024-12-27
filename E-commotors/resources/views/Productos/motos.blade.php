@@ -10,24 +10,23 @@
             <button class="boton-principal filtrar">Modificar</button>
         </div>
     </section>
-  
-    <!--LISTADO DE PRODUCTOS-->
 
+    <!--LISTADO DE PRODUCTOS-->
     <section class="container-productos my-4 w-75">
         <div class="container-cards">
-        @foreach($motos as $moto) <!-- CARD --> 
-          <div class="card costum-card"> 
-            <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" alt="{{ $moto->nombre }}"> 
-            <div class="card-body pb-4"> 
-              <h5 class="card-title">{{ $moto->nombre }}</h5> 
-              <p class="card-text">${{ $moto->precio_base }}</p> 
-             <div class="d-flex justify-content-end w-100"> <a href="#" class="boton-principal align-bottom">Comprar</a> </div> 
-          </div> </div> 
-          @endforeach   
+        @foreach($motos as $moto) <!-- CARD -->
+          <div class="card costum-card">
+            <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" alt="{{ $moto->nombre }}">
+            <div class="card-body pb-4">
+              <h5 class="card-title">{{ $moto->nombre }}</h5>
+              <p class="card-text">${{ $moto->precio_base }}</p>
+             <div class="d-flex justify-content-end w-100"> <a href="#" class="boton-principal align-bottom">Comprar</a> </div>
+          </div> </div>
+          @endforeach
         </div>
     </section>
-  
-    <!-- Paginación -->
+
+    <!-- Paginación FALTA HACER QUE AUMENTE ON JS-->
     <nav class="paginacion d-flex flex-wrap justify-content-start gap-1">
       <button class="boton-principal fs-3 px-4">1</button>
       <button class="boton-principal fs-3 px-4">2</button>
@@ -43,7 +42,7 @@
 
 
   <aside class="filter-sidebar aside-oculto w-75 pt-0">
-  
+
     <section class="position-fixed" style="width: 70vw">
       <div class="d-flex p-2 justify-content-between w-100 position-relative bg-white" style="height: 70px;">
           <h2 class="jaro">Filtros</h2>
@@ -53,7 +52,7 @@
           </div>
       </div>
     </section>
-    
+
     <div style="margin-top: 70px ">
       <!-- Categorías -->
       <section class="filter-group">
@@ -81,73 +80,8 @@
           <button class="varela fw-bold filter-btn">Kawasaki</button>
         </div>
       </section>
-
-      <!-- Marca -->
-      <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Marca:</h3>
-        <div class="d-flex flex-wrap gap-2">
-          <button class="varela fw-bold filter-btn">Zanella</button>
-          <button class="varela fw-bold filter-btn">Motomel</button>
-          <button class="varela fw-bold filter-btn">Gilera</button>
-          <button class="varela fw-bold filter-btn">Yamaha</button>
-          <button class="varela fw-bold filter-btn">Honda</button>
-          <button class="varela fw-bold filter-btn">BMW</button>
-          <button class="varela fw-bold filter-btn">Kawasaki</button>
-        </div>
-      </section><!-- Marca -->
-      <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Marca:</h3>
-        <div class="d-flex flex-wrap gap-2">
-          <button class="varela fw-bold filter-btn">Zanella</button>
-          <button class="varela fw-bold filter-btn">Motomel</button>
-          <button class="varela fw-bold filter-btn">Gilera</button>
-          <button class="varela fw-bold filter-btn">Yamaha</button>
-          <button class="varela fw-bold filter-btn">Honda</button>
-          <button class="varela fw-bold filter-btn">BMW</button>
-          <button class="varela fw-bold filter-btn">Kawasaki</button>
-        </div>
-      </section><!-- Marca -->
-      <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Marca:</h3>
-        <div class="d-flex flex-wrap gap-2">
-          <button class="varela fw-bold filter-btn">Zanella</button>
-          <button class="varela fw-bold filter-btn">Motomel</button>
-          <button class="varela fw-bold filter-btn">Gilera</button>
-          <button class="varela fw-bold filter-btn">Yamaha</button>
-          <button class="varela fw-bold filter-btn">Honda</button>
-          <button class="varela fw-bold filter-btn">BMW</button>
-          <button class="varela fw-bold filter-btn">Kawasaki</button>
-        </div>
-      </section><!-- Marca -->
-      <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Marca:</h3>
-        <div class="d-flex flex-wrap gap-2">
-          <button class="varela fw-bold filter-btn">Zanella</button>
-          <button class="varela fw-bold filter-btn">Motomel</button>
-          <button class="varela fw-bold filter-btn">Gilera</button>
-          <button class="varela fw-bold filter-btn">Yamaha</button>
-          <button class="varela fw-bold filter-btn">Honda</button>
-          <button class="varela fw-bold filter-btn">BMW</button>
-          <button class="varela fw-bold filter-btn">Kawasaki</button>
-        </div>
-      </section>
-      <!-- Marca -->
-      <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Marca:</h3>
-        <div class="d-flex flex-wrap gap-2">
-          <button class="varela fw-bold filter-btn">Zanella</button>
-          <button class="varela fw-bold filter-btn">Motomel</button>
-          <button class="varela fw-bold filter-btn">Gilera</button>
-          <button class="varela fw-bold filter-btn">Yamaha</button>
-          <button class="varela fw-bold filter-btn">Honda</button>
-          <button class="varela fw-bold filter-btn">BMW</button>
-          <button class="varela fw-bold filter-btn">Kawasaki</button>
-        </div>
-      </section>
     </div>
 
-   
-  
     <!-- Kilómetros -->
     <section class="filter-group">
       <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
@@ -159,6 +93,6 @@
       </div>
     </section>
   </aside>
-  
+
 
 @include('footer')

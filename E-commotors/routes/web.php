@@ -17,10 +17,17 @@ Route::get('/card', function () {
 });
 
 
-Route::get('/hola', function () {
+Route::get('/inicio', function () {
     return view('welcome');
 });
- 
+
+Route::get('/administracion', function () {
+    return view('admin');
+});
+
+Route::get('/muestra', function () {
+    return view('muestra');
+});
 
  //ROUTE -> vista de enviar un mensaje
  Route::get('/message', [MensajeController::class, 'index'])->name('message');
