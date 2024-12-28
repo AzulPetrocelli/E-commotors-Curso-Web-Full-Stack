@@ -1,3 +1,21 @@
+<!-- USUARIO FUNCIONAL PARA EL LOGIN CON CONTRASEÑA
+    AGREGAR EN BASE DE DATOS:
+    id: 1,
+    nombre: Juan Perez,
+    email: juan@example.com,
+    email_verified_at: NULL,
+    password: $2y$12$pKjj9DnK6vfVTWLaqnioUOR7EaEDoazapX/orjJG6Pkv1Md.xcRCK,
+    remeber_token: NULL,
+    created_at: 2024-12-27 21:37:03
+    updated_at: 2024-12-27 21:37:03
+
+    PARA INGRESAR:
+    usuario: juan@example.com,
+    contraseña: 123456
+
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,3 +66,4 @@
 </body>
 
 @include('footer')
+
