@@ -51,8 +51,12 @@ Route::get('/motos/productos-motos', [MotosController::class, 'index'])->name('p
 Route::get('/card{id}', [MotosController::class, 'show'])->name('motos.show');
 
 
-//Route
+//Route -> agregar moto
 Route::get('/agregar-moto',[MotosController::class,'create'])->name('agregarMoto');
+
+//Route -> vista de las motos filtradas
+Route::post('/productos-motos#', [MotosController::class, 'filtrar']);
+
 
 
 

@@ -122,56 +122,6 @@
         </div>
     </section>
 
-    <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
-        <div class="d-flex flex-wrap gap-2">
-            <a href="#" class="varela fw-bold filter-btn">0 km</a>
-            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
-            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
-            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
-        </div>
-    </section>
-
-    <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
-        <div class="d-flex flex-wrap gap-2">
-            <a href="#" class="varela fw-bold filter-btn">0 km</a>
-            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
-            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
-            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
-        </div>
-    </section>
-
-    <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
-        <div class="d-flex flex-wrap gap-2">
-            <a href="#" class="varela fw-bold filter-btn">0 km</a>
-            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
-            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
-            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
-        </div>
-    </section>
-
-
-    <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
-        <div class="d-flex flex-wrap gap-2">
-            <a href="#" class="varela fw-bold filter-btn">0 km</a>
-            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
-            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
-            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
-        </div>
-    </section>
-
-    <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
-        <div class="d-flex flex-wrap gap-2">
-            <a href="#" class="varela fw-bold filter-btn">0 km</a>
-            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
-            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
-            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
-        </div>
-    </section>
 
 </aside>
 
