@@ -45,8 +45,11 @@
                       </a>
                       <ul class="dropdown-menu">
                         <!--Agregar foreach-->
+                        <li><a class="dropdown-item jaro" href="#">Cascos</a></li>
+                        <li><a class="dropdown-item jaro" href="#">Antiparras</a></li>
+                        <li><a class="dropdown-item jaro" href="#">Guantes</a></li>
+                        <li><a class="dropdown-item jaro" href="#">Botas</a></li>
                         <li><a class="dropdown-item jaro" href="#">Puños</a></li>
-                        <li><a class="dropdown-item jaro" href="#">Another action</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
@@ -55,8 +58,9 @@
                       </a>
                       <ul class="dropdown-menu">
                         <!--Agregar foreach-->
-                        <li><a class="dropdown-item jaro" href="#">Piñom</a></li>
-                        <li><a class="dropdown-item jaro" href="#">Another action</a></li>
+                        <li><a class="dropdown-item jaro" href="#">Piñones</a></li>
+                        <li><a class="dropdown-item jaro" href="#">Manubrios</a></li>
+                        <li><a class="dropdown-item jaro" href="#">Pastillas de Freno</a></li>
                       </ul>
                     </li>
                   </ul>

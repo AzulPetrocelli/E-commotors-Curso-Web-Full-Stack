@@ -11,11 +11,19 @@ class MotosController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $motos = Moto::paginate(6); // Paginación de 6 motos por página
-        return view('Productos.motos', ['motos' => $motos]);
+    public function index(Request $request)
+{
+    $query = Moto::query(); // Constructor de consulta
+
+    if ($request->has('busqueda')) {
+        $query->where('nombre', 'like', '%' . $request->busqueda . '%'); // Agregar condición
     }
+
+    $motos = $query->paginate(6); // Paginación de los resultados
+
+    return view('Productos.motos', ['motos' => $motos]); // Retornar vista
+}
+
 
     /**
      * Show the form for creating a new resource.

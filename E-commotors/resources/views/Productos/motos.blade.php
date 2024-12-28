@@ -5,7 +5,12 @@
     <section class="d-flex justify-content-between mt-5 w-75">
         <h1 class="jaro">Motos</h1>
         <div class="d-flex justify-content-end gap-2">
-            <input type="text" placeholder="Buscar..." class="input-form jaro w-100"/>
+          <form action="" method="GET" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="busqueda" id="busqueda" autocomplete="off" class="form-control" placeholder="Buscar moto..." style="border: 0.5px solid rgb(102, 101, 101); box-shadow: none;">
+                <button type="submit" class="btn btn-outline-secondary">Buscar</button>
+            </div>
+        </form>
             <button class="boton-principal filtrar">Filtrar</button>
         </div>
     </section>
