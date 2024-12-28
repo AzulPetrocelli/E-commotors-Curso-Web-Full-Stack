@@ -25,7 +25,7 @@ class Moto extends Model
                             'imagenes', 
                             'color' ]; 
     
-    // Define las relaciones con otros modelos, si es necesario
+
     public function marca() { 
         return $this->belongsTo(Marca::class, 'id_marca'); 
     } 

@@ -19,6 +19,27 @@ class MotosController extends Controller
         $query->where('nombre', 'like', '%' . $request->busqueda . '%'); // Agregar condición
     }
 
+    if(isset($request->categoria)){
+        $query->whereHas('categoria',function($q) use($request){
+            $q ->where('id_categoria',$request->categoria);
+        });
+    }
+    if(isset($request->marca)){
+        $query->whereHas('marca',function($q) use($request){
+            $q ->where('id_marca',$request->marca);
+        });
+    }
+
+    if (isset($request->min)) {
+        // Aplica un filtro de precio mínimo directamente sobre el campo 'precio_base'
+        $query->where('precio_base', '>=', $request->min);
+    }
+    
+    if (isset($request->max)) {
+        // Aplica un filtro de precio máximo directamente sobre el campo 'precio_base'
+        $query->where('precio_base', '<=', $request->max);
+    }
+
     $motos = $query->paginate(6); // Paginación de los resultados
 
     return view('Productos.motos', ['motos' => $motos]); // Retornar vista

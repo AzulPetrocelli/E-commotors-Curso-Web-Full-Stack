@@ -12,6 +12,7 @@
             </div>
         </form>
             <button class="boton-principal filtrar">Filtrar</button>
+            <a class="boton-principal" href="{{url("/productos-motos")}}">Limpiar Filtros</a>
         </div>
     </section>
 
@@ -77,57 +78,59 @@
 
 <!-- FILTRO -->
 <aside class="filter-sidebar aside-oculto w-75 pt-0">
-    <section class="position-fixed" style="width: 70vw">
-        <div class="d-flex p-2 justify-content-between w-100 position-relative bg-white" style="height: 70px;">
-            <h2 class="jaro">Filtros</h2>
-            <div class="d-flex gap-2" style="">
-                <button class="boton-principal filtrar">Salir</button>
-                <button class="boton-principal filtrar">Filtrar</button>
-            </div>
-        </div>
-    </section>
-
-    <div style="margin-top: 70px ">
-        <!-- Categorías -->
-        <section class="filter-group">
-            <h3 class="jaro fs-4 mb-2">Categorías:</h3>
-            <div class="d-flex flex-wrap gap-2">
-                <a href="#" class="varela fw-bold filter-btn">Calle</a>
-                <a href="#" class="varela fw-bold filter-btn">Enduro</a>
-                <a href="#" class="varela fw-bold filter-btn">Scooters</a>
-                <a href="#" class="varela fw-bold filter-btn">Touring</a>
-                <a href="#" class="varela fw-bold filter-btn">Naked</a>
-                <a href="#" class="varela fw-bold filter-btn">Retro</a>
+    <form action="{{url('productos-motos')}}" method="GET">
+        <section class="position-fixed" style="width: 70vw">
+            <div class="d-flex p-2 justify-content-between w-100 position-relative bg-white" style="height: 70px; margin-top: -70px;">
+                <h2 class="jaro">Filtros</h2>
+                <div class="d-flex gap-2" style="">
+                    <button class="boton-principal filtrar">Salir</button>
+                    <input type="submit" class="boton-principal filtrar"></button>
+                </div>
             </div>
         </section>
+        
+        <div style="margin-top: 90px ">
+            <!-- Categorías -->
+            <section class="filter-group">
+                <h3 class="jaro fs-4 mb-2">Categoría:</h3>
+                <div class="d-flex flex-wrap gap-2">
+                    @foreach($categorias as $categoria)
+                    <input type="checkbox" href="#" class="varela fw-bold filter-btn" name="categoria[]" value="{{$categoria->id_categoria}}">{{$categoria->nombre_categoria}}</input>
+                    @endforeach
+                </div>
+            </section>
 
-        <!-- Marca -->
+            <!-- Marca -->
+            <section class="filter-group">
+                <h3 class="jaro fs-4 mb-2">Marca:</h3>
+                <div class="d-flex flex-wrap gap-2">
+                    @foreach($marcas as $marca)
+                        <input type="checkbox" href="#" class="varela fw-bold filter-btn" name="marca[]" value="{{$marca->id_marca}}">{{$marca->nombre_marca}}</input>
+                    @endforeach
+                </div>
+            </section>
+
+
+        <!-- Kilómetros -->
         <section class="filter-group">
-            <h3 class="jaro fs-4 mb-2">Marca:</h3>
-            <div class="d-flex flex-wrap gap-2">
-                <a href="#" class="varela fw-bold filter-btn">Zanella</a>
-                <a href="#" class="varela fw-bold filter-btn">Motomel</a>
-                <a href="#" class="varela fw-bold filter-btn">Gilera</a>
-                <a href="#" class="varela fw-bold filter-btn">Yamaha</a>
-                <a href="#" class="varela fw-bold filter-btn">Honda</a>
-                <a href="#" class="varela fw-bold filter-btn">BMW</a>
-                <a href="#" class="varela fw-bold filter-btn">Kawasaki</a>
+            <h3 class="jaro fs-4 mb-2">Precio:</h3>
+            <div class="filter-content collapse show" id="collapse_3">
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Min</label>
+                            <input type="number" class="form-control" placeholder="0" name="min">
+                        </div>
+                        <div class="form-group text-right col-md-6">
+                            <label>Max</label>
+                            <input type="number" class="form-control" placeholder="100000" name="max">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
-    </div>
-
-    <!-- Kilómetros -->
-    <section class="filter-group">
-        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
-        <div class="d-flex flex-wrap gap-2">
-            <a href="#" class="varela fw-bold filter-btn">0 km</a>
-            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
-            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
-            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
-        </div>
-    </section>
-
-
+    </form>
 </aside>
 
 @include('footer')
