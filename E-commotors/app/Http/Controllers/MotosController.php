@@ -13,7 +13,7 @@ class MotosController extends Controller
      */
     public function index()
     {
-        $motos = Moto::paginate(6); // Paginación de 6 motos por página 
+        $motos = Moto::paginate(6); // Paginación de 6 motos por página
         return view('Productos.motos', ['motos' => $motos]);
     }
 

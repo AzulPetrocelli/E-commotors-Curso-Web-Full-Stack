@@ -16,10 +16,10 @@
             @foreach($motos as $moto) <!-- CARD -->
             <a href="{{ route('motos.show', ['id' => $moto->id_moto]) }}" style="text-decoration: none; font-weight: bold; text-align: center; color: inherit;">
                 <div class="card costum-card m-2">
-                    <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" alt="{{ $moto->nombre }}">
+                    <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" style="height: 250px" alt="{{ $moto->nombre }}">
                     <div class="card-body pb-4">
-                        <p class="card-text">${{ $moto->precio_base }}</p>
                         <h5 class="card-title">{{ $moto->nombre }}</h5>
+                        <p class="card-text">${{ $moto->precio_base }}</p>
                     </div>
                 </div>
             </a>

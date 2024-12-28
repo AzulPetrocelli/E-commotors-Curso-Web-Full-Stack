@@ -13,6 +13,11 @@
     --fuente-secundaria: "Varela Round", serif;
 }
 
+img{
+    user-select: none;
+    pointer-events: none;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -223,17 +228,37 @@ textarea {
 }
 
 .container-productos .container-cards .costum-card{
+  overflow: hidden;
   box-shadow: 0px 2px 8px #000000;
   flex: 1 1 calc(25% - 20px);
-  max-width: 300px;
-  min-width: 200px;
-    height: 350px;
+  width: 300px;
+  height: 350px;
+  /*Prueba*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /*CLASES DE LA CARD*/
+.container-card-view {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+    margin: 112px auto 42px auto;
+}
+
+.container-images-card-view {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
 .container-images-card-view .card-image{
-    width: 300px;
-    height: auto;
+    width: 100%;
+    object-fit: cover;
+    min-width: 300px;
+    height: 400px;
     box-shadow: 0px 0px 30px var(--color-primario);
     border-radius: 20px;
 }
@@ -292,12 +317,17 @@ textarea {
 
 /*MEDIA QUERYS*/
 
-@media(width <= 580px){
+@media(width <= 680px){
     .container-card-view{
-        display: block !important;
+        flex-direction: column !important;
+    }
+
+    .container-card-view div.w-50{
+        width: auto !important;
     }
 
     .container-images-card-view{
+        width: 90%;
         display: flex;
         flex-direction: column;
         margin-bottom: 24px;
