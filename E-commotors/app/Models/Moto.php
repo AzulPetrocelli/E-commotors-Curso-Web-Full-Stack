@@ -15,13 +15,12 @@ class Moto extends Model
     // Define los atributos que se pueden asignar en masa 
     protected $fillable = [ 'nombre', 
                             'estado', 
-                            'precio_base', 
-                            'precio_noche', 
+                            'precio_moto', 
                             'foto_moto', 
                             'id_categoria', 
                             'id_marca', 
-                            'knowledge_node', 
-                            'descripcion_node', 
+                            'titulo_card', 
+                            'descripcion_moto', 
                             'imagenes', 
                             'color' ]; 
     
