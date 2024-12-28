@@ -44,14 +44,14 @@
         <img src="images/logo.png" alt="Logo E-commotors" class="w-100">
 
         <label for="" class="w-75">
-            <input type="text" value="{{ old('email') }}" class="input-form position-relative z-2" placeholder="Usuario" name="email" id="">
+            <input type="text" value="{{ old('email') }}" class="input-form position-relative z-2" placeholder="Usuario" autocomplete="off" name="email" id="">
             @error('email')
                 <div class="error-message varela">{{ $message }}</div>
             @enderror
         </label>
 
         <label for="" class="w-75">
-            <input type="password" class="input-form position-relative z-2" placeholder="Contraseña" name="password" id="">
+            <input type="password" class="input-form position-relative z-2" placeholder="Contraseña" name="password" autocomplete="off" id="">
             @error('password')
                 <div class="error-message varela">{{ $message }}</div>
             @enderror

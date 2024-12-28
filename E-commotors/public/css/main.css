@@ -78,7 +78,7 @@ img{
     display: flex;
     top: 0px;
     align-items: end;
-    z-index: 10;
+    z-index: 10000;
 }
 
 
@@ -206,7 +206,8 @@ textarea {
 }
 
 .costum-carousel{
-    margin-top: 75px;
+    margin: 100px auto 0px auto;
+    max-width: 1000px;
 }
 
 /*CLASES DE LOS PRODUCTOS*/
@@ -218,7 +219,8 @@ textarea {
   align-items: center;
 }
 
-.container-productos .container-cards {
+/*.container-productos .container-cards*/
+.container-cards {
   padding: 12px;
   margin-bottom: 12px;
   display: flex;
@@ -227,16 +229,15 @@ textarea {
   gap: 20px;
 }
 
-.container-productos .container-cards .costum-card{
-  overflow: hidden;
+/*
+.container-productos .container-cards .costum-card
+*/
+.costum-card{
   box-shadow: 0px 2px 8px #000000;
   flex: 1 1 calc(25% - 20px);
-  width: 300px;
-  height: 350px;
-  /*Prueba*/
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  min-width: 300px;
+  max-width: 300px;
+  height: auto;
 }
 
 /*CLASES DE LA CARD*/
@@ -272,7 +273,7 @@ textarea {
     width: 100vw;
     height: 100vh;
     background-color: rgb(128, 128, 128);
-    z-index: 1000000000000; /* Debajo del filtro */
+    z-index: 999; /* Debajo del filtro */
 }
 
 .filter-sidebar {
