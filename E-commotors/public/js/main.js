@@ -6,7 +6,7 @@ const body = document.body;
 botonFiltrar.forEach(boton => {
     boton.addEventListener("click", () => {
         var contenedorAside = document.querySelector(".filter-sidebar")
-        
+
         if(contenedorAside.classList.contains("aside-oculto")){
             contenedorAside.classList.toggle("aside-oculto");
             body.classList.toggle('fondo-gris');
@@ -38,3 +38,12 @@ aceptarOCancelar.forEach(boton => {
         }
       })
 })
+
+const links = document.querySelectorAll('.link-item');
+
+// Añadir evento de click
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        link.classList.toggle('selected'); // Alternar clase 'selected'
+    });
+});

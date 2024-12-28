@@ -14,7 +14,7 @@
                     <li><a href="{{ route('descargarPDF')}}">Devoluciones</a></li>
                 </ul>
             </div>
-            
+
             <div>
                 <h4 class="jaro">Desarrolladores</h4>
                 <ul>
@@ -22,7 +22,6 @@
                     <li>Agustin Montaini</li>
                     <li>Federico Migliavacca</li>
                     <li>Thiago Mathus</li>
-                    <li>Tomas Balladares</li>
                 </ul>
             </div>
 
@@ -42,12 +41,12 @@
                             <a href="https://www.facebook.com/"><i class="lab la-facebook"></i></a>
                             <a href="https://www.instagram.com/"><i class="lab la-instagram"></i></a>
                             <a href="https://x.com/"><i class="lab la-twitter"></i></a>
-                            <a href="https://www.youtube.com/"><i class="lab la-youtube"></i></a>         
+                            <a href="https://www.youtube.com/"><i class="lab la-youtube"></i></a>
                         </div>
                     </li>
                 </ul>
             </div>
-        </div>   
+        </div>
     </div>
     <div class="footer-autor">© e-comotors 2024 Todos los derechos reservados</div>
 </footer>

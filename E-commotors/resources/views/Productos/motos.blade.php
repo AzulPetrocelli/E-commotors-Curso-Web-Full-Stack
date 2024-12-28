@@ -64,6 +64,8 @@
     </section>
 </main>
 
+
+<!-- FILTRO -->
 <aside class="filter-sidebar aside-oculto w-75 pt-0">
     <section class="position-fixed" style="width: 70vw">
         <div class="d-flex p-2 justify-content-between w-100 position-relative bg-white" style="height: 70px;">
@@ -80,12 +82,12 @@
         <section class="filter-group">
             <h3 class="jaro fs-4 mb-2">Categorías:</h3>
             <div class="d-flex flex-wrap gap-2">
-                <button class="varela fw-bold filter-btn">Calle</button>
-                <button class="varela fw-bold filter-btn">Enduro</button>
-                <button class="varela fw-bold filter-btn">Scooters</button>
-                <button class="varela fw-bold filter-btn">Touring</button>
-                <button class="varela fw-bold filter-btn">Naked</button>
-                <button class="varela fw-bold filter-btn">Retro</button>
+                <a href="#" class="varela fw-bold filter-btn">Calle</a>
+                <a href="#" class="varela fw-bold filter-btn">Enduro</a>
+                <a href="#" class="varela fw-bold filter-btn">Scooters</a>
+                <a href="#" class="varela fw-bold filter-btn">Touring</a>
+                <a href="#" class="varela fw-bold filter-btn">Naked</a>
+                <a href="#" class="varela fw-bold filter-btn">Retro</a>
             </div>
         </section>
 
@@ -93,13 +95,13 @@
         <section class="filter-group">
             <h3 class="jaro fs-4 mb-2">Marca:</h3>
             <div class="d-flex flex-wrap gap-2">
-                <button class="varela fw-bold filter-btn">Zanella</button>
-                <button class="varela fw-bold filter-btn">Motomel</button>
-                <button class="varela fw-bold filter-btn">Gilera</button>
-                <button class="varela fw-bold filter-btn">Yamaha</button>
-                <button class="varela fw-bold filter-btn">Honda</button>
-                <button class="varela fw-bold filter-btn">BMW</button>
-                <button class="varela fw-bold filter-btn">Kawasaki</button>
+                <a href="#" class="varela fw-bold filter-btn">Zanella</a>
+                <a href="#" class="varela fw-bold filter-btn">Motomel</a>
+                <a href="#" class="varela fw-bold filter-btn">Gilera</a>
+                <a href="#" class="varela fw-bold filter-btn">Yamaha</a>
+                <a href="#" class="varela fw-bold filter-btn">Honda</a>
+                <a href="#" class="varela fw-bold filter-btn">BMW</a>
+                <a href="#" class="varela fw-bold filter-btn">Kawasaki</a>
             </div>
         </section>
     </div>
@@ -108,12 +110,64 @@
     <section class="filter-group">
         <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
         <div class="d-flex flex-wrap gap-2">
-            <button class="varela fw-bold filter-btn">0 km</button>
-            <button class="varela fw-bold filter-btn">0 a 4.500 km</button>
-            <button class="varela fw-bold filter-btn">4.500 a 20.000 km</button>
-            <button class="varela fw-bold filter-btn">20.000 a 100.000 km</button>
+            <a href="#" class="varela fw-bold filter-btn">0 km</a>
+            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
+            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
+            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
         </div>
     </section>
+
+    <section class="filter-group">
+        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
+        <div class="d-flex flex-wrap gap-2">
+            <a href="#" class="varela fw-bold filter-btn">0 km</a>
+            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
+            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
+            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
+        </div>
+    </section>
+
+    <section class="filter-group">
+        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
+        <div class="d-flex flex-wrap gap-2">
+            <a href="#" class="varela fw-bold filter-btn">0 km</a>
+            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
+            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
+            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
+        </div>
+    </section>
+
+    <section class="filter-group">
+        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
+        <div class="d-flex flex-wrap gap-2">
+            <a href="#" class="varela fw-bold filter-btn">0 km</a>
+            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
+            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
+            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
+        </div>
+    </section>
+
+
+    <section class="filter-group">
+        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
+        <div class="d-flex flex-wrap gap-2">
+            <a href="#" class="varela fw-bold filter-btn">0 km</a>
+            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
+            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
+            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
+        </div>
+    </section>
+
+    <section class="filter-group">
+        <h3 class="jaro fs-4 mb-2">Kilómetros:</h3>
+        <div class="d-flex flex-wrap gap-2">
+            <a href="#" class="varela fw-bold filter-btn">0 km</a>
+            <a href="#" class="varela fw-bold filter-btn">0 a 4.500 km</a>
+            <a href="#" class="varela fw-bold filter-btn">4.500 a 20.000 km</a>
+            <a href="#" class="varela fw-bold filter-btn">20.000 a 100.000 km</a>
+        </div>
+    </section>
+
 </aside>
 
 @include('footer')
