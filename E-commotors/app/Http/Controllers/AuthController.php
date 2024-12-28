@@ -16,6 +16,11 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:6',
+        ], [
+            "email.required" => "Falta ingresar el mail",
+            "email.email" => "El mail ingresado no es valido",
+            "password.required" => "Falta ingresar la contraseña",
+            "password.min" => "La contraseña debe tener al menos 6 caracteres"
         ]);
 
         // Intentar obtener al usuario con el correo proporcionado
@@ -28,10 +33,14 @@ class AuthController extends Controller
 
             // Redirige al usuario a la ruta 'admin' después del login exitoso
             return redirect()->route('admin');
-        }
 
-        // Si no se encuentra el usuario o las credenciales no coinciden
-        return back()->withErrors(['email' => 'No se encontró el usuario o las credenciales son incorrectas.']);
+        } elseif (!$user) {
+            // Notifica que el usuario no es valido
+            return back()->withErrors(['email' => 'El usuario ingresado no está registrado']);
+        } elseif (!Hash::check($request->password, $user->password)) {
+            // Notifica que la contraseña no es valida
+            return back()->withErrors(['password' => 'La contraseña ingresada no es correcta']);
+        }
     }
 }
 
