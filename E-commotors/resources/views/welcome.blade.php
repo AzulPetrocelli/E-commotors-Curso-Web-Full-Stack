@@ -27,7 +27,7 @@
         <label for="" class="w-75"><input type="text" class="input-form" placeholder="Usuario" name="" id=""></label>
         <label for="" class="w-75"><input type="password" class="input-form" placeholder="Contraseña" name="" id=""></label>
         <button class="boton-principal w-75">Iniciar Sesion</button>
-        <a href="#" class="boton-principal w-75" style="text-align: center">Entrar sin cuenta</a>
+        <a href="{{route('/main')}}" class="boton-principal w-75" style="text-align: center">Entrar sin cuenta</a>
     </form>
 
 @include('footer')

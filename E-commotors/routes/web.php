@@ -7,10 +7,10 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\AdminController;
 
-Route::get('/', function () {
+Route::get('/main', function () {
     $motosAleatorias = Moto::inRandomOrder()->take(3)->get();
     return view('main',['motosAleatorias' => $motosAleatorias]);
-}) -> name("/");
+}) -> name("/main");
 
 
 Route::get('/card', function () {
@@ -46,12 +46,17 @@ Route::get('admin',function(){
 //Route::get('/productos-motos', [MotosController::class, 'index'])->name('productos-motos');
 Route::get('/productos-motos', [MotosController::class, 'index'])->name('productos-motos');
 Route::get('/motos/productos-motos', [MotosController::class, 'index'])->name('productos-motos');
-
 // Ruta para mostrar card de una moto específica
 Route::get('/card{id}', [MotosController::class, 'show'])->name('motos.show');
 
+
 //Route
 Route::get('/agregar-moto',[MotosController::class,'create'])->name('agregarMoto');
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------
+// ROUTES DE FOOTER
 
 //ROUTE -> vista de /terminos-y-condiciones (archivo terminos)
 Route::get('/terminos-y-condiciones',[FooterController::class,"terminosYcondiciones"]) -> name('terminosYcondiciones');
@@ -64,3 +69,6 @@ Route::get('/locales',[FooterController::class,"locales"]) -> name('locales');
 
 // ROUTE -> DESCARGA DE PDF CONDICIONES
 Route::get('/descargar-devoluciones', [FooterController::class, 'descargarDevoluciones'])->name('descargarPDF');
+
+// ROUTE ENVIAR MENSAJE
+Route::post('/enviar-mensaje', [MensajeController::class, 'store'])->name('mensaje.store');

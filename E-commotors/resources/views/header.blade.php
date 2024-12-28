@@ -18,6 +18,7 @@
     
     <!--Estilos CSS-->
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    
 
     <title>Document</title>
 
@@ -31,7 +32,7 @@
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
-                  <a href="{{route('/')}}">
+                  <a href="{{route('/main')}}">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" width="60px">
                   </a>                  
                   <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">

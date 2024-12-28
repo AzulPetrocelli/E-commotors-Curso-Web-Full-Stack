@@ -4,7 +4,7 @@
     <div class="container-images-card-view">
         <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-image img-fluid" alt="{{ $moto->nombre }}">
     </div>
-    <div class="p-2 w-auto">
+    <div class="p-2 w-50">
         <h1 class="jaro fs-1">{{ $moto->nombre }}</h1>
         <h2 class="jaro fs-2">Descripcion</h2>
         <p class="varela">
