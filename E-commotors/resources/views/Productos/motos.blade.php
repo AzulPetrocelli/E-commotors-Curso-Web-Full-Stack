@@ -17,17 +17,22 @@
 
     <!-- LISTADO DE PRODUCTOS -->
     <section class="container-productos my-4 w-75">
-        <div class="container-cards d-flex flex-wrap justify-content-center">
-            @foreach($motos as $moto) <!-- CARD -->
-            <a href="{{ route('motos.show', ['id' => $moto->id_moto]) }}" style="text-decoration: none; font-weight: bold; text-align: center; color: inherit;">
-                <div class="card costum-card m-2">
+        <div class="container-cards d-flex flex-wrap">
+
+            <!-- CARD -->
+            @foreach($motos as $moto)
+            <div class="card costum-card">
+                <a href="{{ route('motos.show', ['id' => $moto->id_moto]) }}">
                     <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" style="height: 250px" alt="{{ $moto->nombre }}">
-                    <div class="card-body pb-4">
-                        <h5 class="card-title">{{ $moto->nombre }}</h5>
-                        <p class="card-text">${{ $moto->precio_base }}</p>
+                </a>
+                    <div class="card-body d-flex flex-column py-2">
+                        <h5 class="card-title jaro">{{ $moto->nombre }}</h5>
+                        <p class="card-text varela">${{ $moto->precio_base }}</p>
                     </div>
-                </div>
-            </a>
+                    <div class="d-flex justify-content-end w-100 p-2">
+                        <a href="#" class="boton-principal align-bottom">Comprar</a>
+                    </div>
+            </div>
             @endforeach
         </div>
 

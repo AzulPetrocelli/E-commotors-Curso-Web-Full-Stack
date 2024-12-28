@@ -38,12 +38,3 @@ aceptarOCancelar.forEach(boton => {
         }
       })
 })
-
-const links = document.querySelectorAll('.link-item');
-
-// Añadir evento de click
-links.forEach(link => {
-    link.addEventListener('click', () => {
-        link.classList.toggle('selected'); // Alternar clase 'selected'
-    });
-});
