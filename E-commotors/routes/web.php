@@ -2,10 +2,11 @@
 
 use App\Models\Moto;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MotosController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\MensajeController;
-use App\Http\Controllers\AdminController;
 
 Route::get('/main', function () {
     $motosAleatorias = Moto::inRandomOrder()->take(3)->get();
@@ -18,13 +19,13 @@ Route::get('/card', function () {
 });
 
 
-Route::get('/inicio', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/administracion', function () {
     return view('admin');
-});
+}) -> name('admin');
 
 Route::get('/muestra', function () {
     return view('muestra');
@@ -72,3 +73,6 @@ Route::get('/descargar-devoluciones', [FooterController::class, 'descargarDevolu
 
 // ROUTE ENVIAR MENSAJE
 Route::post('/enviar-mensaje', [MensajeController::class, 'store'])->name('mensaje.store');
+
+//ROUTE LOGUIN
+Route::post('/login', [AuthController::class, 'login'])->name('login');

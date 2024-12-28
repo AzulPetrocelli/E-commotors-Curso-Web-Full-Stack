@@ -1,3 +1,20 @@
+<!-- USUARIO FUNCIONAL PARA EL LOGIN CON CONTRASEÑA
+    AGREGAR EN BASE DE DATOS:
+    id: 1,
+    nombre: Juan Perez,
+    email: juan@example.com,
+    email_verified_at: NULL,
+    password: $2y$12$pKjj9DnK6vfVTWLaqnioUOR7EaEDoazapX/orjJG6Pkv1Md.xcRCK,
+    remeber_token: NULL,
+    created_at: 2024-12-27 21:37:03
+    updated_at: 2024-12-27 21:37:03
+
+    PARA INGRESAR:
+    usuario: juan@example.com,
+    contraseña: 123456
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +39,27 @@
     <title>Welcome</title>
 </head>
 <body style="background-color:var(--color-primario);">
-    <form action="" method="" class="form-welcome w-25">
+    <form action="{{ route('login') }}" method="POST" class="form-welcome w-25">
+        @csrf <!-- Token CSRF para proteger el formulario -->
         <img src="images/logo.png" alt="Logo E-commotors" class="w-100">
-        <label for="" class="w-75"><input type="text" class="input-form" placeholder="Usuario" name="" id=""></label>
-        <label for="" class="w-75"><input type="password" class="input-form" placeholder="Contraseña" name="" id=""></label>
+        <label for="" class="w-75"><input type="email" class="input-form" placeholder="Usuario" name="email" id=""></label>
+        <label for="" class="w-75"><input type="password" class="input-form" placeholder="Contraseña" name="password" id=""></label>
         <button class="boton-principal w-75">Iniciar Sesion</button>
-        <a href="{{route('/main')}}" class="boton-principal w-75" style="text-align: center">Entrar sin cuenta</a>
+        <a href="{{ route('/main') }}" class="boton-principal w-75" style="text-align: center">Entrar sin cuenta</a>
     </form>
 
+    <!-- Mostrar el error si las credenciales no coinciden -->
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+</body>
+
 @include('footer')
+
