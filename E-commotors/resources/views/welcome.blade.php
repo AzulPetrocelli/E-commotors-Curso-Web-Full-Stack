@@ -42,23 +42,24 @@
     <form action="{{ route('login') }}" method="POST" class="form-welcome w-25">
         @csrf <!-- Token CSRF para proteger el formulario -->
         <img src="images/logo.png" alt="Logo E-commotors" class="w-100">
-        <label for="" class="w-75"><input type="email" class="input-form" placeholder="Usuario" name="email" id=""></label>
-        <label for="" class="w-75"><input type="password" class="input-form" placeholder="Contraseña" name="password" id=""></label>
+
+        <label for="" class="w-75">
+            <input type="text" value="{{ old('email') }}" class="input-form position-relative z-2" placeholder="Usuario" name="email" id="">
+            @error('email')
+                <div class="error-message varela">{{ $message }}</div>
+            @enderror
+        </label>
+
+        <label for="" class="w-75">
+            <input type="password" class="input-form position-relative z-2" placeholder="Contraseña" name="password" id="">
+            @error('password')
+                <div class="error-message varela">{{ $message }}</div>
+            @enderror
+        </label>
+
         <button class="boton-principal w-75">Iniciar Sesion</button>
         <a href="{{ route('/main') }}" class="boton-principal w-75" style="text-align: center">Entrar sin cuenta</a>
     </form>
-
-    <!-- Mostrar el error si las credenciales no coinciden -->
-    @if($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
 </body>
 
 @include('footer')
