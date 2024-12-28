@@ -19,7 +19,7 @@ Route::get('/card', function () {
 });
 
 
-Route::get('/inicio', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
