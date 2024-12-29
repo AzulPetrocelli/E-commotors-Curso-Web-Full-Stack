@@ -1,5 +1,57 @@
 @include('headeradmin')
 
+    <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <div class="fondo-gris" style="z-index: 10">
+    </div>
+
+    <form class="form-welcome w-50 position-absolute top-50 start-50 translate-middle py-4 m-0" style="z-index: 11; padding: 35px 0px;" action="{{ route('agregarProducto') }}" method="POST" enctype="multipart/form-data"><!-- ;-->
+        @csrf
+        <div class="w-75">
+            <input type="text" placeholder="Nombre" class="input-form" id="nombre" name="nombre" required value="{{ old('nombre', $moto->nombre ?? '') }}">
+        </div>
+
+        <div class="w-75">
+            <input type="text" placeholder="Estado" class="input-form" id="estado" name="estado" required value="{{ old('estado', $moto->estado ?? '') }}">
+        </div>
+
+        <div class="w-75">
+            <input type="number" placeholder="Precio" class="input-form" id="precio_moto" name="precio_moto" autocomplete="off" required value="{{ old('precio_moto', $moto->precio_moto ?? '') }}">
+        </div>
+
+        <div class="w-75">
+            <input type="text" placeholder="Categoría" class="input-form" id="id_categoria" name="id_categoria" autocomplete="off" required value="{{ old('id_categoria') }}">
+        </div>
+
+        <div class="w-75">
+            <input type="text" placeholder="Marca" class="input-form" id="id_marca" name="id_marca" autocomplete="off" required value="{{ old('id_marca') }}">
+        </div>
+
+        <div class="w-75">
+            <input type="text" placeholder="Descripcion" class="input-form" id="descripcion_moto" name="descripcion_moto" autocomplete="off" required value="{{ old('descripcion_moto', $moto->descripcion_moto ?? '') }}">
+        </div>
+
+        <div class="w-75">
+            <label for="foto_moto" class="fs-5 varela">Imagen</label>
+            <input type="file" class="form-control" id="foto_moto" name="foto_moto" style="background: var(--color-secundario);color: white; text-aling:center;">
+        </div>
+
+        <div class="w-75 d-flex justify-content-end gap-2">
+            <a href="#" class="boton-principal filtrar">Cancelar</a>
+            <button type="submit" class="boton-principal">Crear Producto</button>
+        </div>
+    </form>
+
+
     <!-- Tabla de ABM -->
     <div class="d-flex justify-content-end gap-2 position-relative bg-white" style="margin-top: 75px; padding: 12px; height: 75px;">
         <form action="" method="GET" class="mb-4">
@@ -81,7 +133,7 @@
         </nav>
     </div>
 
-    <!-- FALTA TERMINAR -->
+    <!-- ASIDE DE VERIFICACION -->
     <aside class="confirmacion aside-oculto rounded shadow p-4 w-25 position-fixed top-50 start-50 translate-middle bg-white" style="min-width: 300px; z-index:1000">
         <p class="varela fs-2">Esta seguro que desea eliminar el producto?</p>
         <div class="d-flex justify-content-end gap-2">

@@ -85,17 +85,15 @@
 <!-- FILTRO -->
 <aside class="filter-sidebar aside-oculto w-75 pt-0">
     <form action="{{url('productos-motos')}}" method="GET">
-        <section class="position-fixed" style="width: 70vw">
-            <div class="d-flex p-2 justify-content-between w-100 position-relative bg-white" style="height: 70px; margin-top: -70px;">
-                <h2 class="jaro">Filtros</h2>
-                <div class="d-flex gap-2" style="">
-                    <button class="boton-principal filtrar">Salir</button>
-                    <input type="submit" class="boton-principal filtrar" value="Filtrar">
-                </div>
+        <div class="d-flex py-2 justify-content-between w-100 position-relative bg-white" style="height: 70px;">
+            <h2 class="jaro">Filtros</h2>
+            <div class="d-flex gap-2">
+                <button class="boton-principal filtrar">Salir</button>
+                <input type="submit" class="boton-principal filtrar" value="Filtrar">
             </div>
-        </section>
+        </div>
 
-        <div style="margin-top: 90px ">
+        <div>
             <!-- Categorías -->
             <section class="filter-group">
                 <h3 class="jaro fs-4 mb-2">Categoría:</h3>
@@ -133,13 +131,13 @@
             <h3 class="jaro fs-4 mb-2">Precio:</h3>
             <div class="filter-content collapse show" id="collapse_3">
                 <div class="card-body">
-                    <div class="form-row">
+                    <div class="form-row d-flex gap-2">
                         <div class="form-group col-md-6">
                             <label class="varela fs-3">Minimo</label>
                             <input type="number" class="input-form" placeholder="0" name="min">
                         </div>
                         <div class="form-group text-right col-md-6">
-                            <label class="varela fs-2">Maximo</label>
+                            <label class="varela fs-3">Maximo</label>
                             <input type="number" class="input-form" placeholder="100000" name="max">
                         </div>
                     </div>

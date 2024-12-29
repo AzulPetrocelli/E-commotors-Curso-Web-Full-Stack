@@ -33,7 +33,7 @@
         </div>
     @endif
 
-    <form class="form-welcome w-50" action="{{ route('agregarProducto') }}" method="POST" enctype="multipart/form-data">
+    <form class="form-welcome w-50 filter-sidebar" action="{{ route('agregarProducto') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="w-75">
             <label for="nombre" class="fs-5 varela">Nombre</label>
@@ -70,7 +70,8 @@
             <input type="file" class="form-control" id="foto_moto" name="foto_moto" style="background: var(--color-secundario);color: white; text-aling:center;">
         </div>
 
-        <div class="w-75 d-flex justify-content-end">
+        <div class="w-75 d-flex justify-content-end gap-2">
+            <a href="{{url('accion-moto')}}" class="boton-principal">Cancelar</a>
             <button type="submit" class="boton-principal">Crear Producto</button>
         </div>
     </form>
