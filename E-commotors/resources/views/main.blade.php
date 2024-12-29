@@ -44,7 +44,7 @@
                 <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" style="height: 250px" alt="{{ $moto->nombre }}">
                 <div class="card-body pb-4">
                     <h5 class="card-title">{{ $moto->nombre }}</h5>
-                    <p class="card-text">${{ $moto->precio_base }}</p>
+                    <p class="card-text">${{ $moto->precio_moto }}</p>
                     <div class="d-flex justify-content-end w-100">
                         <a href="#" class="boton-principal align-bottom">Comprar</a>
                     </div>

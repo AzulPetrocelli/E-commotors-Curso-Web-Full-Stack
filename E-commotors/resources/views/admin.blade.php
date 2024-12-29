@@ -23,7 +23,7 @@
 <body>
 
     <form action="" class="form-welcome w-25 position-absolute top-50 start-50 translate-middle">
-        <h3 class="varela mb-4">Menu Principal</h3>
+        <h3 class="jaro fs-1  mb-4">Menu Principal</h3>
 
         <a href="#" class="boton-principal w-100 text-center fs-2 filtrar">Motos</a>
         <a href="#" class="boton-principal w-100 text-center fs-2 filtrar">Repuestos</a>

@@ -194,6 +194,7 @@ textarea {
     text-decoration: none;
     border: var(--color-primario) solid 3px;
     border-radius: 10px;
+    text-align: center;
 }
 
 .boton-principal:hover{
@@ -409,3 +410,68 @@ img{
     justify-content: center;
     width: 100%;
 }
+
+/* ESTILOS DE LOS INPUT SELECT */
+
+.container-check {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: var(--fuente-secundaria);
+    font-weight: bold;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .container-check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 24px;
+    width: 24px;
+    background-color: #eee;
+  }
+
+  .container-check:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  .container-check input:checked ~ .checkmark {
+    background-color: var(--negro-claro);
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .container-check input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* ESTILO DE LA CHECK MARK */
+  .container-check .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--color-secundario);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

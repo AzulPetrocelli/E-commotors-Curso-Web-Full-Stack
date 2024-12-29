@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MotosController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\MensajeController;
+use App\Http\Controllers\AccesoriosController;
 
 Route::get('/main', function () {
     $motosAleatorias = Moto::inRandomOrder()->take(3)->get();
@@ -47,8 +48,15 @@ Route::get('/motos/productos-motos', [MotosController::class, 'index'])->name('p
 Route::get('/card{id}', [MotosController::class, 'show'])->name('motos.show');
 
 
-//Route
-Route::get('/agregar-moto',[MotosController::class,'create'])->name('agregarMoto');
+//Route -> agregar moto
+Route::get('/accion-moto',[MotosController::class,'create'])->name('accionMoto');
+
+//Route -> agregar moto
+Route::get('/accion-accesorio',[AccesoriosController::class,'create'])->name('accionAccesorio');
+
+//Route -> vista de las motos filtradas
+Route::post('/productos-motos#', [MotosController::class, 'filtrar']);
+
 
 
 
