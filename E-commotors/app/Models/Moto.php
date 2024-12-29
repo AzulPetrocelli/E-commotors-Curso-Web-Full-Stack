@@ -11,6 +11,8 @@ class Moto extends Model
     protected $table = 'moto'; 
 
     protected $primaryKey = 'id_moto';
+
+    public $timestamps = false;
     
     // Define los atributos que se pueden asignar en masa 
     protected $fillable = [ 'nombre', 

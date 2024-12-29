@@ -48,11 +48,26 @@ Route::get('/motos/productos-motos', [MotosController::class, 'index'])->name('p
 Route::get('/card{id}', [MotosController::class, 'show'])->name('motos.show');
 
 
-//Route -> agregar moto
-Route::get('/accion-moto',[MotosController::class,'create'])->name('accionMoto');
+//Route -> muestro items
+Route::get('/accion-moto',[MotosController::class,'showItems'])->name('accionMoto');
 
-//Route -> agregar moto
-Route::get('/accion-accesorio',[AccesoriosController::class,'create'])->name('accionAccesorio');
+//Route -> form para agregar un producto
+Route::get('/accion-moto/agregar', [MotosController::class, 'create'])->name('accionMotoCreate');
+
+//Route -> Agregar Producto
+Route::post('/accion-moto/agregar', [MotosController::class, 'store'])->name('agregarProducto');
+
+
+
+//Route -> muestro items
+Route::get('/accion-accesorio',[AccesoriosController::class,'showItems'])->name('accionAccesorio');
+
+//Route -> accion repuesto
+Route::get('/accion-repuesto',[AccesoriosController::class,'create'])->name('accionAccesorio');
+
+//Route -> ver mensaje
+Route::get('/accion-repuesto',[AccesoriosController::class,'create'])->name('accionAccesorio');
+
 
 //Route -> vista de las motos filtradas
 Route::post('/productos-motos#', [MotosController::class, 'filtrar']);
