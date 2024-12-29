@@ -1,13 +1,19 @@
 @include('headeradmin')
 
     <!-- Tabla de ABM -->
-    <div style="width: 100%; overflow-x: auto;">
-        <table class="table" style="border-collapse: collapse">
-            <div class="d-flex justify-content-end gap-2 position-sticky bg-white" style="top: 76px; margin-top: 80px; padding: 12px;">
-                <a href="{{url('admin')}}" class="boton-principal">Volver</a>
-                <a href="{{url('accion-moto/agregar')}}" class="boton-principal">Agregar Producto</a>
+    <div class="d-flex justify-content-end gap-2 position-relative bg-white" style="margin-top: 75px; padding: 12px; height: 75px;">
+        <form action="" method="GET" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="busqueda" id="busqueda" autocomplete="off" class="form-control input-form" placeholder="Buscar moto..." style="border: 0.5px solid rgb(102, 101, 101); box-shadow: none;">
+                <button type="submit" class="btn btn-outline-secondary boton-principal">Buscar</button>
             </div>
-            <thead style="margin-top: 200px">
+        </form>
+        <a href="{{url('admin')}}" class="boton-principal">Volver</a>
+        <a href="{{url('accion-moto/agregar')}}" class="boton-principal">Agregar Producto</a>
+    </div>
+    <div style="width: 90%; overflow-x: auto; overflow-y: auto; height:80vh" class="m-auto">
+        <table class="table" style="border-collapse: collapse">
+            <thead>
                 <tr>
                     <th scope="col">Imagen</th>
                     <th scope="col">Nombre</th>
@@ -22,14 +28,14 @@
                 @foreach($motos as $moto)
                 <tr>
                     <th scope="row">
-                        <img src="{{ $moto->foto_moto ? asset('images/'.$moto->foto_moto) : asset('images/default-moto.jpg') }}" alt="Foto Moto" style="object-fit: cover; width: 100px; height: 70px;">
+                        <img src="{{ $moto->foto_moto ? asset('images/'.$moto->foto_moto) : asset('images/default-moto.jpg') }}" alt="Foto Moto" style="object-fit: cover; width: 100px; height: 80px;">
                     </th>
-                    <td>{{$moto->nombre}}</td>
-                    <td>{{$moto->precio_moto}}</td>
-                    <td>{{$moto->categoria->nombre_categoria}}</td>
-                    <td>{{$moto->marca->nombre_marca}}</td>
-                    <td>{{$moto->descripcion_moto}}</td>
-                    <td class="d-flex flex-nowrap gap-2">
+                    <td><div class="overflow-hidden" style="height: 80px">{{$moto->nombre}}</div></td>
+                    <td><div class="overflow-hidden" style="height: 80px">{{$moto->precio_moto}}</div></td>
+                    <td><div class="overflow-hidden" style="height: 80px">{{$moto->categoria->nombre_categoria}}</div></td>
+                    <td><div class="overflow-hidden" style="height: 80px">{{$moto->marca->nombre_marca}}</div></td>
+                    <td><div class="overflow-hidden" style="height: 80px">{{$moto->descripcion_moto}}</div></td>
+                    <td class="d-flex flex-nowrap justify-content-center align-items-center gap-3" style="height: 100px">
                         <a href="#"><i class="las la-times-circle text-danger fs-2"></i></a>
                         <a href="#"><i class="las la-edit text-primary fs-2"></i></a>
                     </td>
