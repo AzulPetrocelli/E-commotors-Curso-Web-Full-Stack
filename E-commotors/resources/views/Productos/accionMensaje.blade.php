@@ -15,7 +15,7 @@
                 <th scope="col">Tipo</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Productos Consultados</th>
-                <th scope="col">Fecha de Creación</th>
+                <th scope="col">Fecha de Creación</th> 
                 <th scope="col">Opciones</th>
             </tr>
         </thead>
@@ -29,7 +29,7 @@
                 <td>{{ $mensaje->created_at->format('d/m/Y H:i') }}</td>
                 <td class="d-flex flex-nowrap gap-2">
                     <!-- Opción para responder el mensaje -->
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#responderModal" data-id="{{ $mensaje->id_mensaje }}" class="boton-principal responder-btn">
+                    <a href="#responderModal" data-bs-toggle="modal" data-id="{{ $mensaje->id_mensaje }}" class="boton-principal responder-btn">
                         Responder
                     </a>
                 </td>
@@ -37,5 +37,33 @@
             @endforeach
         </tbody>
     </table>
+
+     <!-- Modal para responder mensaje -->
+     <div class="modal fade" id="responderModal" tabindex="-1" aria-labelledby="responderModalLabel" aria-hidden="true">
+        <br>
+        <br>
+        <br>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="responderModalLabel">Responder Mensaje</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="{{ url('admin/mensajes/'.$mensaje->id_mensaje.'/responder') }}">
+                        @csrf
+                        <div class="form-group">
+                            <label for="respuesta">Respuesta</label>
+                            <textarea name="respuesta" id="respuesta" rows="4" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Enviar Respuesta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
 
 @include("footer")
