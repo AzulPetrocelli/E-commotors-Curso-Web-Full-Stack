@@ -25,10 +25,10 @@
     <form action="" class="form-welcome w-25 position-absolute top-50 start-50 translate-middle">
         <h3 class="jaro fs-1  mb-4">Menu Principal</h3>
 
-        <a href="{{url('accion-moto')}}" class="boton-principal w-100 text-center fs-2 filtrar">Motos</a>
-        <a href="{{url('accion-accesorio')}}" class="boton-principal w-100 text-center fs-2 filtrar">Accesorios</a>
-        <a href="{{url('accion-repuesto')}}" class="boton-principal w-100 text-center fs-2 filtrar">Repuestos</a>
-        <a href="{{url('accion-mensaje')}}" class="boton-principal w-100 text-center fs-2 filtrar">Mensajes</a>
+        <a href="{{url('accion-moto')}}" class="boton-principal w-100 text-center fs-2 show">Motos</a>
+        <a href="{{url('accion-accesorio')}}" class="boton-principal w-100 text-center fs-2 show">Accesorios</a>
+        <a href="{{url('accion-repuesto')}}" class="boton-principal w-100 text-center fs-2 show">Repuestos</a>
+        <a href="{{url('accion-mensaje')}}" class="boton-principal w-100 text-center fs-2 show">Mensajes</a>
 
     </form>
 

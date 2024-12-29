@@ -78,7 +78,7 @@ img{
     display: flex;
     top: 0px;
     align-items: end;
-    z-index: 10000;
+    z-index: 998;
 }
 
 .dropdown-item-custom:focus {
@@ -247,9 +247,7 @@ textarea {
 */
 .costum-card{
   box-shadow: 0px 2px 8px #000000;
-  flex: 1 1 calc(25% - 20px);
-  min-width: 300px;
-  max-width: 300px;
+  width: 300px;
   height: auto;
 }
 
@@ -285,6 +283,7 @@ textarea {
     background-color: black;
     opacity: 0.8;
     z-index: 999; /* Debajo del filtro */
+    top: 0;
 }
 
 .filter-sidebar {

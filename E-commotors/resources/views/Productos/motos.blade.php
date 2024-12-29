@@ -16,7 +16,7 @@
             </form>
 
             <div class="d-flex justify-content-end gap-2" style="height: 50px">
-                <button class="boton-principal filtrar">Filtros</button>
+                <button class="boton-principal show">Filtros</button>
                 <a class=" boton-principal" href="{{url("/productos-motos")}}">Limpiar Filtros</a>
             </div>
         </div>
@@ -83,13 +83,14 @@
 
 
 <!-- FILTRO -->
-<aside class="filter-sidebar aside-oculto w-75 pt-0">
+<div class="pantalla-gris"></div>
+<aside class="filter-sidebar visually-hidden w-75 pt-0">
     <form action="{{url('productos-motos')}}" method="GET">
         <div class="d-flex py-2 justify-content-between w-100 position-relative bg-white" style="height: 70px;">
             <h2 class="jaro">Filtros</h2>
             <div class="d-flex gap-2">
-                <button class="boton-principal filtrar">Salir</button>
-                <input type="submit" class="boton-principal filtrar" value="Filtrar">
+                <button class="boton-principal show">Salir</button>
+                <input type="submit" class="boton-principal show" value="Filtrar">
             </div>
         </div>
 
