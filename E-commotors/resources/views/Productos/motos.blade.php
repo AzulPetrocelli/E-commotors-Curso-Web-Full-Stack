@@ -17,9 +17,8 @@
             <!-- CARD -->
             @foreach($motos as $moto)
             <div class="card costum-card">
-                <a href="{{ route('motos.show', ['id' => $moto->id_moto]) }}">
+                <a href="{{ route('motos.show', ['id' => $moto->id_moto]) }}" style="color:black; text-decoration:none;">
                     <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" style="height: 250px" alt="{{ $moto->nombre }}">
-                </a>
                     <div class="card-body d-flex flex-column py-2">
                         <h5 class="card-title jaro">{{ $moto->nombre }}</h5>
                         <p class="card-text varela">${{ $moto->precio_base }}</p>
@@ -27,6 +26,7 @@
                     <div class="d-flex justify-content-end w-100 p-2">
                         <a href="#" class="boton-principal align-bottom">Comprar</a>
                     </div>
+                </a>
             </div>
             @endforeach
         </div>
