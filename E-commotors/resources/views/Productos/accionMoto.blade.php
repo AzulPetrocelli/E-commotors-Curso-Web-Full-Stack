@@ -1,46 +1,46 @@
-<h1>VIEW DE CREAR MOTOS</h1>
 @include('headeradmin')
-<!DOCTYPE html>
-<html lang="es">
-<body>
-    <table class="table" >
-        <div class="d-flex justify-content-end gap-2 position-sticky" style="margin-top:40px; margin-right:10px;">
-            <a href="{{url('admin')}}" class="boton-principal">Volver</a>
-            <a href="{{url('accion-moto/agregar')}}" class="boton-principal">Agregar Producto</a>
-        </div>
-        <thead>
-            <tr>
-                <th scope="col">Imagen</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Marca</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Opciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($motos as $moto)
-            <tr>
-                <th scope="row">
-                    <img src="{{ $moto->foto_moto ? asset('images/'.$moto->foto_moto) : asset('images/default-moto.jpg') }}" alt="Foto Moto" style="object-fit: cover; width: 100px; height: 70px;">
-                </th>
-                <td>{{$moto->nombre}}</td>
-                <td>{{$moto->precio_moto}}</td>
-                <td>{{$moto->categoria->nombre_categoria}}</td>
-                <td>{{$moto->marca->nombre_marca}}</td>
-                <td>{{$moto->descripcion_moto}}</td>
-                <td class="d-flex flex-nowrap gap-2">
-                    <a href="#"><i class="las la-times-circle text-danger fs-2"></i></a>
-                    <a href="#"><i class="las la-edit text-primary fs-2"></i></a>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+
+    <!-- Tabla de ABM -->
+    <div style="width: 100%; overflow-x: auto;">
+        <table class="table" style="border-collapse: collapse">
+            <div class="d-flex justify-content-end gap-2 position-sticky bg-white" style="top: 76px; margin-top: 80px; padding: 12px;">
+                <a href="{{url('admin')}}" class="boton-principal">Volver</a>
+                <a href="{{url('accion-moto/agregar')}}" class="boton-principal">Agregar Producto</a>
+            </div>
+            <thead style="margin-top: 200px">
+                <tr>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($motos as $moto)
+                <tr>
+                    <th scope="row">
+                        <img src="{{ $moto->foto_moto ? asset('images/'.$moto->foto_moto) : asset('images/default-moto.jpg') }}" alt="Foto Moto" style="object-fit: cover; width: 100px; height: 70px;">
+                    </th>
+                    <td>{{$moto->nombre}}</td>
+                    <td>{{$moto->precio_moto}}</td>
+                    <td>{{$moto->categoria->nombre_categoria}}</td>
+                    <td>{{$moto->marca->nombre_marca}}</td>
+                    <td>{{$moto->descripcion_moto}}</td>
+                    <td class="d-flex flex-nowrap gap-2">
+                        <a href="#"><i class="las la-times-circle text-danger fs-2"></i></a>
+                        <a href="#"><i class="las la-edit text-primary fs-2"></i></a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
     <!-- Paginación personalizada -->
-    <<div class="pagination-container d-flex justify-content-center mt-4 w-100">
+    <div class="pagination-container d-flex justify-content-center mt-4 w-100">
         <nav>
             <ul class="pagination custom-pagination">
                 <!-- Botón Anterior -->
@@ -83,8 +83,5 @@
             <a href="#" class="boton-principal filtrar">Cancelar</a>
         </div>
     </aside>
-
-</body>
-</html>
 
 @include('footer')

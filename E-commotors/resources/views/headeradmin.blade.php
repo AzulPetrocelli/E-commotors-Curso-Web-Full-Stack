@@ -7,18 +7,18 @@
     <!--Estilos Boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    
+
     <!--Tipografia-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Varela+Round&display=swap" rel="stylesheet">
-    
+
     <!--ICONOS-->
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
-    
+
     <!--Estilos CSS-->
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
-    
+
 
     <title>Vista de Admin</title>
 
@@ -34,9 +34,9 @@
                 <div class="collapse navbar-collapse" id="navbarScroll">
                   <a href="{{route('/main')}}">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" width="60px">
-                  </a>                  
+                  </a>
                   <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li>VISTA DE ADMIN</li>
+                    <li>ADMIN</li>
                   </ul>
                 </div>
           </div>

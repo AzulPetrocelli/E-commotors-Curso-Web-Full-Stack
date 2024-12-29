@@ -47,22 +47,22 @@
 
         <div class="w-75">
             <label for="precio_moto" class="fs-5 varela">Precio</label>
-            <input type="number" class="input-form" id="precio_moto" name="precio_moto" required value="{{ old('precio_moto', $moto->precio_moto ?? '') }}">
+            <input type="number" class="input-form" id="precio_moto" name="precio_moto" autocomplete="off" required value="{{ old('precio_moto', $moto->precio_moto ?? '') }}">
         </div>
 
         <div class="w-75">
             <label for="id_categoria" class="fs-5 varela">Categoría</label>
-            <input type="text" class="input-form" id="id_categoria" name="id_categoria" required value="{{ old('id_categoria') }}">
+            <input type="text" class="input-form" id="id_categoria" name="id_categoria" autocomplete="off" required value="{{ old('id_categoria') }}">
         </div>
 
         <div class="w-75">
             <label for="id_marca" class="fs-5 varela">Marca</label>
-            <input type="text" class="input-form" id="id_marca" name="id_marca" required value="{{ old('id_marca') }}">
+            <input type="text" class="input-form" id="id_marca" name="id_marca" autocomplete="off" required value="{{ old('id_marca') }}">
         </div>
 
         <div class="w-75">
             <label for="descripcion_moto" class="fs-5 varela">Descripcion:</label>
-            <input type="text" class="input-form" id="descripcion_moto" name="descripcion_moto" required value="{{ old('descripcion_moto', $moto->descripcion_moto ?? '') }}">
+            <input type="text" class="input-form" id="descripcion_moto" name="descripcion_moto" autocomplete="off" required value="{{ old('descripcion_moto', $moto->descripcion_moto ?? '') }}">
         </div>
 
         <div class="w-75">

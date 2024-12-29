@@ -31,11 +31,11 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarScroll">
+                <div class="collapse navbar-collapse w-100" id="navbarScroll">
                   <a href="{{route('/main')}}">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" width="60px">
                   </a>
-                  <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <ul class="navbar-nav w-100 my-2 my-lg-0">
                     <li class="">
                       <a class="text-white nav-link jaro fs-3" href="{{'productos-motos'}}">Motos</a>
                     </li>
@@ -45,22 +45,22 @@
                       </a>
                       <ul class="dropdown-menu">
                         <!--Agregar foreach-->
-                        <li><a class="dropdown-item jaro" href="#">Cascos</a></li>
-                        <li><a class="dropdown-item jaro" href="#">Antiparras</a></li>
-                        <li><a class="dropdown-item jaro" href="#">Guantes</a></li>
-                        <li><a class="dropdown-item jaro" href="#">Botas</a></li>
-                        <li><a class="dropdown-item jaro" href="#">Puños</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Cascos</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Antiparras</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Guantes</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Botas</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Puños</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
-                      <a class="text-white nav-link dropdown-toggle jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="text-white nav-link dropdown-toggle dropdown-item-custom jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Repuestos
                       </a>
                       <ul class="dropdown-menu">
                         <!--Agregar foreach-->
-                        <li><a class="dropdown-item jaro" href="#">Piñones</a></li>
-                        <li><a class="dropdown-item jaro" href="#">Manubrios</a></li>
-                        <li><a class="dropdown-item jaro" href="#">Pastillas de Freno</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Piñones</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Manubrios</a></li>
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Pastillas de Freno</a></li>
                       </ul>
                     </li>
                   </ul>
