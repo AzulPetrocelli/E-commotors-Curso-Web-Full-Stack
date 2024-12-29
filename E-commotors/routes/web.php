@@ -78,6 +78,9 @@ Route::post('/productos-motos#', [MotosController::class, 'filtrar']);
 //ROUTE -> vista de mensajes recibidos
 Route::get('/accion-mensaje',[AdminController::class,'mensajes']) -> name('accion-mensaje');
 
+// 
+Route::get('/accion-mensaje-sin_responder',[AdminController::class,'mensajesSinResponder']) -> name('accion-mensaje-sin-responder');
+
 // ROUTE ->  responder mensaje
 Route::post('/admin/mensajes/{id}/responder', [MensajeController::class, 'responder'])->name('admin-mensajes-responder');
 

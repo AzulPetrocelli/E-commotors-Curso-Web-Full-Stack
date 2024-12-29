@@ -17,4 +17,9 @@ class AdminController extends Controller
         $mensajes = Mensaje::all();
         return view('Productos.accionMensaje',compact('mensajes'));
     }
+
+    public function mensajesSinResponder(){
+        $mensajes = Mensaje::whereNull('respuesta_mensaje') -> get();
+        return view('Productos.accionMensaje',compact('mensajes'));
+    }
 }
