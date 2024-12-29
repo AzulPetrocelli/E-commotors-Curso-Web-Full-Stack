@@ -8,6 +8,7 @@ use App\Http\Controllers\MotosController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\MensajeController;
 use App\Http\Controllers\AccesoriosController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/main', function () {
     $motosAleatorias = Moto::inRandomOrder()->take(3)->get();
@@ -41,9 +42,10 @@ Route::get('admin',function(){
 }); */
 
  //ROUTE -> vista de Productos/motos
-//Route::get('/productos-motos', [MotosController::class, 'index'])->name('productos-motos');
+
 Route::get('/productos-motos', [MotosController::class, 'index'])->name('productos-motos');
 Route::get('/motos/productos-motos', [MotosController::class, 'index'])->name('productos-motos');
+
 // Ruta para mostrar card de una moto específica
 Route::get('/card{id}', [MotosController::class, 'show'])->name('motos.show');
 
@@ -71,6 +73,16 @@ Route::get('/accion-repuesto',[AccesoriosController::class,'create'])->name('acc
 
 //Route -> vista de las motos filtradas
 Route::post('/productos-motos#', [MotosController::class, 'filtrar']);
+
+
+//ROUTE -> vista de mensajes recibidos
+Route::get('/accion-mensaje',[AdminController::class,'mensajes']) -> name('accion-mensaje');
+
+// 
+Route::get('/accion-mensaje-sin_responder',[AdminController::class,'mensajesSinResponder']) -> name('accion-mensaje-sin-responder');
+
+// ROUTE ->  responder mensaje
+Route::post('/admin/mensajes/{id}/responder', [MensajeController::class, 'responder'])->name('admin-mensajes-responder');
 
 
 

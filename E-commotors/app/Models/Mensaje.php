@@ -11,6 +11,8 @@ class Mensaje extends Model
 
     protected $table = 'mensaje'; // Nombre de la tabla en la base de datos
 
+    protected $primaryKey = 'id_mensaje';
+
     protected $fillable = [
         'nombre_mensaje',
         'tipo_mensaje',

@@ -1,4 +1,3 @@
-<h1>VIEW DE CREAR ACCESORIOS</h1>
 @include('headeradmin')
 <!DOCTYPE html>
 <html lang="es">
