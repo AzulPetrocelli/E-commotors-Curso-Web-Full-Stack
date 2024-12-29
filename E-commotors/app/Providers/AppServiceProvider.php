@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Accesorio;
+use App\Models\Moto;
 use App\Models\Marca;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\View;
@@ -31,7 +33,11 @@ class AppServiceProvider extends ServiceProvider
     });
 
     View::composer('*', function ($view) {
-        $view->with('marcas', Marca::all());
+        $view->with('motos', Moto::paginate(6));
+    });
+
+    View::composer('*', function ($view) {
+        $view->with('accesorios', Accesorio::all());
     });
 }
 }

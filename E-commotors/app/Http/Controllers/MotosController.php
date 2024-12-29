@@ -51,8 +51,9 @@ class MotosController extends Controller
      */
     public function create()
     {
-        return view('Productos.crearProducto');
+        return view('Productos.accionMoto');
     }
+
 
     /**
      * Store a newly created resource in storage.
