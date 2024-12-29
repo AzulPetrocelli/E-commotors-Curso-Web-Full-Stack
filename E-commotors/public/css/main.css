@@ -475,3 +475,13 @@ img{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
+
+/*ABM DE LAS MOTOS*/
+
+.fila-abm .img-abm{
+    object-fit: cover;
+    width: 100px;
+    height: 70px;
+    border-radius: 10px;
+}

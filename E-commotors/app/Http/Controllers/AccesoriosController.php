@@ -43,8 +43,13 @@ class AccesoriosController extends Controller
 }
 
 
-    public function create()
+    public function showItems()
     {
         return view('Productos.accionAccesorio');
+    }
+
+    public function create()
+    {
+
     }
 }

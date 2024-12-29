@@ -4,9 +4,9 @@
 <html lang="es">
 <body>
     <table class="table" >
-        <div class="d-flex justify-content-end gap-2 position-sticky" style="margin-top:40px;">
-            <a href="" class="boton-principal filtrar">Salir</a>
-            <a href="#" class="boton-principal">Agregar Producto</a>
+        <div class="d-flex justify-content-end gap-2 position-sticky" style="margin-top:40px; margin-right:10px;">
+            <a href="{{url('admin')}}" class="boton-principal">Volver</a>
+            <a href="{{url('accion-moto/agregar')}}" class="boton-principal">Agregar Producto</a>
         </div>
         <thead>
             <tr>
@@ -23,7 +23,7 @@
             @foreach($motos as $moto)
             <tr>
                 <th scope="row">
-                    <img src="{{ $moto->foto_moto ? asset('images/'.$moto->foto_moto) : asset('images/default-moto.jpg') }}" alt="Foto Moto" style="width: 100px; height: auto;">
+                    <img src="{{ $moto->foto_moto ? asset('images/'.$moto->foto_moto) : asset('images/default-moto.jpg') }}" alt="Foto Moto" style="object-fit: cover; width: 100px; height: 70px;">
                 </th>
                 <td>{{$moto->nombre}}</td>
                 <td>{{$moto->precio_moto}}</td>

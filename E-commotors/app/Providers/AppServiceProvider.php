@@ -32,8 +32,8 @@ class AppServiceProvider extends ServiceProvider
         $view->with('marcas', Marca::all());
     });
 
-/*     View::composer('*', function ($view) {
-        $view->with('motos', Moto::paginate(6));
+ /* View::composer('*', function ($view) {
+        $view->with('motos', Moto::all());
     }); */
 
     View::composer('*', function ($view) {
