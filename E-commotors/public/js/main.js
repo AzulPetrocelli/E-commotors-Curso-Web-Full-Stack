@@ -116,3 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
         pantallaGris.classList.remove('fondo-gris'); // Quita el fondo gris
     });
 })
+
+var botonComprar = document.getElementById("Comprar")
+botonComprar.addEventListener("click", () =>  mostrarOcultar(".container-compra"));

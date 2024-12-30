@@ -38,9 +38,38 @@
         <p class="jaro fs-2">Precio: ${{ $moto->precio_moto }}</p>
         <div class="d-flex justify-content-end">
             <a href="#" class="boton-principal m-2 show">Enviar Mensaje</a>
-            <a href="#" class="boton-principal m-2">Comprar</a>
+            <a href="#" class="boton-principal m-2" id="comprar">Comprar</a>
         </div>
     </div>
 </section>
+
+<div action="" class="w-75 container-compra formulario-base position-fixed top-50 start-50 translate-middle visually-hidden">Gracias por su compra</div>
+
+
+<form action="" class="w-75 formulario-base position-fixed top-50 start-50 translate-middle visually-hidden">
+    <h3 class="titulo">Formulario de compra</h3>
+    <label for="">
+        <input type="text" placeholder="Nombre" class="input-form">
+    </label>
+    <label for="">
+        <input type="text" placeholder="Apellido" class="input-form">
+    </label>
+    <label for="">
+        <input type="text" placeholder="Numero de Telefono" class="input-form">
+    </label>
+    <label for="">
+        <input type="text" placeholder="Mail" class="input-form">
+    </label>
+    <label for="">
+        <input type="text" placeholder="Direccion" class="input-form">
+    </label>
+    <label for="">
+        <input type="text" placeholder="Codigo Postal" class="input-form">
+    </label>
+    <div class="d-flex justify-content-end gap-2">
+        <a class="boton-principal">Cancelar</a>
+        <button class="boton-principal">Confirmar</button>
+    </div>
+</form>
 
 @include('footer')
