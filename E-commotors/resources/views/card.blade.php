@@ -1,5 +1,28 @@
 @include('header')
 
+<div class="fondo-gris"></div>
+<aside class="position-fixed top-50 start-50 translate-middle w-75" style="z-index:999;">
+    <form action="{{ route('mensaje.store') }}" method="POST" class="formulario-base w-75 mx-auto d-flex flex-column justify-content-center gap-3">
+        @csrf <!-- Token de seguridad de Laravel -->
+        <label for=""><input type="text" name="nombre_mensaje" placeholder="Nombre..." class="input-form"></label>
+        <label for=""><input type="text" name="tipo_mensaje" placeholder="Tipo de Mensaje..." class="input-form"></label>
+        <label for=""><textarea name="descripcion_mensaje" class="input-form" placeholder="Descripción del Mensaje..."></textarea></label>
+        <label for=""><textarea name="productos_consultados" class="input-form" placeholder="Productos Consultados..."></textarea></label>
+
+        <div class="d-flex justify-content-end gap-2">
+            <a href="javascript:window.history.back()" class="boton-principal">Cancelar</a>
+            <button type="submit" class="boton-principal">Enviar Mensaje</button>
+        </div>
+    </form>
+</aside>
+
+<!-- Mostrar mensaje de éxito si existe -->
+@if(session('success'))
+    <div class="alert alert-success w-75 mx-auto my-3">
+        {{ session('success') }}
+    </div>
+@endif
+
 <section class="container-card-view">
     <div class="container-images-card-view">
         <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-image img-fluid" alt="{{ $moto->nombre }}">

@@ -1,3 +1,5 @@
+    <!-- ERROR VALIDACION -->
+
 @include('headeradmin')
 
     <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
@@ -17,39 +19,60 @@
     <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
     <form id="form-agregar-producto" class="form-welcome visually-hidden w-50 position-absolute start-50 translate-middle py-4 m-0" style="z-index: 11; padding: 35px 0px; top: 56vh;" action="{{ route('agregarProducto') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="w-75">
-            <input type="text" placeholder="Nombre" class="input-form" id="nombre" name="nombre" required value="{{ old('nombre', $moto->nombre ?? '') }}">
-        </div>
+        <label class="w-75">
+            <input type="text" placeholder="Nombre" autocomplete="off" autocomplete="off" class="input-form" id="nombre" name="nombre" value="{{ old('nombre', $moto->nombre ?? '') }}">
+            @error('nombre')
+                <div class="error-message varela">{{ $message }}</div>
+            @enderror
+        </label>
 
-        <div class="w-75">
-            <input type="text" placeholder="Estado" class="input-form" id="estado" name="estado" required value="{{ old('estado', $moto->estado ?? '') }}">
-        </div>
+        <label class="w-75">
+            <input type="text" placeholder="Estado" autocomplete="off" class="input-form" id="estado" name="estado" value="{{ old('estado', $moto->estado ?? '') }}">
+            @error('estado')
+                <div class="error-message varela">{{ $message }}</div>
+            @enderror
+        </label>
 
-        <div class="w-75">
-            <input type="number" placeholder="Precio" class="input-form" id="precio_moto" name="precio_moto" autocomplete="off" required value="{{ old('precio_moto', $moto->precio_moto ?? '') }}">
-        </div>
+        <label class="w-75">
+            <input type="number" placeholder="Precio" autocomplete="off" class="input-form" id="precio_moto" name="precio_moto" autocomplete="off" value="{{ old('precio_moto', $moto->precio_moto ?? '') }}">
+            @error('precio_moto')
+                <div class="error-message varela">{{ $message }}</div>
+            @enderror
+        </label>
 
-        <div class="w-75">
-            <input type="text" placeholder="Categoría" class="input-form" id="id_categoria" name="id_categoria" autocomplete="off" required value="{{ old('id_categoria') }}">
-        </div>
+        <label class="w-75">
+            <input type="text" placeholder="Categoría" class="input-form" id="id_categoria" name="id_categoria" autocomplete="off" value="{{ old('id_categoria') }}">
+            @error('id_categoria')
+                <div class="error-message varela">{{ $message }}</div>
+            @enderror
+        </label>
 
-        <div class="w-75">
-            <input type="text" placeholder="Marca" class="input-form" id="id_marca" name="id_marca" autocomplete="off" required value="{{ old('id_marca') }}">
-        </div>
+        <label class="w-75">
+            <input type="text" placeholder="Marca" autocomplete="off" class="input-form" id="id_marca" name="id_marca" autocomplete="off" value="{{ old('id_marca') }}">
+            @error('id_marca')
+                <div class="error-message varela">{{ $message }}</div>
+            @enderror
+        </label>
 
-        <div class="w-75">
-            <input type="text" placeholder="Descripcion" class="input-form" id="descripcion_moto" name="descripcion_moto" autocomplete="off" required value="{{ old('descripcion_moto', $moto->descripcion_moto ?? '') }}">
-        </div>
+        <label class="w-75">
+            <input type="text" placeholder="Descripcion" autocomplete="off" class="input-form" id="descripcion_moto" name="descripcion_moto" autocomplete="off" value="{{ old('descripcion_moto', $moto->descripcion_moto ?? '') }}">
+            @error('descripcion_moto')
+                <div class="error-message varela">{{ $message }}</div>
+            @enderror
+        </label>
 
-        <div class="w-75">
+        <label class="w-75">
             <label for="foto_moto" class="fs-5 varela">Imagen</label>
-            <input type="file" class="form-control" id="foto_moto" name="foto_moto" style="background: var(--color-secundario);color: white; text-aling:center;">
-        </div>
+            <input type="file" required class="form-control" id="foto_moto" name="foto_moto" style="background: var(--color-secundario);color: white; text-aling:center;">
+            @error('foto_moto')
+                <div class="error-message varela">{{ $message }}</div>
+            @enderror
+        </label>
 
-        <div class="w-75 d-flex justify-content-end gap-2">
+        <label class="w-75 d-flex justify-content-end gap-2">
             <a href="#" class="boton-principal filtrar show">Cancelar</a>
             <button type="submit" class="boton-principal">Crear Producto</button>
-        </div>
+        </label>
     </form>
 
     <!-- Tabla de ABM -->

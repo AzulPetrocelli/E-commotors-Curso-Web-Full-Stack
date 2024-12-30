@@ -34,12 +34,12 @@ class MotosController extends Controller
 
     if (isset($request->min)) {
         // Aplica un filtro de precio mínimo directamente sobre el campo 'precio_base'
-        $query->where('precio_base', '>=', $request->min);
+        $query->where('precio_moto', '>=', $request->min);
     }
-    
+
     if (isset($request->max)) {
         // Aplica un filtro de precio máximo directamente sobre el campo 'precio_base'
-        $query->where('precio_base', '<=', $request->max);
+        $query->where('precio_moto', '<=', $request->max);
     }
 
     $motos = $query->paginate(6); // Paginación de los resultados
@@ -53,7 +53,7 @@ class MotosController extends Controller
      */
     public function create()
     {
-        $moto = new Moto(); 
+        $moto = new Moto();
         $categorias = Categoria::all();  // Obtener todas las categorías
         $marcas = Marca::all();          // Obtener todas las marcas
     return view('Productos.Acciones.agregarMoto', compact('categorias', 'marcas','moto'));
@@ -76,11 +76,15 @@ class MotosController extends Controller
         'nombre' => 'required|string|max:255',
         'estado' => 'required|string|max:255',
         'precio_moto' => 'required|numeric',
-        'id_categoria' => 'required|exists:categoria,nombre_categoria',  
-        'id_marca' => 'required|exists:marca,nombre_marca', 
+        'id_categoria' => 'required|exists:categoria,nombre_categoria',
+        'id_marca' => 'required|exists:marca,nombre_marca',
         'descripcion_moto' => 'required|string',
         'foto_moto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-    ]);
+    ], [
+        'required' => "Campo obligatorio",
+        'max' => "Sobrepaso el limite de 255 caracteres",
+        'numeric' => "El valor ingresado debe ser un numero",
+     ]);
 
     $moto = new Moto();
     $moto->nombre = $request->nombre;
@@ -105,10 +109,10 @@ class MotosController extends Controller
     if ($request->hasFile('foto_moto')) {
         // Obtener el nombre original del archivo
         $filename = $request->file('foto_moto')->getClientOriginalName();
-        
+
         // Guardar el archivo con el mismo nombre en la carpeta public/images
         $imagen = $request->file('foto_moto')->storeAs('public/images', $filename);
-        
+
         // Asignar el nombre del archivo a la propiedad de la moto
         $moto->foto_moto = basename($imagen);  // Guardamos solo el nombre del archivo
     }
@@ -118,7 +122,7 @@ class MotosController extends Controller
     return redirect()->route('accionMoto')->with('success', 'Producto creado exitosamente');
 }
 
-    
+
 
     /**
      * Display the specified resource.
