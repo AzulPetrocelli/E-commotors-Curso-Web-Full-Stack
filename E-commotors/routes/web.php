@@ -4,11 +4,12 @@ use App\Models\Moto;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MotosController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\MensajeController;
+use App\Http\Controllers\RepuestoController;
 use App\Http\Controllers\AccesoriosController;
-use App\Http\Controllers\AdminController;
 
 Route::get('/main', function () {
     $motosAleatorias = Moto::inRandomOrder()->take(3)->get();
@@ -127,3 +128,10 @@ Route::post('/enviar-mensaje', [MensajeController::class, 'store'])->name('mensa
 
 //ROUTE LOGUIN
 Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+
+//ROUTES PARA REPUESTOS
+Route::get('/productos-repuestos', [RepuestoController::class, 'index'])->name('repuestos.index');
+Route::get('/productos-repuestos/{id}', [RepuestoController::class, 'show'])->name('repuesto.show');
+Route::get('/productos-repuestos/filtrar/{id}', [RepuestoController::class, 'filtrarPorTipo'])->name('repuestos.filtrarPorTipo');
+Route::get('/productos-repuestos/buscar', [RepuestoController::class, 'busqueda'])->name('repuestos.busqueda');
