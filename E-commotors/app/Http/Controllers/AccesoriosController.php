@@ -96,6 +96,127 @@ public function showItems()
     
     $accesorios = $query->get();
 
-    return view('Productos.accionMoto', ['accesorios' => $accesorios]); // Retornar vista
+    return view('Productos.accionAccesorio', ['accesorios' => $accesorios]); // Retornar vista
 }
+
+public function destroy($id)
+{
+    $accesorio = Accesorio::find($id);
+
+    if (!$accesorio) {
+        return redirect()->route('accionAccesorio')->with('error', 'El accesorio no existe.');
+    }
+
+    // Eliminar la imagen asociada si existe
+    if ($accesorio->foto_accesorio && file_exists(public_path('images/' . $accesorio->foto_accesorio))) {
+        unlink(public_path('images/' . $accesorio->foto_accesorio));
+    }
+
+    $accesorio->delete();
+
+    return redirect()->route('accionAccesorio')->with('success', 'Accesorio eliminado exitosamente.');
+}
+
+public function store(Request $request)
+{
+    $request->validate(
+        [
+            'nombre_accesorio' => 'required|string|max:255',
+            'precio_accesorio' => 'required|numeric',
+            'id_tipo' => 'required|exists:tipo_de_accesorio,nombre_tipo',
+            'descripcion_accesorio' => 'required|string',
+            'foto_accesorio' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ],
+        [
+            'nombre_accesorio.required' => 'El campo "Nombre" es obligatorio.',
+            'precio_accesorio.required' => 'El campo "Precio" es obligatorio.',
+            'precio_accesorio.numeric' => 'El precio debe ser un número válido.',
+            'id_tipo.required' => 'El campo "Tipo" es obligatorio.',
+            'id_tipo.exists' => 'El tipo seleccionado no es válido.',
+            'descripcion_accesorio.required' => 'El campo "Descripción" es obligatorio.',
+            'foto_accesorio.image' => 'La imagen debe ser un archivo válido.',
+        ]
+    );
+
+    $accesorio = new Accesorio();
+    $accesorio->nombre_accesorio = $request->nombre_accesorio;
+    $accesorio->precio_accesorio = $request->precio_accesorio;
+
+    // Obtener el ID del tipo mediante el nombre
+    $tipo = TipoAccesorio::where('nombre_tipo', $request->id_tipo)->first();
+    if ($tipo) {
+        $accesorio->id_tipo = $tipo->id_tipo;
+    }
+
+    $accesorio->descripcion_accesorio = $request->descripcion_accesorio;
+
+    // Subir la imagen si existe
+    if ($request->hasFile('foto_accesorio')) {
+        // Obtener el nombre original del archivo
+        $filename = $request->file('foto_accesorio')->getClientOriginalName();
+
+        // Guardar el archivo con el mismo nombre en la carpeta public/images
+        $imagen = $request->file('foto_accesorio')->storeAs('public/images', $filename);
+
+        // Asignar el nombre del archivo a la propiedad del accesorio
+        $accesorio->foto_accesorio = basename($imagen);  // Guardamos solo el nombre del archivo
+    }
+
+    $accesorio->save();
+    return redirect()->route('accionAccesorio')->with('success', 'Accesorio creado exitosamente');
+}
+
+public function update(Request $request, $id)
+{
+    // Validación de datos
+    $request->validate([
+        'nombre_accesorio' => 'required|string|max:255',
+        'precio_accesorio' => 'required|numeric',
+        'id_tipo' => 'required|string',
+        'descripcion_accesorio' => 'required|string',
+        'foto_accesorio' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ],
+    [
+        'nombre_accesorio.required' => 'El campo "Nombre" es obligatorio.',
+        'precio_accesorio.required' => 'El campo "Precio" es obligatorio.',
+        'precio_accesorio.numeric' => 'El precio debe ser un número válido.',
+        'id_tipo.required' => 'El campo "Tipo" es obligatorio.',
+        'descripcion_accesorio.required' => 'El campo "Descripción" es obligatorio.',
+        'foto_accesorio.image' => 'La imagen debe ser un archivo válido.',
+    ]);
+
+    // Buscar el accesorio
+    $accesorio = Accesorio::findOrFail($id);
+
+    // Actualizar los datos
+    $accesorio->nombre_accesorio = $request->nombre_accesorio;
+    $accesorio->precio_accesorio = $request->precio_accesorio;
+
+    // Asignar el tipo de accesorio
+    $tipo = TipoAccesorio::where('nombre_tipo', $request->id_tipo)->first();
+    if ($tipo) {
+        $accesorio->id_tipo = $tipo->id_tipo;
+    }
+
+    $accesorio->descripcion_accesorio = $request->descripcion_accesorio;
+
+    // Actualizar la imagen si se subió una nueva
+    if ($request->hasFile('foto_accesorio')) {
+        // Eliminar la imagen anterior
+        if ($accesorio->foto_accesorio && file_exists(public_path('images/' . $accesorio->foto_accesorio))) {
+            unlink(public_path('images/' . $accesorio->foto_accesorio));
+        }
+
+        // Subir la nueva imagen
+        $filename = $request->file('foto_accesorio')->getClientOriginalName();
+        $request->file('foto_accesorio')->storeAs('public/images', $filename);
+        $accesorio->foto_accesorio = $filename;
+    }
+
+    // Guardar los cambios
+    $accesorio->save();
+
+    return redirect()->route('accionAccesorio')->with('success', 'Accesorio actualizado exitosamente.');
+}
+
 }

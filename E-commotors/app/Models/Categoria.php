@@ -12,6 +12,8 @@ class Categoria extends Model
 
     protected $fillable = ['nombre_categoria', 'estado_categoria'];
 
+    public $timestamps = false;
+
     public function motos()
     {
         return $this->hasMany(Moto::class, 'id_categoria');

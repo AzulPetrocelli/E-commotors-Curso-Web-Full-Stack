@@ -67,7 +67,12 @@ Route::get('/accion-moto', [MotosController::class, 'showItems'])->name('accionM
 Route::get('/accion-moto/search',[MotosController::class,'busqueda'])->name('busqueda.moto');
 
 //Route -> muestro items
-Route::get('/accion-accesorios',[AccesoriosController::class,'busqueda'])->name('busqueda.accesorios');
+Route::get('/accion-accesorios',[AccesoriosController::class,'busqueda'])->name('busqueda.accesorio');
+
+Route::delete('/accesorios/{id}', [AccesoriosController::class, 'destroy'])->name('eliminarAccesorio');
+
+//Route -> Agregar Producto
+Route::post('/accion-accesorio/agregar', [AccesoriosController::class, 'store'])->name('agregar_accesorio');
 
 //Route -> form para agregar un producto
 Route::get('/accion-moto/agregar', [MotosController::class, 'create'])->name('accionMotoCreate');
@@ -77,6 +82,8 @@ Route::post('/accion-moto/agregar', [MotosController::class, 'store'])->name('ag
 
 //Route -> Editar Producto
 Route::put('/motos/{id}', [MotosController::class, 'update'])->name('editarMoto');
+
+Route::put('/accesorios/{id}', [AccesoriosController::class, 'update'])->name('editarAccesorio');
 
 Route::delete('/motos/{id}', [MotosController::class, 'destroy'])->name('motos.destroy');
 

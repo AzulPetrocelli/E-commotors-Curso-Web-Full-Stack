@@ -15,7 +15,7 @@
 <div class="pantalla-gris" style="z-index: 10"></div>
 
 <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
-<form id="form-agregar-producto" class="form-welcome visually-hidden w-50 position-absolute start-50 translate-middle py-4 m-0" style="z-index: 11; padding: 35px 0px; top: 56vh;" action="{{ route('agregarMoto') }}" method="POST" enctype="multipart/form-data">
+<form id="form-agregar-moto" class="form-welcome visually-hidden w-50 position-absolute start-50 translate-middle py-4 m-0" style="z-index: 11; padding: 35px 0px; top: 56vh;" action="{{ route('agregarAccesorio') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <label class="w-75">
@@ -121,7 +121,7 @@ style="z-index: 11; padding: 35px 0px; top: 56vh;" action="" method="POST" encty
         </div>
     </form>
     <a href="{{url('admin')}}" class="boton-principal">Volver</a>
-    <a href="#" class="boton-principal" id="agregar-producto">Agregar Producto</a>{{--{{url('accion-moto/agregar')}}--}}
+    <a href="#" class="boton-principal" id="agregar-accesorio">Agregar Producto</a>{{--{{url('accion-moto/agregar')}}--}}
 </div>
 <div style="width: 90%; overflow-x: auto; overflow-y: auto; height:80vh" class="m-auto">
     <table class="table">
