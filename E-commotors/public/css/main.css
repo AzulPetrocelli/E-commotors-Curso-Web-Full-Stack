@@ -504,11 +504,3 @@ img{
     height: 70px;
     border-radius: 10px;
 }
-
-
-.confirmacion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}

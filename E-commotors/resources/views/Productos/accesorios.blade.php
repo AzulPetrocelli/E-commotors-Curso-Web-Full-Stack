@@ -96,15 +96,14 @@
     </section>
 </main>
 
-
 <!-- FILTRO -->
 <div class="pantalla-gris"></div>
-<aside class="container-show filter-sidebar visually-hidden w-75 pt-0">
+<aside class="confirmacion container-show filter-sidebar visually-hidden w-75 pt-0">
     <form action="{{url('productos-accesorios')}}" method="GET">
         <div class="d-flex py-2 justify-content-between w-100 position-relative bg-white" style="height: 70px;">
             <h2 class="jaro">Filtros</h2>
             <div class="d-flex gap-2">
-                <button class="boton-principal show">Salir</button>
+                <button type="button" class="boton-principal salir">Salir</button>
                 <input type="submit" class="boton-principal show" value="Filtrar">
             </div>
         </div>

@@ -187,7 +187,7 @@
                 @method('DELETE')
                 <button type="submit" class="boton-principal">Aceptar</button>
             </form>
-            <button type="button" class="boton-principal cancelar">Cancelar</button>
+            <button type="button" class="boton-principal salir">Cancelar</button>
         </div>
     </aside>
 
