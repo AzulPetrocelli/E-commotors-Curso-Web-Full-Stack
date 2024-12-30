@@ -33,7 +33,9 @@
         <p class="varela">
             {{ $moto->descripcion_moto }}
         </p>
-        <p class="jaro fs-2">Precio ${{ $moto->precio_moto }}</p>
+        <p class="jaro fs-3">Estado: {{ $moto->estado }}</p>
+        <p class="jaro fs-3">Categoria: {{ $moto->categoria->nombre_categoria }}</p>
+        <p class="jaro fs-2">Precio: ${{ $moto->precio_moto }}</p>
         <div class="d-flex justify-content-end">
             <a href="#" class="boton-principal m-2 show">Enviar Mensaje</a>
             <a href="#" class="boton-principal m-2">Comprar</a>

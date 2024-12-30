@@ -151,16 +151,65 @@ class MotosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        // Validación de datos
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'estado' => 'required|string|max:255',
+            'precio_moto' => 'required|numeric',
+            'id_categoria' => 'required|string',
+            'id_marca' => 'required|string',
+            'descripcion_moto' => 'required|string',
+            'foto_moto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Buscar la moto
+        $moto = Moto::findOrFail($id);
+
+        // Actualizar los datos
+        $moto->nombre = $request->nombre;
+        $moto->estado = $request->estado;
+        $moto->precio_moto = $request->precio_moto;
+
+        // Asignar la categoría y marca
+        $categoria = Categoria::where('nombre_categoria', $request->id_categoria)->first();
+        if ($categoria) {
+            $moto->id_categoria = $categoria->id_categoria;
+        }
+
+        $marca = Marca::where('nombre_marca', $request->id_marca)->first();
+        if ($marca) {
+            $moto->id_marca = $marca->id_marca;
+        }
+
+        $moto->descripcion_moto = $request->descripcion_moto;
+
+        // Actualizar la imagen si se subió una nueva
+        if ($request->hasFile('foto_moto')) {
+            // Eliminar la imagen anterior
+            if ($moto->foto_moto && file_exists(public_path('images/' . $moto->foto_moto))) {
+                unlink(public_path('images/' . $moto->foto_moto));
+            }
+
+            // Subir la nueva imagen
+            $filename = $request->file('foto_moto')->getClientOriginalName();
+            $request->file('foto_moto')->storeAs('public/images', $filename);
+            $moto->foto_moto = $filename;
+        }
+
+        // Guardar los cambios
+        $moto->save();
+
+        return redirect()->route('accionMoto')->with('success', 'Moto actualizada exitosamente.');
     }
+
 
     /**
      * Remove the specified resource from storage.

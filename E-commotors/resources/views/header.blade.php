@@ -61,6 +61,7 @@
                       </a>
                       <ul class="dropdown-menu">
                         <!--Agregar foreach-->
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="{{url('productos-repuestos')}}">Todos</a></li>
                         <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Piñones</a></li>
                         <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Manubrios</a></li>
                         <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Pastillas de Freno</a></li>

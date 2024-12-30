@@ -81,6 +81,10 @@ img{
     z-index: 998;
 }
 
+.dropdown-item-custom:hover {
+    background-color: var(--color-secundario) !important;
+}
+
 .dropdown-item-custom:focus {
     background-color: var(--color-secundario);
 }
