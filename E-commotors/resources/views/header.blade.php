@@ -56,7 +56,7 @@
                     </ul>
                     </li>
                     <li class="dropdown">
-                      <a class="text-white nav-link dropdown-toggle dropdown-item-custom jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="text-white nav-link dropdown-toggle jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Repuestos
                       </a>
                       <ul class="dropdown-menu">

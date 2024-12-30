@@ -84,7 +84,7 @@
 
 <!-- FILTRO -->
 <div class="pantalla-gris"></div>
-<aside class="filter-sidebar visually-hidden w-75 pt-0">
+<aside class="container-show filter-sidebar visually-hidden w-75 pt-0">
     <form action="{{url('productos-motos')}}" method="GET">
         <div class="d-flex py-2 justify-content-between w-100 position-relative bg-white" style="height: 70px;">
             <h2 class="jaro">Filtros</h2>

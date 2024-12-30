@@ -168,6 +168,18 @@ form.agregar-margin {
     margin-top: 100px;
 }
 
+.formulario-base {
+    padding: 24px;
+    border-radius: 12px;
+    background-color: var(--texto-color);
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    gap: 24px;
+    border: 1px #000000 solid;
+    box-shadow: 0px 0px 8px #000000;
+}
+
 .input-form {
     width: 100%;
     border-radius: 10px;

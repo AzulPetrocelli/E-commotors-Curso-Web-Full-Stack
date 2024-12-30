@@ -33,7 +33,7 @@
         </div>
     @endif
 
-    <form class="form-welcome w-50 filter-sidebar" action="{{ route('agregarProducto') }}" method="POST" enctype="multipart/form-data">
+    <form class="form-welcome w-50 container-show filter-sidebar" action="{{ route('agregarProducto') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="w-75">
             <label for="nombre" class="fs-5 varela">Nombre</label>
