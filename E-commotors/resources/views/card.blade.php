@@ -1,8 +1,9 @@
 @include('header')
 
-<div class="fondo-gris"></div>
-<aside class="position-fixed top-50 start-50 translate-middle w-75" style="z-index:999;">
-    <form action="{{ route('mensaje.store') }}" method="POST" class="formulario-base w-75 mx-auto d-flex flex-column justify-content-center gap-3">
+<div class="fondo-gris visually-hidden"></div>
+
+<aside class="container-show visually-hidden position-fixed top-50 start-50 translate-middle w-75" style="z-index:999;">
+    <form action="{{ route('mensaje.store') }}" method="POST" class="formulario-base w-100 d-flex flex-column justify-content-center gap-3">
         @csrf <!-- Token de seguridad de Laravel -->
         <label for=""><input type="text" name="nombre_mensaje" placeholder="Nombre..." class="input-form"></label>
         <label for=""><input type="text" name="tipo_mensaje" placeholder="Tipo de Mensaje..." class="input-form"></label>
@@ -10,7 +11,7 @@
         <label for=""><textarea name="productos_consultados" class="input-form" placeholder="Productos Consultados..."></textarea></label>
 
         <div class="d-flex justify-content-end gap-2">
-            <a href="javascript:window.history.back()" class="boton-principal">Cancelar</a>
+            <a href="#" class="boton-principal show">Cancelar</a>
             <button type="submit" class="boton-principal">Enviar Mensaje</button>
         </div>
     </form>
@@ -35,7 +36,7 @@
         </p>
         <p class="jaro fs-2">Precio ${{ $moto->precio_moto }}</p>
         <div class="d-flex justify-content-end">
-            <a href="{{ route('message') }}" class="boton-principal m-2">Enviar Mensaje</a>
+            <a href="#" class="boton-principal m-2 show">Enviar Mensaje</a>
             <a href="#" class="boton-principal m-2">Comprar</a>
         </div>
     </div>

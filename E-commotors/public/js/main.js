@@ -17,7 +17,7 @@ const mostrarOcultar = (referencia) => {
 // Aparecer el aside del filtro
 var botonFiltrar = document.querySelectorAll(".show");
 botonFiltrar.forEach(boton => {
-    boton.addEventListener("click", () => mostrarOcultar(".filter-sidebar"))
+    boton.addEventListener("click", () => mostrarOcultar(".container-show"))
 })
 
 // Aparecer Formulario para agregar porducto
