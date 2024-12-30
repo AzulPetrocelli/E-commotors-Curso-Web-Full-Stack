@@ -306,12 +306,12 @@ CREATE TABLE `password_reset_tokens` (
 
 CREATE TABLE `repuesto` (
   `id_repuesto` int(11) NOT NULL,
-  `nombre_accesorio` varchar(255) DEFAULT NULL,
-  `precio_accesorio` decimal(10,2) DEFAULT NULL,
-  `estado_accesorio` varchar(50) DEFAULT NULL,
-  `foto_accesorio` varchar(255) DEFAULT NULL,
+  `nombre_repuesto` varchar(255) DEFAULT NULL,
+  `precio_repuesto` decimal(10,2) DEFAULT NULL,
+  `estado_repuesto` varchar(50) DEFAULT NULL,
+  `foto_repuesto` varchar(255) DEFAULT NULL,
   `tipo_de_repuesto` int(11) DEFAULT NULL,
-  `descripcion_accesorio` text DEFAULT NULL
+  `descripcion_repuesto` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

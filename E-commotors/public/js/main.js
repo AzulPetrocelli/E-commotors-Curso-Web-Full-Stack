@@ -37,7 +37,7 @@ botonEliminar.forEach(boton => {
 })
 
 //thiago --> tarea para azul 
-
+//METODO DESTROY
     document.addEventListener('DOMContentLoaded', function () {
         const confirmarBtns = document.querySelectorAll('.confirmar-eliminacion'); // Botones para eliminar
         const confirmacionAside = document.querySelector('.confirmacion'); // El aside
@@ -69,6 +69,50 @@ botonEliminar.forEach(boton => {
             confirmacionAside.classList.add('visually-hidden');
         });
     });
+
+    //METODO UPDATE
+    document.addEventListener('DOMContentLoaded', function () {
+        const editarBtns = document.querySelectorAll('.editar-moto'); // Botones de editar
+        const formEditar = document.querySelector('#form-editar-producto'); // Formulario de edición
+        const pantallaGris = document.querySelector('.pantalla-gris'); // Fondo gris
+        const cancelarBtn = formEditar.querySelector('.cancelar'); // Botón de cancelar
+    
+        editarBtns.forEach(boton => {
+            boton.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                // Rellenar el formulario con los datos de la moto
+                formEditar.querySelector('#edit-id-moto').value = this.dataset.id;
+                formEditar.querySelector('#edit-nombre').value = this.dataset.nombre;
+                formEditar.querySelector('#edit-estado').value = this.dataset.estado;
+                formEditar.querySelector('#edit-precio').value = this.dataset.precio;
+                formEditar.querySelector('#edit-categoria').value = this.dataset.categoria;
+                formEditar.querySelector('#edit-marca').value = this.dataset.marca;
+                formEditar.querySelector('#edit-descripcion').value = this.dataset.descripcion;
+    
+                // Configurar la acción del formulario con el ID de la moto
+                formEditar.action = `/motos/${this.dataset.id}`;
+    
+                // Mostrar el formulario y el fondo gris
+                formEditar.classList.remove('visually-hidden');
+                pantallaGris.classList.remove('visually-hidden');
+            });
+        });
+    
+        // Ocultar el formulario y el fondo gris al cancelar
+        cancelarBtn.addEventListener('click', function () {
+            formEditar.classList.add('visually-hidden');
+            pantallaGris.classList.add('visually-hidden');
+        });
+    });
+    
+
+
+
+
+
+
+
 
     // Añade el evento 'submit'
 /* formulario.addEventListener("submit", function(e) {

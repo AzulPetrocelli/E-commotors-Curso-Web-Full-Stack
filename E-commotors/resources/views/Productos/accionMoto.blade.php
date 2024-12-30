@@ -76,6 +76,44 @@
         </div>
     </form>
 
+
+        <form id="form-editar-producto" class="form-welcome visually-hidden w-50 position-absolute start-50 translate-middle py-4 m-0" 
+      style="z-index: 11; padding: 35px 0px; top: 56vh;" 
+      action="" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
+
+    <input type="hidden" name="id_moto" id="edit-id-moto">
+
+    <label class="w-75">
+        <input type="text" name="nombre" id="edit-nombre" class="input-form" placeholder="Nombre">
+    </label>
+    <label class="w-75">
+        <input type="text" name="estado" id="edit-estado" class="input-form" placeholder="Estado">
+    </label>
+    <label class="w-75">
+        <input type="number" name="precio_moto" id="edit-precio" class="input-form" placeholder="Precio">
+    </label>
+    <label class="w-75">
+        <input type="text" name="id_categoria" id="edit-categoria" class="input-form" placeholder="Categoría">
+    </label>
+    <label class="w-75">
+        <input type="text" name="id_marca" id="edit-marca" class="input-form" placeholder="Marca">
+    </label>
+    <label class="w-75">
+        <textarea name="descripcion_moto" id="edit-descripcion" class="input-form" placeholder="Descripción"></textarea>
+    </label>
+    <label class="w-75">
+        <label for="edit-foto" class="varela">Cambiar Imagen</label>
+        <input type="file" name="foto_moto" id="edit-foto" class="form-control">
+    </label>
+    <div class="w-75 d-flex justify-content-end gap-2">
+        <button type="button" class="btn btn-secondary cancelar">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </div>
+</form>
+
+        
     <!-- Tabla de ABM -->
     <div class="d-flex justify-content-end gap-2 position-relative bg-white" style="margin-top: 75px; padding: 12px; height: 75px;">
         <form action="{{route('busqueda.moto')}}" method="GET" class="mb-4">
@@ -93,6 +131,7 @@
                 <tr>
                     <th scope="col">Imagen</th>
                     <th scope="col">Nombre</th>
+                    <th scope="col">Estado</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Categoria</th>
                     <th scope="col">Marca</th>
@@ -107,6 +146,7 @@
                         <img src="{{ $moto->foto_moto ? asset('images/'.$moto->foto_moto) : asset('images/default-moto.jpg') }}" alt="Foto Moto" style="object-fit: cover; width: 100px; height: 80px;">
                     </th>
                     <td><div class="overflow-hidden" style="height: 80px">{{$moto->nombre}}</div></td>
+                    <td><div class="overflow-hidden" style="height: 80px">{{$moto->estado}}</div></td>
                     <td><div class="overflow-hidden" style="height: 80px">{{$moto->precio_moto}}</div></td>
                     <td><div class="overflow-hidden" style="height: 80px">{{$moto->categoria->nombre_categoria}}</div></td>
                     <td><div class="overflow-hidden" style="height: 80px">{{$moto->marca->nombre_marca}}</div></td>
@@ -118,7 +158,17 @@
                             data-nombre="{{ $moto->nombre }}">
                             <i class="las la-times-circle text-danger fs-2"></i>
 
-                            <a href="#"><i class="las la-edit text-primary fs-2"></i></a>
+                        <a href="#" 
+                            class="btn editar-moto" 
+                            data-id="{{ $moto->id_moto }}" 
+                            data-nombre="{{ $moto->nombre }}"
+                            data-estado="{{ $moto->estado }}"
+                            data-precio="{{ $moto->precio_moto }}"
+                            data-categoria="{{ $moto->categoria->nombre_categoria ?? '' }}"
+                            data-marca="{{ $moto->marca->nombre_marca ?? '' }}"
+                            data-descripcion="{{ $moto->descripcion_moto }}">
+                            <i class="las la-edit text-primary fs-2"></i>
+                        </a>
                     </td>
                         </a>
                     </td>
