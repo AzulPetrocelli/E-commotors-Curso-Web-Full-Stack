@@ -10,16 +10,16 @@
 
         <div class="d-flex flex-wrap justify-content-end gap-2">
 
-        <form action="{{ url('productos-repuestos') }}" method="GET" class="mb-4">       
+        <form action="{{ url('productos-repuestos') }}" method="GET" class="mb-4">
             <div class="input-group">
-                <input type="text" name="busqueda" id="busqueda" autocomplete="off" 
-                    class="form-control input-form" placeholder="Buscar repuesto..." 
-                    value="{{ request('busqueda') }}" 
+                <input type="text" name="busqueda" id="busqueda" autocomplete="off"
+                    class="form-control input-form" placeholder="Buscar repuesto..."
+                    value="{{ request('busqueda') }}"
                     style="border: 0.5px solid rgb(102, 101, 101); box-shadow: none;">
                 <button type="submit" class="btn btn-outline-secondary boton-principal">Buscar</button>
             </div>
         </form>
-            
+
 
             <div class="d-flex justify-content-end gap-2" style="height: 50px">
                 <button class="boton-principal show">Filtros</button>
@@ -37,18 +37,15 @@
                 <div class="container-cards d-flex flex-wrap">
                     @foreach($repuestos as $repuesto)
                         <div class="card costum-card">
-                            <a href="{{ route('repuesto.show', ['id' => $repuesto->id_repuesto]) }}" 
+                            <a href="{{ route('repuesto.show', ['id' => $repuesto->id_repuesto]) }}"
                                     style="color:black; text-decoration:none;">
-                                <img src="{{ asset('images/' . $repuesto->foto_repuesto) }}" 
-                                    class="card-img-top shadow-sm" 
-                                    style="height: 250px" 
+                                <img src="{{ asset('images/' . $repuesto->foto_repuesto) }}"
+                                    class="card-img-top shadow-sm"
+                                    style="height: 250px"
                                     alt="{{ $repuesto->nombre_repuesto }}">
                                 <div class="card-body d-flex flex-column py-2">
                                     <h5 class="card-title jaro">{{ $repuesto->nombre_repuesto }}</h5>
                                     <p class="card-text varela">${{ $repuesto->precio_repuesto }}</p>
-                                </div>
-                                <div class="d-flex justify-content-end w-100 p-2">
-                                    <a href="#" class="boton-principal align-bottom">Comprar</a>
                                 </div>
                             </a>
                         </div>
@@ -115,7 +112,7 @@
                 <select name="tipo_de_repuesto" class="form-control">
                     <option value="">Seleccionar Tipo</option>
                     @foreach($tiposRep as $tipoRep)
-                        <option value="{{ $tipoRep->id_repuesto }}" 
+                        <option value="{{ $tipoRep->id_repuesto }}"
                             {{ request('tipo_de_repuesto') == $tipoRep->id_repuesto ? 'selected' : '' }}>
                             {{ $tipoRep->nombre_repuesto }}
                         </option>
