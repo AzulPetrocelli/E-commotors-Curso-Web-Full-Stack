@@ -69,10 +69,10 @@
             @enderror
         </label>
 
-        <label class="w-75 d-flex justify-content-end gap-2">
-            <a href="#" class="boton-principal filtrar show">Cancelar</a>
+        <div class="w-75 d-flex justify-content-end gap-2">
+            <a href="#" class="boton-principal show">Cancelar</a>
             <button type="submit" class="boton-principal">Crear Producto</button>
-        </label>
+        </div>
     </form>
 
     <!-- Tabla de ABM -->
@@ -120,10 +120,8 @@
         </table>
     </div>
 
-
-
     <!-- ASIDE DE VERIFICACION -->
-    <aside class="confirmacion aside-oculto rounded shadow p-4 w-25 position-fixed top-50 start-50 translate-middle bg-white" style="min-width: 300px; z-index:1000">
+    <aside class="confirmacion visually-hidden rounded shadow p-4 w-25 position-fixed top-50 start-50 translate-middle bg-white" style="min-width: 300px; z-index:1000">
         <p class="varela fs-2">Esta seguro que desea eliminar el producto?</p>
         <div class="d-flex justify-content-end gap-2">
             <a href="#" class="boton-principal">Aceptar</a>

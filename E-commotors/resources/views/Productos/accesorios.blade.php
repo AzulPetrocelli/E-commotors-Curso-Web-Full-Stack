@@ -10,18 +10,18 @@
 
         <div class="d-flex flex-wrap justify-content-end gap-2">
 
-            <form action="{{ url('productos-accesorios') }}" method="GET" class="mb-4">       
+            <form action="{{ url('productos-accesorios') }}" method="GET" class="mb-4">
                 <div class="input-group">
 
-                    <input type="text" name="busqueda" id="busqueda" autocomplete="off" 
-                        class="form-control input-form" placeholder="Buscar accesorio..." 
+                    <input type="text" name="busqueda" id="busqueda" autocomplete="off"
+                        class="form-control input-form" placeholder="Buscar accesorio..."
                         style="border: 0.5px solid rgb(102, 101, 101); box-shadow: none;">
 
                     <button type="submit" class="btn btn-outline-secondary boton-principal">Buscar</button>
 
                 </div>
             </form>
-            
+
 
             <div class="d-flex justify-content-end gap-2" style="height: 50px">
                 <button class="boton-principal show">Filtros</button>
@@ -39,11 +39,11 @@
                 <div class="container-cards d-flex flex-wrap">
                     @foreach($accesorios as $accesorio)
                         <div class="card costum-card">
-                            <a href="{{ route('accesorios.show', ['id' => $accesorio->id_accesorio]) }}" 
+                            <a href="{{ route('accesorios.show', ['id' => $accesorio->id_accesorio]) }}"
                                     style="color:black; text-decoration:none;">
-                                <img src="{{ asset('images/' . $accesorio->foto_accesorio) }}" 
-                                    class="card-img-top shadow-sm" 
-                                    style="height: 250px" 
+                                <img src="{{ asset('images/' . $accesorio->foto_accesorio) }}"
+                                    class="card-img-top shadow-sm"
+                                    style="height: 250px"
                                     alt="{{ $accesorio->nombre_accesorio }}">
                                 <div class="card-body d-flex flex-column py-2">
                                     <h5 class="card-title jaro">{{ $accesorio->nombre_accesorio }}</h5>
@@ -119,7 +119,7 @@
                 <select name="categoria" class="form-control">
                     <option value="">Seleccionar Tipo</option>
                     @foreach($tipos as $tipo)
-                        <option value="{{ $tipo->id_tipo }}" 
+                        <option value="{{ $tipo->id_tipo }}"
                             {{ request('categoria') == $tipo->id_tipo ? 'selected' : '' }}>
                             {{ $tipo->nombre_tipo }}
                         </option>

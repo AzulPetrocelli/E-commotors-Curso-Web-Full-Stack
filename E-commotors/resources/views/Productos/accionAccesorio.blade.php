@@ -2,11 +2,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <body>
-        <table class="table">
-            <div class="d-flex justify-content-end gap-2 position-sticky" style="margin-top:40px; margin-right:10px;">
-                <a href="{{url('admin')}}" class="boton-principal">Volver</a>
-                <a href="#" class="boton-principal">Agregar Producto</a>
+
+    <!-- Tabla de ABM -->
+    <div class="d-flex justify-content-end gap-2 position-relative bg-white" style="margin-top: 75px; padding: 12px; height: 75px;">
+        <form action="" method="GET" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="busqueda" id="busqueda" autocomplete="off" class="form-control input-form" placeholder="Buscar moto..." style="border: 0.5px solid rgb(102, 101, 101); box-shadow: none;">
+                <button type="submit" class="btn btn-outline-secondary boton-principal">Buscar</button>
             </div>
+        </form>
+        <a href="{{url('admin')}}" class="boton-principal">Volver</a>
+        <a href="#" class="boton-principal" id="agregar-producto">Agregar Producto</a>{{--{{url('accion-moto/agregar')}}--}}
+    </div>
+
+    <div style="width: 90%; overflow-x: auto; overflow-y: auto; height:80vh" class="m-auto">
+        <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Imagen</th>
@@ -23,18 +33,19 @@
                     <th scope="row">
                         <img src="{{ $accesorio->foto_accesorio ? asset('images/'.$accesorio->foto_accesorio) : asset('images/default-accesorio.jpg') }}" alt="Foto Accesorio" class="img-abm">
                     </th>
-                    <td>{{$accesorio->nombre_accesorio}}</td>
-                    <td>{{$accesorio->precio_accesorio}}</td>
-                    <td>{{$accesorio->tipo->nombre_tipo}}</td>
-                    <td>{{$accesorio->descripcion_accesorio}}</td>
-                    <td class="d-flex flex-nowrap gap-2">
-                        <a href="#"><i class="las la-times-circle text-danger fs-2"></i></a>
-                        <a href="#"><i class="las la-edit text-primary fs-2"></i></a>
+                    <td><div class="overflow-hidden" style="height: 80px">{{$accesorio->nombre_accesorio}}</div></td>
+                    <td><div class="overflow-hidden" style="height: 80px">{{$accesorio->precio_accesorio}}</div></td>
+                    <td><div class="overflow-hidden" style="height: 80px">{{$accesorio->tipo->nombre_tipo}}</div></td>
+                    <td><div class="overflow-hidden" style="height: 80px">{{$accesorio->descripcion_accesorio}}</div></td>
+                    <td class="d-flex flex-nowrap justify-content-center align-items-center gap-3" style="height: 100px">
+                        <a href="#" class="eliminar"><i class="las la-times-circle text-danger fs-2"></i></a>
+                        <a href="#" class="editar"><i class="las la-edit text-primary fs-2"></i></a>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+    </div>
 
 
     <!-- FALTA TERMINAR -->
