@@ -170,10 +170,6 @@
                             <i class="las la-edit text-primary fs-2"></i>
                         </a>
                     </td>
-                        </a>
-                    </td>
-                    
-                    
                 </tr>
                 @endforeach
             </tbody>
