@@ -98,35 +98,20 @@
 
 
 <!-- FILTRO -->
+<!-- FILTRO -->
 <div class="pantalla-gris"></div>
-<aside class="filter-sidebar visually-hidden w-75 pt-0">
-    <form action="{{ url('productos-accesorios') }}" method="GET">
+<aside class="container-show filter-sidebar visually-hidden w-75 pt-0">
+    <form action="{{url('productos-accesorios')}}" method="GET">
         <div class="d-flex py-2 justify-content-between w-100 position-relative bg-white" style="height: 70px;">
             <h2 class="jaro">Filtros</h2>
             <div class="d-flex gap-2">
-                <button type="button" class="boton-principal show">Salir</button>
+                <button class="boton-principal show">Salir</button>
                 <input type="submit" class="boton-principal show" value="Filtrar">
             </div>
         </div>
+            </section>
 
-        <!-- Precio -->
-        <section class="filter-group">
-            <h3 class="jaro fs-4 mb-2">Precio:</h3>
-            <div class="card-body">
-                <div class="form-row d-flex gap-2">
-                    <div class="form-group col-md-6">
-                        <label class="varela fs-3">Mínimo</label>
-                        <input type="number" class="input-form" placeholder="0" name="min" value="{{ request('min') }}">
-                    </div>
-                    <div class="form-group text-right col-md-6">
-                        <label class="varela fs-3">Máximo</label>
-                        <input type="number" class="input-form" placeholder="100000" name="max" value="{{ request('max') }}">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tipo de Accesorio -->
+            <!-- Tipo de Accesorio -->
         @if(isset($tipos) && $tipo==null)
         <section class="filter-group mt-3">
             <h3 class="jaro fs-4 mb-2">Tipo de Accesorio:</h3>
@@ -144,8 +129,26 @@
         </section>
         @endif
 
+        <!-- Kilómetros -->
+        <section class="filter-group">
+            <h3 class="jaro fs-4 mb-2">Precio:</h3>
+                <div class="card-body">
+                    <div class="form-row d-flex gap-2">
+                        <div class="form-group col-md-6">
+                            <label class="varela fs-3">Minimo</label>
+                            <input type="number" class="input-form" placeholder="0" name="min">
+                        </div>
+                        <div class="form-group text-right col-md-6">
+                            <label class="varela fs-3">Maximo</label>
+                            <input type="number" class="input-form" placeholder="100000" name="max">
+                        </div>
+                    </div>
+                </div>
+        </section>
     </form>
 </aside>
+
+
 
 
 @include('footer')

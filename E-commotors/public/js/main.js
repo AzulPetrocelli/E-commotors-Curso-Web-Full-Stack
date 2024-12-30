@@ -32,3 +32,5 @@ botonEliminar.forEach(boton => {
     boton.addEventListener("click", () => mostrarOcultar(".confirmacion"))
 })
 
+
+
