@@ -5,12 +5,14 @@
 
     <!-- Tabla de ABM -->
     <div class="d-flex justify-content-end gap-2 position-relative bg-white" style="margin-top: 75px; padding: 12px; height: 75px;">
-        <form action="" method="GET" class="mb-4">
-            <div class="input-group">
-                <input type="text" name="busqueda" id="busqueda" autocomplete="off" class="form-control input-form" placeholder="Buscar moto..." style="border: 0.5px solid rgb(102, 101, 101); box-shadow: none;">
-                <button type="submit" class="btn btn-outline-secondary boton-principal">Buscar</button>
-            </div>
-        </form>
+        {{--
+            <form action="" method="GET" class="mb-4">
+                <div class="input-group">
+                    <input type="text" name="busqueda" id="busqueda" autocomplete="off" class="form-control input-form" placeholder="Buscar moto..." style="border: 0.5px solid rgb(102, 101, 101); box-shadow: none;">
+                    <button type="submit" class="btn btn-outline-secondary boton-principal">Buscar</button>
+                </div>
+            </form>
+        --}}
         <a href="{{url('admin')}}" class="boton-principal">Volver</a>
         <a href="#" class="boton-principal" id="agregar-producto">Agregar Producto</a>{{--{{url('accion-moto/agregar')}}--}}
     </div>

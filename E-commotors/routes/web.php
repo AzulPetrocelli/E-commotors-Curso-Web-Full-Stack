@@ -55,14 +55,24 @@ Route::get('/cardAccesorios/{id}', [AccesoriosController::class, 'show'])->name(
 Route::get('/accesorios/tipo/{id}', [AccesoriosController::class, 'filtrarPorTipo'])->name('accesorios.filtrar');
 
 
+
+
 //Route -> muestro items
 Route::get('/accion-moto',[MotosController::class,'showItems'])->name('accionMoto');
+
+//Route -> muestro items
+Route::get('/accion-moto/search',[MotosController::class,'busqueda'])->name('busqueda.moto');
+
+//Route -> muestro items
+Route::get('/accion-accesorios',[AccesoriosController::class,'busqueda'])->name('busqueda.accesorios');
 
 //Route -> form para agregar un producto
 Route::get('/accion-moto/agregar', [MotosController::class, 'create'])->name('accionMotoCreate');
 
 //Route -> Agregar Producto
-Route::post('/accion-moto/agregar', [MotosController::class, 'store'])->name('agregarProducto');
+Route::post('/accion-moto/agregar', [MotosController::class, 'store'])->name('agregarMoto');
+
+Route::delete('/motos/{id}', [MotosController::class, 'destroy'])->name('motos.destroy');
 
 
 
@@ -83,7 +93,7 @@ Route::post('/productos-motos#', [MotosController::class, 'filtrar']);
 //ROUTE -> vista de mensajes recibidos
 Route::get('/accion-mensaje',[AdminController::class,'mensajes']) -> name('accion-mensaje');
 
-// 
+//
 Route::get('/accion-mensaje-sin_responder',[AdminController::class,'mensajesSinResponder']) -> name('accion-mensaje-sin-responder');
 
 // ROUTE ->  responder mensaje
