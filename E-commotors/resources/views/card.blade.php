@@ -1,7 +1,6 @@
 @include('header')
 
-<div class="fondo-gris visually-hidden"></div>
-
+<div class="pantalla-gris"></div>
 <aside class="container-show visually-hidden position-fixed top-50 start-50 translate-middle w-75" style="z-index:999;">
     <form action="{{ route('mensaje.store') }}" method="POST" class="formulario-base w-100 d-flex flex-column justify-content-center gap-3">
         @csrf <!-- Token de seguridad de Laravel -->
