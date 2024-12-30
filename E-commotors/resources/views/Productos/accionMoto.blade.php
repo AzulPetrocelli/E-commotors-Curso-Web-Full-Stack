@@ -77,7 +77,7 @@
 
     <!-- Tabla de ABM -->
     <div class="d-flex justify-content-end gap-2 position-relative bg-white" style="margin-top: 75px; padding: 12px; height: 75px;">
-        <form action="" method="GET" class="mb-4">
+        <form action="{{route('busqueda.db')}}" method="GET" class="mb-4">
             <div class="input-group">
                 <input type="text" name="busqueda" id="busqueda" autocomplete="off" class="form-control input-form" placeholder="Buscar moto..." style="border: 0.5px solid rgb(102, 101, 101); box-shadow: none;">
                 <button type="submit" class="btn btn-outline-secondary boton-principal">Buscar</button>
@@ -110,10 +110,19 @@
                     <td><div class="overflow-hidden" style="height: 80px">{{$moto->categoria->nombre_categoria}}</div></td>
                     <td><div class="overflow-hidden" style="height: 80px">{{$moto->marca->nombre_marca}}</div></td>
                     <td><div class="overflow-hidden" style="height: 80px">{{$moto->descripcion_moto}}</div></td>
-                    <td class="d-flex flex-nowrap justify-content-center align-items-center gap-3" style="height: 100px">
-                        <a href="#" class="eliminar"><i class="las la-times-circle text-danger fs-2"></i></a>
-                        <a href="#" class="editar"><i class="las la-edit text-primary fs-2"></i></a>
+                    <td class="d-flex flex-nowrap justify-content-center align-items-center gap-3">
+                        <a href="#" 
+                            class="btn confirmar-eliminacion" 
+                            data-id="{{ $moto->id_moto }}" 
+                            data-nombre="{{ $moto->nombre }}">
+                            <i class="las la-times-circle text-danger fs-2"></i>
+
+                            <a href="#"><i class="las la-edit text-primary fs-2"></i></a>
                     </td>
+                        </a>
+                    </td>
+                    
+                    
                 </tr>
                 @endforeach
             </tbody>
@@ -123,13 +132,18 @@
 
 
     <!-- ASIDE DE VERIFICACION -->
-    <aside class="confirmacion aside-oculto rounded shadow p-4 w-25 position-fixed top-50 start-50 translate-middle bg-white" style="min-width: 300px; z-index:1000">
-        <p class="varela fs-2">Esta seguro que desea eliminar el producto?</p>
+    <aside class="confirmacion visually-hidden rounded shadow p-4 w-25 position-fixed top-50 start-50 translate-middle bg-white" style="min-width: 300px; z-index:1000">
+        <p class="varela fs-2">¿Está seguro que desea eliminar la moto: <span id="nombre-moto"></span>?</p>
         <div class="d-flex justify-content-end gap-2">
-            <a href="#" class="boton-principal">Aceptar</a>
-            <a href="#" class="boton-principal eliminar">Cancelar</a>
+            <form id="form-confirmar-eliminar" action="" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="boton-principal">Aceptar</button>
+            </form>
+            <button type="button" class="boton-principal cancelar">Cancelar</button>
         </div>
     </aside>
+    
 
     <!-- FORMULARIO DE EDICION -->
     <aside>

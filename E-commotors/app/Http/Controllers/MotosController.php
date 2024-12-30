@@ -84,7 +84,7 @@ class MotosController extends Controller
         'required' => "Campo obligatorio",
         'max' => "Sobrepaso el limite de 255 caracteres",
         'numeric' => "El valor ingresado debe ser un numero",
-     ]);
+    ]);
 
     $moto = new Moto();
     $moto->nombre = $request->nombre;
@@ -156,8 +156,35 @@ class MotosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function destroy($id)
+{
+    $moto = Moto::find($id);
+
+    if (!$moto) {
+        return redirect()->route('accionMoto')->with('error', 'La moto no existe.');
     }
+
+    if ($moto->foto_moto && file_exists(public_path('images/' . $moto->foto_moto))) {
+        unlink(public_path('images/' . $moto->foto_moto));
+    }
+
+    $moto->delete();
+
+    return redirect()->route('accionMoto')->with('success', 'Moto eliminada exitosamente.');
+}
+
+public function busqueda(Request $request)
+{
+    $query = Moto::query(); // Constructor de consulta
+    
+
+    if ($request->has('busqueda')) {
+        $query->where('nombre', 'like', '%' . $request->busqueda . '%'); // Agregar condición
+    }
+    
+    $motos = $query->get();
+
+    return view('Productos.accionMoto', ['motos' => $motos]); // Retornar vista
+}
+
 }

@@ -55,14 +55,21 @@ Route::get('/cardAccesorios/{id}', [AccesoriosController::class, 'show'])->name(
 Route::get('/accesorios/tipo/{id}', [AccesoriosController::class, 'filtrarPorTipo'])->name('accesorios.filtrar');
 
 
+
+
 //Route -> muestro items
 Route::get('/accion-moto',[MotosController::class,'showItems'])->name('accionMoto');
+
+//Route -> muestro items
+Route::get('/accion-moto',[MotosController::class,'busqueda'])->name('busqueda.db');
 
 //Route -> form para agregar un producto
 Route::get('/accion-moto/agregar', [MotosController::class, 'create'])->name('accionMotoCreate');
 
 //Route -> Agregar Producto
 Route::post('/accion-moto/agregar', [MotosController::class, 'store'])->name('agregarProducto');
+
+Route::delete('/motos/{id}', [MotosController::class, 'destroy'])->name('motos.destroy');
 
 
 

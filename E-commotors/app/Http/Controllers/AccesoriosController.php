@@ -84,4 +84,18 @@ public function showItems()
     {
 
     }
+
+    public function busqueda(Request $request)
+{
+    $query = Accesorio::query(); // Constructor de consulta
+    
+
+    if ($request->has('busqueda')) {
+        $query->where('nombre', 'like', '%' . $request->busqueda . '%'); // Agregar condición
+    }
+    
+    $accesorios = $query->get();
+
+    return view('Productos.accionMoto', ['accesorios' => $accesorios]); // Retornar vista
+}
 }
