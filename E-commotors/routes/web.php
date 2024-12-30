@@ -8,7 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MotosController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\MensajeController;
-use App\Http\Controllers\RepuestoController;
+use App\Http\Controllers\RepuestosController;
 use App\Http\Controllers\AccesoriosController;
 
 Route::get('/main', function () {
@@ -54,6 +54,8 @@ Route::get('/card/{id}', [MotosController::class, 'show'])->name('motos.show');
 Route::get('/cardAccesorios/{id}', [AccesoriosController::class, 'show'])->name('accesorios.show');
 
 Route::get('/accesorios/tipo/{id}', [AccesoriosController::class, 'filtrarPorTipo'])->name('accesorios.filtrar');
+
+Route::get('/repuestos/tipo/{id}', [RepuestosController::class, 'filtrarPorTipo'])->name('repuestos.filtrar');
 
 
 
@@ -131,7 +133,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 
 //ROUTES PARA REPUESTOS
-Route::get('/productos-repuestos', [RepuestoController::class, 'index'])->name('repuestos.index');
-Route::get('/productos-repuestos/{id}', [RepuestoController::class, 'show'])->name('repuesto.show');
-Route::get('/productos-repuestos/filtrar/{id}', [RepuestoController::class, 'filtrarPorTipo'])->name('repuestos.filtrarPorTipo');
-Route::get('/productos-repuestos/buscar', [RepuestoController::class, 'busqueda'])->name('repuestos.busqueda');
+Route::get('/productos-repuestos', [RepuestosController::class, 'index'])->name('repuestos.index');
+Route::get('/productos-repuestos/{id}', [RepuestosController::class, 'show'])->name('repuesto.show');
+Route::get('/productos-repuestos/filtrar/{id}', [RepuestosController::class, 'filtrarPorTipo'])->name('repuestos.filtrarPorTipo');
+Route::get('/productos-repuestos/buscar', [RepuestosController::class, 'busqueda'])->name('repuestos.busqueda');

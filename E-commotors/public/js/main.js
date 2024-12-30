@@ -1,122 +1,78 @@
-var formulario = document.getElementById("form-agregar-producto");
+var pantallaGris = document.querySelector('.pantalla-gris');
 
-
-
-
-//PARA QUE APAREZCA Y DESAPAREZCA EL ASIDE DEL FILTER
-var pantallaGris = document.querySelector('.pantalla-gris')
-
+// Función para mostrar/ocultar aside y manejar el fondo gris
 const mostrarOcultar = (referencia) => {
-    var contenedorAside = document.querySelector(referencia)
+    var contenedorAside = document.querySelector(referencia);
 
-        if(contenedorAside.classList.contains("visually-hidden")){
-            contenedorAside.classList.toggle("visually-hidden");
-            pantallaGris.classList.toggle('fondo-gris');
-        } else {
-            contenedorAside.classList.toggle("aside-oculto");
-            pantallaGris.classList.toggle('fondo-gris');
-        }
-}
+    if (contenedorAside.classList.contains("visually-hidden")) {
+        contenedorAside.classList.remove("visually-hidden");
+        pantallaGris.classList.add('fondo-gris');
+    } else {
+        contenedorAside.classList.add("visually-hidden");
+        pantallaGris.classList.remove('fondo-gris');
+    }
+};
 
-// Aparecer el aside del filtro
+// Botón "Filtrar" para mostrar el aside
 var botonFiltrar = document.querySelectorAll(".show");
 botonFiltrar.forEach(boton => {
-    boton.addEventListener("click", () => mostrarOcultar(".container-show"))
-})
+    boton.addEventListener("click", () => mostrarOcultar(".container-show"));
+});
 
-// Aparecer Formulario para agregar porducto
+// Botón "Agregar Producto" para mostrar el formulario de agregar
 var botonAgregarProducto = document.querySelectorAll("#agregar-producto, .show");
 botonAgregarProducto.forEach(boton => {
-    boton.addEventListener("click", () => mostrarOcultar("#form-agregar-producto"))
-})
+    boton.addEventListener("click", () => mostrarOcultar("#form-agregar-producto"));
+});
 
-// Aparecer el mensaje de Eliminar producto
+// Botón "Eliminar Producto" para mostrar el mensaje de confirmación
 var botonEliminar = document.querySelectorAll(".eliminar");
 botonEliminar.forEach(boton => {
-    boton.addEventListener("click", () => mostrarOcultar(".confirmacion"))
-})
+    boton.addEventListener("click", () => mostrarOcultar(".confirmacion"));
+});
 
-//thiago --> tarea para azul 
-//METODO DESTROY
-    document.addEventListener('DOMContentLoaded', function () {
-        const confirmarBtns = document.querySelectorAll('.confirmar-eliminacion'); // Botones para eliminar
-        const confirmacionAside = document.querySelector('.confirmacion'); // El aside
-        const cancelarBtn = document.querySelector('.cancelar'); // Botón de cancelar
-        const formEliminar = document.querySelector('#form-confirmar-eliminar'); // Formulario dentro del aside
-        const nombreMotoSpan = document.querySelector('#nombre-moto'); // Span para mostrar el nombre del producto
+// Para cerrar el filtro sin realizar ninguna acción (botón "Salir")
+document.addEventListener('DOMContentLoaded', () => {
+    const closeButton = document.querySelector('.salir');
+    const asideElement = document.getElementById('filter-sidebar');
 
-        // Mostrar la confirmación al hacer clic en el ícono de eliminar
-        confirmarBtns.forEach(boton => {
-            boton.addEventListener('click', function (e) {
-                e.preventDefault();
+    closeButton.addEventListener('click', () => {
+        asideElement.classList.add('visually-hidden');
+        pantallaGris.classList.remove('fondo-gris'); // Asegúrate de quitar el fondo gris
+    });
+});
 
-                const motoId = this.dataset.id; // Obtener ID de la moto
-                const motoNombre = this.dataset.nombre; // Obtener nombre de la moto
+// METODO UPDATE (Formulario de edición)
+document.addEventListener('DOMContentLoaded', function () {
+    const editarBtns = document.querySelectorAll('.editar-moto');
+    const formEditar = document.querySelector('#form-editar-producto');
+    const cancelarBtn = formEditar.querySelector('.cancelar');
 
-                // Actualizar el nombre del producto en el mensaje
-                nombreMotoSpan.textContent = motoNombre;
+    editarBtns.forEach(boton => {
+        boton.addEventListener('click', function (e) {
+            e.preventDefault();
 
-                // Actualizar la acción del formulario
-                formEliminar.setAttribute('action', `/motos/${motoId}`);
+            // Rellenar el formulario con los datos del producto
+            formEditar.querySelector('#edit-id-moto').value = this.dataset.id;
+            formEditar.querySelector('#edit-nombre').value = this.dataset.nombre;
+            formEditar.querySelector('#edit-estado').value = this.dataset.estado;
+            formEditar.querySelector('#edit-precio').value = this.dataset.precio;
+            formEditar.querySelector('#edit-categoria').value = this.dataset.categoria;
+            formEditar.querySelector('#edit-marca').value = this.dataset.marca;
+            formEditar.querySelector('#edit-descripcion').value = this.dataset.descripcion;
 
-                // Mostrar el aside de confirmación
-                confirmacionAside.classList.remove('visually-hidden');
-            });
-        });
+            // Configurar la acción del formulario con el ID
+            formEditar.action = `/motos/${this.dataset.id}`;
 
-        // Ocultar el aside al hacer clic en "Cancelar"
-        cancelarBtn.addEventListener('click', function () {
-            confirmacionAside.classList.add('visually-hidden');
+            // Mostrar el formulario y el fondo gris
+            formEditar.classList.remove('visually-hidden');
+            pantallaGris.classList.add('fondo-gris');
         });
     });
 
-    //METODO UPDATE
-    document.addEventListener('DOMContentLoaded', function () {
-        const editarBtns = document.querySelectorAll('.editar-moto'); // Botones de editar
-        const formEditar = document.querySelector('#form-editar-producto'); // Formulario de edición
-        const pantallaGris = document.querySelector('.pantalla-gris'); // Fondo gris
-        const cancelarBtn = formEditar.querySelector('.cancelar'); // Botón de cancelar
-    
-        editarBtns.forEach(boton => {
-            boton.addEventListener('click', function (e) {
-                e.preventDefault();
-    
-                // Rellenar el formulario con los datos de la moto
-                formEditar.querySelector('#edit-id-moto').value = this.dataset.id;
-                formEditar.querySelector('#edit-nombre').value = this.dataset.nombre;
-                formEditar.querySelector('#edit-estado').value = this.dataset.estado;
-                formEditar.querySelector('#edit-precio').value = this.dataset.precio;
-                formEditar.querySelector('#edit-categoria').value = this.dataset.categoria;
-                formEditar.querySelector('#edit-marca').value = this.dataset.marca;
-                formEditar.querySelector('#edit-descripcion').value = this.dataset.descripcion;
-    
-                // Configurar la acción del formulario con el ID de la moto
-                formEditar.action = `/motos/${this.dataset.id}`;
-    
-                // Mostrar el formulario y el fondo gris
-                formEditar.classList.remove('visually-hidden');
-                pantallaGris.classList.remove('visually-hidden');
-            });
-        });
-    
-        // Ocultar el formulario y el fondo gris al cancelar
-        cancelarBtn.addEventListener('click', function () {
-            formEditar.classList.add('visually-hidden');
-            pantallaGris.classList.add('visually-hidden');
-        });
+    // Ocultar el formulario y el fondo gris al cancelar
+    cancelarBtn.addEventListener('click', function () {
+        formEditar.classList.add('visually-hidden');
+        pantallaGris.classList.remove('fondo-gris');
     });
-    
-
-
-
-
-
-
-
-
-    // Añade el evento 'submit'
-/* formulario.addEventListener("submit", function(e) {
-    e.preventDefault(); // Previene el envío del formulario
-    console.log("El envío del formulario fue prevenido.");
-}); */
-
+});

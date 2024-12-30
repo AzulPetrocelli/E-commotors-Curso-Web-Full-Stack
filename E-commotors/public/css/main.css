@@ -213,6 +213,8 @@ textarea {
     text-align: center;
 }
 
+
+
 .boton-principal:hover{
     background-color: var(--negro-claro);
     color: var(--color-primario);
