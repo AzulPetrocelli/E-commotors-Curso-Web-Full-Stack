@@ -26,9 +26,37 @@ botonAgregarProducto.forEach(boton => {
 });
 
 // Botón "Eliminar Producto" para mostrar el mensaje de confirmación
-var botonEliminar = document.querySelectorAll(".eliminar");
-botonEliminar.forEach(boton => {
-    boton.addEventListener("click", () => mostrarOcultar(".confirmacion"));
+document.addEventListener('DOMContentLoaded', function () {
+    const confirmarBtns = document.querySelectorAll('.confirmar-eliminacion');
+    const confirmacionAside = document.querySelector('.confirmacion');
+    const formEliminar = document.querySelector('#form-confirmar-eliminar');
+    const nombreMotoSpan = document.querySelector('#nombre-moto'); // Span para el nombre de la moto
+
+    confirmarBtns.forEach(boton => {
+        boton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const motoId = this.dataset.id; // Obtener ID del producto
+            const motoNombre = this.dataset.nombre; // Obtener el nombre del producto
+
+            // Actualizar el mensaje con el nombre del producto
+            nombreMotoSpan.textContent = motoNombre;
+
+            // Configurar la acción del formulario para enviar la solicitud DELETE
+            formEliminar.setAttribute('action', `/motos/${motoId}`);
+
+            // Mostrar el aside de confirmación
+            confirmacionAside.classList.remove('visually-hidden');
+            pantallaGris.classList.add('fondo-gris');
+        });
+    });
+
+    // Ocultar el aside de confirmación al hacer clic en "Cancelar"
+    const cancelarBtn = document.querySelector('.cancelar');
+    cancelarBtn.addEventListener('click', function () {
+        confirmacionAside.classList.add('visually-hidden');
+        pantallaGris.classList.remove('fondo-gris');
+    });
 });
 
 // Para cerrar el filtro sin realizar ninguna acción (botón "Salir")
@@ -76,3 +104,15 @@ document.addEventListener('DOMContentLoaded', function () {
         pantallaGris.classList.remove('fondo-gris');
     });
 });
+
+// Ocultar el aside al hacer clic en el botón "Cancelar"
+document.addEventListener('DOMContentLoaded', () => {
+    const cancelarBtn = document.querySelector('.salir'); // Botón "Cancelar"
+    const confirmacionAside = document.querySelector('.confirmacion'); // El aside de confirmación
+    const pantallaGris = document.querySelector('.pantalla-gris'); // Fondo gris
+
+    cancelarBtn.addEventListener('click', () => {
+        confirmacionAside.classList.add('visually-hidden'); // Oculta el aside
+        pantallaGris.classList.remove('fondo-gris'); // Quita el fondo gris
+    });
+})
