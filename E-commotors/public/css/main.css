@@ -94,8 +94,7 @@ img{
     text-align: center;
     font-size: 50px;
     font-family: var(--fuente-principal);
-    color: var(--color-primario); /* Color del texto */
-    text-shadow: -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black, 3px 3px 0 black; /* Sombra para simular borde */
+    color: var(--negro-claro);
 }
 
 /*CLASES DEL FOOTER*/

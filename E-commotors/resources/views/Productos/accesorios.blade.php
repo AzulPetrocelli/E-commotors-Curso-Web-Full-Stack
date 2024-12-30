@@ -49,9 +49,6 @@
                                     <h5 class="card-title jaro">{{ $accesorio->nombre_accesorio }}</h5>
                                     <p class="card-text varela">${{ $accesorio->precio_accesorio }}</p>
                                 </div>
-                                <div class="d-flex justify-content-end w-100 p-2">
-                                    <a href="#" class="boton-principal align-bottom">Comprar</a>
-                                </div>
                             </a>
                         </div>
                     @endforeach
