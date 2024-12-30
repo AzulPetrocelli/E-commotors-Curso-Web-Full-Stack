@@ -37,20 +37,23 @@
                   </a>
                   <ul class="navbar-nav w-100 my-2 my-lg-0">
                     <li class="">
-                      <a class="text-white nav-link jaro fs-3" href="{{'productos-motos'}}">Motos</a>
+                      <a class="text-white nav-link jaro fs-3" href="{{url('productos-motos')}}">Motos</a>
                     </li>
                     <li class="dropdown">
-                      <a class="text-white nav-link dropdown-toggle jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="text-white nav-link dropdown-toggle jaro fs-3" href="{{'productos-accesorios'}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Accesorios
                       </a>
                       <ul class="dropdown-menu">
-                        <!--Agregar foreach-->
-                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Cascos</a></li>
-                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Antiparras</a></li>
-                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Guantes</a></li>
-                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Botas</a></li>
-                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Puños</a></li>
-                      </ul>
+                        <li><a class="dropdown-item dropdown-item-custom jaro" href="{{url('productos-accesorios')}}">Todos</a></li>
+                        @foreach($tipos as $tipo)
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom jaro" 
+                                  href="{{ route('accesorios.filtrar', ['id' => $tipo->id_tipo]) }}">
+                                  {{ $tipo->nombre_tipo }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                     </li>
                     <li class="dropdown">
                       <a class="text-white nav-link dropdown-toggle dropdown-item-custom jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -36,41 +36,6 @@
             </tbody>
         </table>
 
-    <!-- Paginación personalizada -->
-    {{-- <div class="pagination-container d-flex justify-content-center mt-4 w-100">
-        <nav>
-            <ul class="pagination custom-pagination">
-                <!-- Botón Anterior -->
-                @if ($accesorios->onFirstPage())
-                <li class="page-item disabled">
-                    <a class="page-link">Anterior</a>
-                </li>
-                @else
-                <li class="page-item">
-                    <a class="page-link" href="{{ $accesorios->previousPageUrl() }}">Anterior</a>
-                </li>
-                @endif
-
-                <!-- Números de Página -->
-                @foreach ($accesorios->getUrlRange(1, $accesorios->lastPage()) as $page => $url)
-                <li class="page-item {{ $page == $accesorios->currentPage() ? 'active' : '' }}">
-                    <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-                </li>
-                @endforeach
-
-                <!-- Botón Siguiente -->
-                @if ($accesorios->hasMorePages())
-                <li class="page-item">
-                    <a class="page-link" href="{{ $accesorios->nextPageUrl() }}">Siguiente</a>
-                </li>
-                @else
-                <li class="page-item disabled">
-                    <a class="page-link">Siguiente</a>
-                </li>
-                @endif
-            </ul>
-        </nav>
-    </div> --}}
 
     <!-- FALTA TERMINAR -->
     <aside class="confirmacion aside-oculto rounded shadow p-4 w-25 position-fixed top-50 start-50 translate-middle bg-white" style="min-width: 300px; z-index:1000">

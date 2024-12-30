@@ -42,12 +42,17 @@ Route::get('admin',function(){
 }); */
 
  //ROUTE -> vista de Productos/motos
-
 Route::get('/productos-motos', [MotosController::class, 'index'])->name('productos-motos');
-Route::get('/motos/productos-motos', [MotosController::class, 'index'])->name('productos-motos');
+
+Route::get('/productos-accesorios', [AccesoriosController::class, 'index'])->name('productos-accesorios');
+
 
 // Ruta para mostrar card de una moto específica
-Route::get('/card{id}', [MotosController::class, 'show'])->name('motos.show');
+Route::get('/card/{id}', [MotosController::class, 'show'])->name('motos.show');
+
+Route::get('/cardAccesorios/{id}', [AccesoriosController::class, 'show'])->name('accesorios.show');
+
+Route::get('/accesorios/tipo/{id}', [AccesoriosController::class, 'filtrarPorTipo'])->name('accesorios.filtrar');
 
 
 //Route -> muestro items

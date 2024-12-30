@@ -34,12 +34,12 @@ class MotosController extends Controller
 
     if (isset($request->min)) {
         // Aplica un filtro de precio mínimo directamente sobre el campo 'precio_base'
-        $query->where('precio_base', '>=', $request->min);
+        $query->where('precio_moto', '>=', $request->min);
     }
     
     if (isset($request->max)) {
         // Aplica un filtro de precio máximo directamente sobre el campo 'precio_base'
-        $query->where('precio_base', '<=', $request->max);
+        $query->where('precio_moto', '<=', $request->max);
     }
 
     $motos = $query->paginate(6); // Paginación de los resultados
@@ -61,8 +61,8 @@ class MotosController extends Controller
 
     public function showItems()
     {
-        //Mando paginado de a 6 y mando la variable moto para que la reciba la view de accionMoto
-        $motos = Moto::paginate(6);
+
+        $motos = Moto::all();
         return view('Productos.accionMoto',['motos' => $motos]);
     }
 

@@ -121,16 +121,10 @@
                 </div>
             </section>
 
-            {{--
-            foreach($marcas as $marca)
-
-            @endforeach
-                    --}}
 
         <!-- Kilómetros -->
         <section class="filter-group">
             <h3 class="jaro fs-4 mb-2">Precio:</h3>
-            <div class="filter-content collapse show" id="collapse_3">
                 <div class="card-body">
                     <div class="form-row d-flex gap-2">
                         <div class="form-group col-md-6">
@@ -143,8 +137,6 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
         </section>
     </form>
 </aside>
