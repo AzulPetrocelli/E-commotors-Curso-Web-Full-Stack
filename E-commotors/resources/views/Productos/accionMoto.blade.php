@@ -2,22 +2,11 @@
 
 @include('headeradmin')
 
-    <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <!-- SOMBRA -->
-    <div class="pantalla-gris" style="z-index: 10"></div>
+    <div class="pantalla-gris {{ $errors->any() ? '' : 'visually-hidden' }}" style="z-index: 10"></div>
 
     <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
-    <form id="form-agregar-producto" class="form-welcome visually-hidden w-50 position-absolute start-50 translate-middle py-4 m-0" style="z-index: 11; padding: 35px 0px; top: 56vh;" action="{{ route('agregarMoto') }}" method="POST" enctype="multipart/form-data">
+    <form id="form-agregar-producto" class=" {{ $errors->any() ? '' : 'visually-hidden' }} form-welcome  w-50 position-fixed start-50 translate-middle py-4 m-0" style="z-index: 1000; padding: 35px 0px; top: 56vh; overflow-y:auto; height:500px " action="{{ route('agregarMoto') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <label class="w-75">
