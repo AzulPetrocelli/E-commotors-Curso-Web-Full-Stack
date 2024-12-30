@@ -21,7 +21,6 @@
                     <li>Azul Petrocelli</li>
                     <li>Thiago Mathus</li>
                     <li>Agustin Montaini</li>
-                    <li>Federico Migliavacca</li>
                 </ul>
             </div>
 
