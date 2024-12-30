@@ -1,3 +1,7 @@
+var formulario = document.getElementById("form-agregar-producto");
+
+
+
 
 //PARA QUE APAREZCA Y DESAPAREZCA EL ASIDE DEL FILTER
 var pantallaGris = document.querySelector('.pantalla-gris')
@@ -65,4 +69,10 @@ botonEliminar.forEach(boton => {
             confirmacionAside.classList.add('visually-hidden');
         });
     });
+
+    // Añade el evento 'submit'
+/* formulario.addEventListener("submit", function(e) {
+    e.preventDefault(); // Previene el envío del formulario
+    console.log("El envío del formulario fue prevenido.");
+}); */
 

@@ -17,13 +17,14 @@
     <div class="pantalla-gris" style="z-index: 10"></div>
 
     <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
-    <form id="form-agregar-producto" class="form-welcome visually-hidden w-50 position-absolute start-50 translate-middle py-4 m-0" style="z-index: 11; padding: 35px 0px; top: 56vh;" action="{{ route('agregarProducto') }}" method="POST" enctype="multipart/form-data">
+    <form id="form-agregar-producto" class="form-welcome visually-hidden w-50 position-absolute start-50 translate-middle py-4 m-0" style="z-index: 11; padding: 35px 0px; top: 56vh;" action="{{ route('agregarMoto') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        
         <label class="w-75">
-            <input type="text" placeholder="Nombre" autocomplete="off" autocomplete="off" class="input-form" id="nombre" name="nombre" value="{{ old('nombre', $moto->nombre ?? '') }}">
-            @error('nombre')
-                <div class="error-message varela">{{ $message }}</div>
-            @enderror
+            <input type="text" placeholder="Nombre" autocomplete="off" class="input-form" id="nombre" name="nombre" value="{{ old('nombre') }}">
+                @error('nombre')
+                    <div class="error-message varela text-danger">{{ $message }}</div>
+                @enderror
         </label>
 
         <label class="w-75">
@@ -63,21 +64,21 @@
 
         <label class="w-75">
             <label for="foto_moto" class="fs-5 varela">Imagen</label>
-            <input type="file" required class="form-control" id="foto_moto" name="foto_moto" style="background: var(--color-secundario);color: white; text-aling:center;">
+            <input type="file"  class="form-control" id="foto_moto" name="foto_moto" style="background: var(--color-secundario);color: white; text-aling:center;">
             @error('foto_moto')
                 <div class="error-message varela">{{ $message }}</div>
             @enderror
         </label>
 
-        <label class="w-75 d-flex justify-content-end gap-2">
+        <div class="w-75 d-flex justify-content-end gap-2">
             <a href="#" class="boton-principal filtrar show">Cancelar</a>
             <button type="submit" class="boton-principal">Crear Producto</button>
-        </label>
+        </div>
     </form>
 
     <!-- Tabla de ABM -->
     <div class="d-flex justify-content-end gap-2 position-relative bg-white" style="margin-top: 75px; padding: 12px; height: 75px;">
-        <form action="{{route('busqueda.db')}}" method="GET" class="mb-4">
+        <form action="{{route('busqueda.moto')}}" method="GET" class="mb-4">
             <div class="input-group">
                 <input type="text" name="busqueda" id="busqueda" autocomplete="off" class="form-control input-form" placeholder="Buscar moto..." style="border: 0.5px solid rgb(102, 101, 101); box-shadow: none;">
                 <button type="submit" class="btn btn-outline-secondary boton-principal">Buscar</button>

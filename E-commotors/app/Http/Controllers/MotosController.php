@@ -72,19 +72,29 @@ class MotosController extends Controller
      */
     public function store(Request $request)
 {
-    $request->validate([
-        'nombre' => 'required|string|max:255',
-        'estado' => 'required|string|max:255',
-        'precio_moto' => 'required|numeric',
-        'id_categoria' => 'required|exists:categoria,nombre_categoria',
-        'id_marca' => 'required|exists:marca,nombre_marca',
-        'descripcion_moto' => 'required|string',
-        'foto_moto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-    ], [
-        'required' => "Campo obligatorio",
-        'max' => "Sobrepaso el limite de 255 caracteres",
-        'numeric' => "El valor ingresado debe ser un numero",
-    ]);
+    $request->validate(
+        [
+            'nombre' => 'required|string|max:255',
+            'estado' => 'required|string|max:255',
+            'precio_moto' => 'required|numeric',
+            'id_categoria' => 'required|exists:categoria,nombre_categoria',
+            'id_marca' => 'required|exists:marca,nombre_marca',
+            'descripcion_moto' => 'required|string',
+            'foto_moto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ],
+        [
+            'nombre.required' => 'El campo "Nombre" es obligatorio.',
+            'estado.required' => 'El campo "Estado" es obligatorio.',
+            'precio_moto.required' => 'El campo "Precio" es obligatorio.',
+            'precio_moto.numeric' => 'El precio debe ser un número válido.',
+            'id_categoria.required' => 'El campo "Categoría" es obligatorio.',
+            'id_categoria.exists' => 'La categoría seleccionada no es válida.',
+            'id_marca.required' => 'El campo "Marca" es obligatorio.',
+            'id_marca.exists' => 'La marca seleccionada no es válida.',
+            'descripcion_moto.required' => 'El campo "Descripción" es obligatorio.',
+            'foto_moto.image' => 'La imagen debe ser un archivo válido.',
+        ]
+    );
 
     $moto = new Moto();
     $moto->nombre = $request->nombre;
@@ -118,7 +128,6 @@ class MotosController extends Controller
     }
 
     $moto->save();
-
     return redirect()->route('accionMoto')->with('success', 'Producto creado exitosamente');
 }
 
@@ -181,7 +190,7 @@ public function busqueda(Request $request)
     if ($request->has('busqueda')) {
         $query->where('nombre', 'like', '%' . $request->busqueda . '%'); // Agregar condición
     }
-    
+
     $motos = $query->get();
 
     return view('Productos.accionMoto', ['motos' => $motos]); // Retornar vista

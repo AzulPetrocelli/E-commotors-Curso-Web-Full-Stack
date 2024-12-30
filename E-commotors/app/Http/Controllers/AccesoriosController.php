@@ -91,7 +91,7 @@ public function showItems()
     
 
     if ($request->has('busqueda')) {
-        $query->where('nombre', 'like', '%' . $request->busqueda . '%'); // Agregar condición
+        $query->where('nombre_accesorio', 'like', '%' . $request->busqueda . '%'); // Agregar condición
     }
     
     $accesorios = $query->get();
