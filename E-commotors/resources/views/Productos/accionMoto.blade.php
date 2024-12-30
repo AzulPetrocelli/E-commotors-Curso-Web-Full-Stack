@@ -11,10 +11,11 @@
         </div>
     @endif
 
-    <div class="fondo-gris" style="z-index: 10">
-    </div>
+    <!-- SOMBRA -->
+    <div class="pantalla-gris" style="z-index: 10"></div>
 
-    <form class="form-welcome w-50 position-absolute top-50 start-50 translate-middle py-4 m-0" style="z-index: 11; padding: 35px 0px;" action="{{ route('agregarProducto') }}" method="POST" enctype="multipart/form-data"><!-- ;-->
+    <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
+    <form id="form-agregar-producto" class="form-welcome visually-hidden w-50 position-absolute start-50 translate-middle py-4 m-0" style="z-index: 11; padding: 35px 0px; top: 56vh;" action="{{ route('agregarProducto') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="w-75">
             <input type="text" placeholder="Nombre" class="input-form" id="nombre" name="nombre" required value="{{ old('nombre', $moto->nombre ?? '') }}">
@@ -46,11 +47,10 @@
         </div>
 
         <div class="w-75 d-flex justify-content-end gap-2">
-            <a href="#" class="boton-principal filtrar">Cancelar</a>
+            <a href="#" class="boton-principal filtrar show">Cancelar</a>
             <button type="submit" class="boton-principal">Crear Producto</button>
         </div>
     </form>
-
 
     <!-- Tabla de ABM -->
     <div class="d-flex justify-content-end gap-2 position-relative bg-white" style="margin-top: 75px; padding: 12px; height: 75px;">
@@ -61,7 +61,7 @@
             </div>
         </form>
         <a href="{{url('admin')}}" class="boton-principal">Volver</a>
-        <a href="{{url('accion-moto/agregar')}}" class="boton-principal">Agregar Producto</a>
+        <a href="#" class="boton-principal" id="agregar-producto">Agregar Producto</a>{{--{{url('accion-moto/agregar')}}--}}
     </div>
     <div style="width: 90%; overflow-x: auto; overflow-y: auto; height:80vh" class="m-auto">
         <table class="table" style="border-collapse: collapse">
@@ -88,8 +88,8 @@
                     <td><div class="overflow-hidden" style="height: 80px">{{$moto->marca->nombre_marca}}</div></td>
                     <td><div class="overflow-hidden" style="height: 80px">{{$moto->descripcion_moto}}</div></td>
                     <td class="d-flex flex-nowrap justify-content-center align-items-center gap-3" style="height: 100px">
-                        <a href="#"><i class="las la-times-circle text-danger fs-2"></i></a>
-                        <a href="#"><i class="las la-edit text-primary fs-2"></i></a>
+                        <a href="#" class="eliminar"><i class="las la-times-circle text-danger fs-2"></i></a>
+                        <a href="#" class="editar"><i class="las la-edit text-primary fs-2"></i></a>
                     </td>
                 </tr>
                 @endforeach
@@ -137,9 +137,14 @@
     <aside class="confirmacion aside-oculto rounded shadow p-4 w-25 position-fixed top-50 start-50 translate-middle bg-white" style="min-width: 300px; z-index:1000">
         <p class="varela fs-2">Esta seguro que desea eliminar el producto?</p>
         <div class="d-flex justify-content-end gap-2">
-            <a href="#" class="boton-principal filtrar">Aceptar</a>
-            <a href="#" class="boton-principal filtrar">Cancelar</a>
+            <a href="#" class="boton-principal">Aceptar</a>
+            <a href="#" class="boton-principal eliminar">Cancelar</a>
         </div>
+    </aside>
+
+    <!-- FORMULARIO DE EDICION -->
+    <aside>
+        <form action=""></form>
     </aside>
 
 @include('footer')
