@@ -7,6 +7,7 @@ use App\Models\Moto;
 use App\Models\Marca;
 use App\Models\Categoria;
 use App\Models\TipoAccesorio;
+use App\Models\TipoRepuesto;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -35,6 +36,10 @@ class AppServiceProvider extends ServiceProvider
 
     View::composer('*', function ($view) {
         $view->with('tipos', TipoAccesorio::all());
+    });
+
+    View::composer('*', function ($view) {
+        $view->with('tiposRep', TipoRepuesto::all());
     });
 
  /* View::composer('*', function ($view) {

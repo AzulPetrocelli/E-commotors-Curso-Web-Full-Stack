@@ -59,13 +59,22 @@
                       <a class="text-white nav-link dropdown-toggle jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Repuestos
                       </a>
+                      
                       <ul class="dropdown-menu">
-                        <!--Agregar foreach-->
-                        <li><a class="dropdown-item dropdown-item-custom jaro" href="{{url('productos-repuestos')}}">Todos</a></li>
-                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Piñones</a></li>
-                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Manubrios</a></li>
-                        <li><a class="dropdown-item dropdown-item-custom jaro" href="#">Pastillas de Freno</a></li>
-                      </ul>
+                        <li>
+                            <a class="dropdown-item dropdown-item-custom jaro" href="{{ url('productos-repuestos') }}">
+                                Todos
+                            </a>
+                        </li>
+                        @foreach($tiposRep as $tipoRep)
+                            <li>
+                                <a class="dropdown-item dropdown-item-custom jaro" 
+                                  href="{{ route('repuestos.filtrar', ['id' => $tipoRep->id_repuesto]) }}">
+                                    {{ $tipoRep->nombre_repuesto }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                     </li>
                   </ul>
                 </div>

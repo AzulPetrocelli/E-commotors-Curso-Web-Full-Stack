@@ -5,7 +5,7 @@
     <section class="d-flex flex-wrap justify-content-between mt-5 w-75">
 
         <h1 class="jaro">
-            {{ isset($tipo) ? $tipo->nombre_tipo : 'Repuestos' }}
+            {{ isset($tipoRepuesto) ? $tipoRepuesto->nombre_repuesto : 'Repuestos' }}
         </h1>
 
         <div class="d-flex flex-wrap justify-content-end gap-2">
@@ -94,39 +94,36 @@
     </section>
 </main>
 
-
-<!-- FILTRO -->
 <!-- FILTRO -->
 <div class="pantalla-gris"></div>
-<aside class="container-show filter-sidebar visually-hidden w-75 pt-0">
+<aside id="filter-sidebar" class="container-show filter-sidebar visually-hidden w-75 pt-0">
     <form action="{{url('productos-repuestos')}}" method="GET">
         <div class="d-flex py-2 justify-content-between w-100 position-relative bg-white" style="height: 70px;">
             <h2 class="jaro">Filtros</h2>
             <div class="d-flex gap-2">
-                <button class="boton-principal show">Salir</button>
-                <input type="submit" class="boton-principal show" value="Filtrar">
+                {{-- Agregue la clase "salir" para con js hacer que se oculte el aside con ninguna otra accion, porque antes se actualizaba la pagina --}}
+                <button type="button" class="boton-principal salir">Salir</button>
+                <input type="submit" class="boton-principal" value="Filtrar">
             </div>
         </div>
-            </section>
 
-            <!-- Tipo de Repuesto -->
-       <!-- Filtro por tipo de repuesto -->
-@if(isset($tiposRepuestos) && !$tipo)
-<section class="filter-group mt-3">
-    <h3 class="jaro fs-4 mb-2">Tipo de Repuesto:</h3>
-    <div class="card-body">
-        <select name="categoria" class="form-control">
-            <option value="">Seleccionar Tipo</option>
-            @foreach($tiposRepuestos as $tipoRepuesto)
-                <option value="{{ $tipoRepuesto->id }}" 
-                    {{ request('categoria') == $tipoRepuesto->id ? 'selected' : '' }}>
-                    {{ $tipoRepuesto->nombre_repuesto }}
-                </option>
-            @endforeach
-        </select>
-    </div>
-</section>
-@endif
+        <!-- Tipo de Repuesto -->
+        @if(!isset($tipoRepuesto))
+        <section class="filter-group mt-3">
+            <h3 class="jaro fs-4 mb-2">Tipo de Repuesto:</h3>
+            <div class="card-body">
+                <select name="tipo_de_repuesto" class="form-control">
+                    <option value="">Seleccionar Tipo</option>
+                    @foreach($tiposRep as $tipoRep)
+                        <option value="{{ $tipoRep->id_repuesto }}" 
+                            {{ request('tipo_de_repuesto') == $tipoRep->id_repuesto ? 'selected' : '' }}>
+                            {{ $tipoRep->nombre_repuesto }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+        </section>
+        @endif
 
         <!-- Kilómetros -->
         <section class="filter-group">
@@ -146,6 +143,7 @@
         </section>
     </form>
 </aside>
+
 
 
 

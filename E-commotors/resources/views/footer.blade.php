@@ -19,9 +19,9 @@
                 <h4 class="jaro">Desarrolladores</h4>
                 <ul>
                     <li>Azul Petrocelli</li>
+                    <li>Thiago Mathus</li>
                     <li>Agustin Montaini</li>
                     <li>Federico Migliavacca</li>
-                    <li>Thiago Mathus</li>
                 </ul>
             </div>
 
