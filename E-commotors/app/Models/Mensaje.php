@@ -13,8 +13,6 @@ class Mensaje extends Model
 
     protected $primaryKey = 'id_mensaje';
 
-    public $timestamps = false;
-
     protected $fillable = [
         'nombre_mensaje',
         'tipo_mensaje',
