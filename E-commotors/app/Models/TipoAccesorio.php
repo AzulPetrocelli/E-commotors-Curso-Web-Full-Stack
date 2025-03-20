@@ -10,6 +10,8 @@ class TipoAccesorio extends Model
     protected $table = 'tipo_de_accesorio'; 
 
     protected $primaryKey = 'id_tipo';
+
+    public $timestamps = false;
     
     // Define los atributos que se pueden asignar en masa 
     protected $fillable = [ 'nombre_tipo']; 

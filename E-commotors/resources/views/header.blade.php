@@ -19,6 +19,7 @@
     <!--Estilos CSS-->
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
+    <link rel="icon" href="images/logo.png" type="image/png" />
 
     <title>Document</title>
 
@@ -47,7 +48,7 @@
                         <li><a class="dropdown-item dropdown-item-custom jaro" href="{{url('productos-accesorios')}}">Todos</a></li>
                         @foreach($tipos as $tipo)
                             <li>
-                                <a class="dropdown-item dropdown-item-custom jaro" 
+                                <a class="dropdown-item dropdown-item-custom jaro"
                                   href="{{ route('accesorios.filtrar', ['id' => $tipo->id_tipo]) }}">
                                   {{ $tipo->nombre_tipo }}
                                 </a>
@@ -59,7 +60,7 @@
                       <a class="text-white nav-link dropdown-toggle jaro fs-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Repuestos
                       </a>
-                      
+
                       <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item dropdown-item-custom jaro" href="{{ url('productos-repuestos') }}">
@@ -68,7 +69,7 @@
                         </li>
                         @foreach($tiposRep as $tipoRep)
                             <li>
-                                <a class="dropdown-item dropdown-item-custom jaro" 
+                                <a class="dropdown-item dropdown-item-custom jaro"
                                   href="{{ route('repuestos.filtrar', ['id' => $tipoRep->id_repuesto]) }}">
                                     {{ $tipoRep->nombre_repuesto }}
                                 </a>

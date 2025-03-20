@@ -19,6 +19,7 @@
     <!--Estilos CSS-->
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
+    <link rel="icon" href="images/logo.png" type="image/png" />
 
     <title>Vista de Admin</title>
 

@@ -25,7 +25,7 @@ botonAgregarProducto.forEach(boton => {
     boton.addEventListener("click", () => mostrarOcultar("#form-agregar-producto"));
 });
 
-// Botón "Eliminar Producto" para mostrar el mensaje de confirmación
+//ELIMINAR MOTO
 document.addEventListener('DOMContentLoaded', function () {
     const confirmarBtns = document.querySelectorAll('.confirmar-eliminacion');
     const confirmacionAside = document.querySelector('.confirmacion');
@@ -59,6 +59,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//ELIMINAR ACCESORIO
+document.addEventListener('DOMContentLoaded', function () {
+    const confirmarBtns = document.querySelectorAll('.confirmar-eliminacion'); // Botones de eliminación
+    const confirmacionAside = document.querySelector('.confirmacion'); // Aside de confirmación
+    const formEliminar = document.querySelector('#form-confirmar-eliminar'); // Formulario dentro del aside
+    const nombreAccesorioSpan = document.querySelector('#nombre-accesorio'); // Span para mostrar el nombre del accesorio
+
+    confirmarBtns.forEach(boton => {
+        boton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const accesorioId = this.dataset.id; // Obtener ID del accesorio
+            const accesorioNombre = this.dataset.nombre; // Obtener nombre del accesorio
+
+            // Actualizar el mensaje con el nombre del accesorio
+            nombreAccesorioSpan.textContent = accesorioNombre;
+
+            // Configurar la acción del formulario para la solicitud DELETE
+            formEliminar.setAttribute('action', `/accesorios/${accesorioId}`);
+
+            // Mostrar el aside de confirmación
+            confirmacionAside.classList.remove('visually-hidden');
+            pantallaGris.classList.add('fondo-gris');
+        });
+    });
+
+    // Botón de cancelar la eliminación
+    const cancelarBtn = document.querySelector('.cancelar');
+    cancelarBtn.addEventListener('click', function () {
+        confirmacionAside.classList.add('visually-hidden');
+        pantallaGris.classList.remove('fondo-gris');
+    });
+});
+
+
 // Para cerrar el filtro sin realizar ninguna acción (botón "Salir")
 document.addEventListener('DOMContentLoaded', () => {
     const closeButton = document.querySelector('.salir');
@@ -70,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// METODO UPDATE (Formulario de edición)
+// METODO UPDATE MOTOS
 document.addEventListener('DOMContentLoaded', function () {
     const editarBtns = document.querySelectorAll('.editar-moto');
     const formEditar = document.querySelector('#form-editar-producto');
@@ -104,6 +139,41 @@ document.addEventListener('DOMContentLoaded', function () {
         pantallaGris.classList.remove('fondo-gris');
     });
 });
+
+// METODO UPDATE ACCESORIOS
+document.addEventListener('DOMContentLoaded', function () {
+    const editarBtns = document.querySelectorAll('.editar-accesorio'); // Botones de edición
+    const formEditar = document.querySelector('#form-editar-producto'); // Formulario de edición
+    const cancelarBtn = formEditar.querySelector('.cancelar'); // Botón de cancelar
+    const pantallaGris = document.querySelector('.pantalla-gris'); // Fondo gris
+
+    editarBtns.forEach(boton => {
+        boton.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Rellenar el formulario con los datos del accesorio
+            formEditar.querySelector('#edit-id-accesorio').value = this.dataset.id;
+            formEditar.querySelector('#edit-nombre').value = this.dataset.nombre;
+            formEditar.querySelector('#edit-precio').value = this.dataset.precio;
+            formEditar.querySelector('#edit-tipo').value = this.dataset.categoria;
+            formEditar.querySelector('#edit-descripcion').value = this.dataset.descripcion;
+
+            // Configurar la acción del formulario con el ID del accesorio
+            formEditar.action = `/accesorios/${this.dataset.id}`;
+
+            // Mostrar el formulario y el fondo gris
+            formEditar.classList.remove('visually-hidden');
+            pantallaGris.classList.add('fondo-gris');
+        });
+    });
+
+    // Ocultar el formulario y el fondo gris al cancelar
+    cancelarBtn.addEventListener('click', function () {
+        formEditar.classList.add('visually-hidden');
+        pantallaGris.classList.remove('fondo-gris');
+    });
+});
+
 
 // Ocultar el aside al hacer clic en el botón "Cancelar"
 document.addEventListener('DOMContentLoaded', () => {

@@ -14,6 +14,7 @@ class Marca extends Model
     // Si los nombres de las columnas no siguen la convención, puedes especificarlas aquí
     protected $fillable = ['nombre_marca', 'descripcion_marca','estado_marca'];
 
+    public $timestamps = false;
     
     public function motos()
     {

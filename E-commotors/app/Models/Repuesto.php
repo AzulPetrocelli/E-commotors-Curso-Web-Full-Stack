@@ -18,6 +18,8 @@ class Repuesto extends Model
                             'tipo_de_repuesto',
     ]; 
 
+    public $timestamps = false;
+
     public function tipo()
     {
         return $this->belongsTo(TipoRepuesto::class, 'tipo_de_repuesto', 'id_repuesto');

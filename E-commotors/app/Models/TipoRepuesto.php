@@ -11,7 +11,9 @@ class TipoRepuesto extends Model
 
     protected $primaryKey = 'id_repuesto';
 
-    protected $fillable = [ 'nombre_repuesto']; 
+    protected $fillable = [ 'nombre_repuesto'];
+    
+    public $timestamps = false;
 
     public function accesorios()
     {

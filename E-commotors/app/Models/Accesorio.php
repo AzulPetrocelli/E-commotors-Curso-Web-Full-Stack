@@ -10,6 +10,8 @@ class Accesorio extends Model
     protected $table = 'accesorio'; 
 
     protected $primaryKey = 'id_accesorio';
+
+    public $timestamps = false;
     
     // Define los atributos que se pueden asignar en masa 
     protected $fillable = [ 'nombre_accesorio', 
