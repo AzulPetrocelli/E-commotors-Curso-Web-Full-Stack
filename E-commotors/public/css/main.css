@@ -246,12 +246,13 @@ textarea {
 
 .container-productos {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  /*
   align-items: center;
+  flex-wrap: wrap;
+  */
 }
 
-/*.container-productos .container-cards*/
 .container-cards {
   padding: 12px;
   margin-bottom: 12px;
@@ -259,6 +260,7 @@ textarea {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  width: 75%;
 }
 
 /*

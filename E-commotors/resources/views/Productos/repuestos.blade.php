@@ -2,7 +2,7 @@
 
 <main class="my-5 d-flex flex-column align-items-center w-100">
     <!-- Barra de búsqueda y filtro -->
-    <section class="d-flex flex-wrap justify-content-between mt-5 w-75">
+    <section class="d-flex flex-wrap justify-content-around mt-5 w-75">
 
         <h1 class="jaro">
             {{ isset($tipoRepuesto) ? $tipoRepuesto->nombre_repuesto : 'Repuestos' }}
@@ -10,7 +10,7 @@
 
         <div class="d-flex flex-wrap justify-content-end gap-2">
 
-        <form action="{{ url('productos-repuestos') }}" method="GET" class="mb-4">
+        <form action="{{ url('productos-repuestos') }}" method="GET">
             <div class="input-group">
                 <input type="text" name="busqueda" id="busqueda" autocomplete="off"
                     class="form-control input-form" placeholder="Buscar repuesto..."
@@ -29,66 +29,62 @@
     </section>
 
     <!-- LISTADO DE PRODUCTOS -->
-    <section class="container-productos my-4 w-75">
-        <div class="container-cards d-flex flex-wrap">
+    <section class="container-cards my-4">
 
-            <!-- CARD -->
-            <section class="container-productos my-4 w-75">
-                <div class="container-cards d-flex flex-wrap">
-                    @foreach($repuestos as $repuesto)
-                        <div class="card costum-card">
-                            <a href="{{ route('repuesto.show', ['id' => $repuesto->id_repuesto]) }}"
-                                    style="color:black; text-decoration:none;">
-                                <img src="{{ asset('images/' . $repuesto->foto_repuesto) }}"
-                                    class="card-img-top shadow-sm"
-                                    style="height: 250px"
-                                    alt="{{ $repuesto->nombre_repuesto }}">
-                                <div class="card-body d-flex flex-column py-2">
-                                    <h5 class="card-title jaro">{{ $repuesto->nombre_repuesto }}</h5>
-                                    <p class="card-text varela">${{ $repuesto->precio_repuesto }}</p>
-                                </div>
-                            </a>
+            <!-- CARDS -->
+            @foreach($repuestos as $repuesto)
+                <div class="card costum-card">
+                    <a href="{{ route('repuesto.show', ['id' => $repuesto->id_repuesto]) }}" style="color: black; text-decoration: none;">
+
+                        <!-- IMAGEN -->
+                        <img src="{{ asset('images/' . $repuesto->foto_repuesto) }}"
+                             alt="{{ $repuesto->nombre_repuesto }}"
+                             class="card-img-top shadow-sm" style="height: 250px">
+
+                        <!-- CUERPO -->
+                        <div class="card-body d-flex flex-column py-2">
+                            <h5 class="card-title jaro">{{ $repuesto->nombre_repuesto }}</h5>
+                            <p class="card-text varela">${{ $repuesto->precio_repuesto }}</p>
                         </div>
-                    @endforeach
+
+                    </a>
                 </div>
-            </section>
-
-        <!-- Paginación personalizada -->
-        <div class="pagination-container d-flex justify-content-center mt-4 w-100">
-            <nav>
-                <ul class="pagination custom-pagination">
-                    <!-- Botón Anterior -->
-                    @if ($repuestos->onFirstPage())
-                    <li class="page-item disabled">
-                        <a class="page-link">Anterior</a>
-                    </li>
-                    @else
-                    <li class="page-item">
-                        <a class="page-link" href="{{ $repuestos->previousPageUrl() }}">Anterior</a>
-                    </li>
-                    @endif
-
-                    <!-- Números de Página -->
-                    @foreach ($repuestos->getUrlRange(1, $repuestos->lastPage()) as $page => $url)
-                    <li class="page-item {{ $page == $repuestos->currentPage() ? 'active' : '' }}">
-                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-                    </li>
-                    @endforeach
-
-                    <!-- Botón Siguiente -->
-                    @if ($repuestos->hasMorePages())
-                    <li class="page-item">
-                        <a class="page-link" href="{{ $repuestos->nextPageUrl() }}">Siguiente</a>
-                    </li>
-                    @else
-                    <li class="page-item disabled">
-                        <a class="page-link">Siguiente</a>
-                    </li>
-                    @endif
-                </ul>
-            </nav>
-        </div>
+            @endforeach
     </section>
+
+    <!-- Paginación personalizada -->
+    <nav class="pagination-container">
+        <ul class="pagination custom-pagination">
+            <!-- Botón Anterior -->
+            @if ($repuestos->onFirstPage())
+                <li class="page-item disabled">
+                    <a class="page-link">Anterior</a>
+                </li>
+            @else
+                <li class="page-item">
+                    <a class="page-link" href="{{ $repuestos->previousPageUrl() }}">Anterior</a>
+                </li>
+            @endif
+
+            <!-- Números de Página -->
+            @foreach ($repuestos->getUrlRange(1, $repuestos->lastPage()) as $page => $url)
+                <li class="page-item {{ $page == $repuestos->currentPage() ? 'active' : '' }}">
+                    <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                </li>
+            @endforeach
+
+            <!-- Botón Siguiente -->
+            @if ($repuestos->hasMorePages())
+                <li class="page-item">
+                    <a class="page-link" href="{{ $repuestos->nextPageUrl() }}">Siguiente</a>
+                </li>
+            @else
+                <li class="page-item disabled">
+                    <a class="page-link">Siguiente</a>
+                </li>
+            @endif
+        </ul>
+    </nav>
 </main>
 
 <!-- FILTRO -->
@@ -140,9 +136,5 @@
         </section>
     </form>
 </aside>
-
-
-
-
 
 @include('footer')

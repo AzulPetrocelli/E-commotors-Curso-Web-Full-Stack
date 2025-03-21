@@ -23,59 +23,63 @@
     </section>
 
     <!-- LISTADO DE PRODUCTOS -->
-    <section class="container-productos my-4 w-75">
-        <div class="container-cards d-flex flex-wrap">
+    <section class="container-cards my-4">
 
-            <!-- CARD -->
+            <!-- CARDS -->
             @foreach($motos as $moto)
-            <div class="card costum-card">
-                <a href="{{ route('motos.show', ['id' => $moto->id_moto]) }}" style="color:black; text-decoration:none;">
-                    <img src="{{ asset('images/' . $moto->foto_moto) }}" class="card-img-top shadow-sm" style="height: 250px" alt="{{ $moto->nombre }}">
-                    <div class="card-body d-flex flex-column py-2">
-                        <h5 class="card-title jaro">{{ $moto->nombre }}</h5>
-                        <p class="card-text varela">${{ $moto->precio_moto }}</p>
-                    </div>
-                </a>
-            </div>
+                <div class="card costum-card">
+                    <a href="{{ route('motos.show', ['id' => $moto->id_moto]) }}" style="color:black; text-decoration:none;">
+
+                        <!-- IMAGEN -->
+                        <img src="{{ asset('images/' . $moto->foto_moto) }}"
+                             alt="{{ $moto->nombre }}"
+                             class="card-img-top shadow-sm" style="height: 250px">
+
+                        <!-- CUERPO -->
+                        <div class="card-body d-flex flex-column py-2">
+                            <h5 class="card-title jaro">{{ $moto->nombre }}</h5>
+                            <p class="card-text varela">${{ $moto->precio_moto }}</p>
+                        </div>
+
+                    </a>
+                </div>
             @endforeach
-        </div>
-
-        <!-- Paginación personalizada -->
-        <div class="pagination-container d-flex justify-content-center mt-4 w-100">
-            <nav>
-                <ul class="pagination custom-pagination">
-                    <!-- Botón Anterior -->
-                    @if ($motos->onFirstPage())
-                    <li class="page-item disabled">
-                        <a class="page-link">Anterior</a>
-                    </li>
-                    @else
-                    <li class="page-item">
-                        <a class="page-link" href="{{ $motos->previousPageUrl() }}">Anterior</a>
-                    </li>
-                    @endif
-
-                    <!-- Números de Página -->
-                    @foreach ($motos->getUrlRange(1, $motos->lastPage()) as $page => $url)
-                    <li class="page-item {{ $page == $motos->currentPage() ? 'active' : '' }}">
-                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-                    </li>
-                    @endforeach
-
-                    <!-- Botón Siguiente -->
-                    @if ($motos->hasMorePages())
-                    <li class="page-item">
-                        <a class="page-link" href="{{ $motos->nextPageUrl() }}">Siguiente</a>
-                    </li>
-                    @else
-                    <li class="page-item disabled">
-                        <a class="page-link">Siguiente</a>
-                    </li>
-                    @endif
-                </ul>
-            </nav>
-        </div>
     </section>
+
+
+    <!-- Paginación personalizada -->
+    <nav class="pagination-container">
+        <ul class="pagination custom-pagination">
+            <!-- Botón Anterior -->
+            @if ($motos->onFirstPage())
+                <li class="page-item disabled">
+                    <a class="page-link">Anterior</a>
+                </li>
+            @else
+                <li class="page-item">
+                    <a class="page-link" href="{{ $motos->previousPageUrl() }}">Anterior</a>
+                </li>
+            @endif
+
+            <!-- Números de Página -->
+            @foreach ($motos->getUrlRange(1, $motos->lastPage()) as $page => $url)
+                <li class="page-item {{ $page == $motos->currentPage() ? 'active' : '' }}">
+                    <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                </li>
+            @endforeach
+
+            <!-- Botón Siguiente -->
+            @if ($motos->hasMorePages())
+                <li class="page-item">
+                    <a class="page-link" href="{{ $motos->nextPageUrl() }}">Siguiente</a>
+                </li>
+            @else
+                <li class="page-item disabled">
+                    <a class="page-link">Siguiente</a>
+                </li>
+            @endif
+        </ul>
+    </nav>
 </main>
 
 

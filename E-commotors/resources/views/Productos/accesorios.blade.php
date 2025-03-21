@@ -31,66 +31,62 @@
     </section>
 
     <!-- LISTADO DE PRODUCTOS -->
-    <section class="container-productos my-4 w-75">
-        <div class="container-cards d-flex flex-wrap">
+    <section class="container-cards my-4">
 
-            <!-- CARD -->
-            <section class="container-productos my-4 w-75">
-                <div class="container-cards d-flex flex-wrap">
-                    @foreach($accesorios as $accesorio)
-                        <div class="card costum-card">
-                            <a href="{{ route('accesorios.show', ['id' => $accesorio->id_accesorio]) }}"
-                                    style="color:black; text-decoration:none;">
-                                <img src="{{ asset('images/' . $accesorio->foto_accesorio) }}"
-                                    class="card-img-top shadow-sm"
-                                    style="height: 250px"
-                                    alt="{{ $accesorio->nombre_accesorio }}">
-                                <div class="card-body d-flex flex-column py-2">
-                                    <h5 class="card-title jaro">{{ $accesorio->nombre_accesorio }}</h5>
-                                    <p class="card-text varela">${{ $accesorio->precio_accesorio }}</p>
-                                </div>
-                            </a>
+            <!-- CARDS -->
+            @foreach($accesorios as $accesorio)
+                <div class="card costum-card">
+                    <a href="{{ route('accesorios.show', ['id' => $accesorio->id_accesorio]) }}" style="color:black; text-decoration:none;">
+
+                        <!-- IMAGEN -->
+                        <img src="{{ asset('images/' . $accesorio->foto_accesorio) }}"
+                             alt="{{ $accesorio->nombre_accesorio }}"
+                             class="card-img-top shadow-sm" style="height: 250px">
+
+                        <!-- CUERPO -->
+                        <div class="card-body d-flex flex-column py-2">
+                            <h5 class="card-title jaro">{{ $accesorio->nombre_accesorio }}</h5>
+                            <p class="card-text varela">${{ $accesorio->precio_accesorio }}</p>
                         </div>
-                    @endforeach
+
+                    </a>
                 </div>
-            </section>
-
-        <!-- Paginación personalizada -->
-        <div class="pagination-container d-flex justify-content-center mt-4 w-100">
-            <nav>
-                <ul class="pagination custom-pagination">
-                    <!-- Botón Anterior -->
-                    @if ($accesorios->onFirstPage())
-                    <li class="page-item disabled">
-                        <a class="page-link">Anterior</a>
-                    </li>
-                    @else
-                    <li class="page-item">
-                        <a class="page-link" href="{{ $accesorios->previousPageUrl() }}">Anterior</a>
-                    </li>
-                    @endif
-
-                    <!-- Números de Página -->
-                    @foreach ($accesorios->getUrlRange(1, $accesorios->lastPage()) as $page => $url)
-                    <li class="page-item {{ $page == $accesorios->currentPage() ? 'active' : '' }}">
-                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-                    </li>
-                    @endforeach
-
-                    <!-- Botón Siguiente -->
-                    @if ($accesorios->hasMorePages())
-                    <li class="page-item">
-                        <a class="page-link" href="{{ $accesorios->nextPageUrl() }}">Siguiente</a>
-                    </li>
-                    @else
-                    <li class="page-item disabled">
-                        <a class="page-link">Siguiente</a>
-                    </li>
-                    @endif
-                </ul>
-            </nav>
-        </div>
+            @endforeach
     </section>
+
+    <!-- Paginación personalizada -->
+    <nav class="pagination-container">
+        <ul class="pagination custom-pagination">
+            <!-- Botón Anterior -->
+            @if ($accesorios->onFirstPage())
+                <li class="page-item disabled">
+                    <a class="page-link">Anterior</a>
+                </li>
+            @else
+                <li class="page-item">
+                    <a class="page-link" href="{{ $accesorios->previousPageUrl() }}">Anterior</a>
+                </li>
+            @endif
+
+            <!-- Números de Página -->
+            @foreach ($accesorios->getUrlRange(1, $accesorios->lastPage()) as $page => $url)
+                <li class="page-item {{ $page == $accesorios->currentPage() ? 'active' : '' }}">
+                    <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                </li>
+            @endforeach
+
+            <!-- Botón Siguiente -->
+            @if ($accesorios->hasMorePages())
+                <li class="page-item">
+                    <a class="page-link" href="{{ $accesorios->nextPageUrl() }}">Siguiente</a>
+                </li>
+            @else
+                <li class="page-item disabled">
+                    <a class="page-link">Siguiente</a>
+                </li>
+            @endif
+        </ul>
+    </nav>
 </main>
 
 <!-- FILTRO -->
