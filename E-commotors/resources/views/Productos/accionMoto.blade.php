@@ -6,46 +6,47 @@
     <div class="pantalla-gris {{ $errors->any() ? '' : 'visually-hidden' }}" style="z-index: 10"></div>
 
     <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
-    <form id="form-agregar-producto" class=" {{ $errors->any() ? '' : 'visually-hidden' }} form-welcome  w-50 position-fixed start-50 translate-middle py-4 m-0" style="z-index: 1000; padding: 35px 0px; top: 56vh; overflow-y:auto; height:500px " action="{{ route('agregarMoto') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('agregarMoto') }}" method="POST" enctype="multipart/form-data" id="form-agregar-producto"
+        class=" {{ $errors->any() ? '' : 'visually-hidden' }} form-welcome centrar-fixed py-5" style="z-index: 1000;">
         @csrf
 
         <label class="w-75">
-            <input type="text" placeholder="Nombre" required autocomplete="off" class="input-form" id="nombre" name="nombre" value="{{ old('nombre') }}">
+            <input type="text" value="{{ old('nombre') }}"  name="nombre" id="nombre" class="input-form" placeholder="Nombre" autocomplete="off" >
                 @error('nombre')
                     <div class="error-message varela text-danger">{{ $message }}</div>
                 @enderror
         </label>
 
         <label class="w-75">
-            <input type="text" placeholder="Estado" required autocomplete="off" class="input-form" id="estado" name="estado" value="{{ old('estado', $moto->estado ?? '') }}">
+            <input type="text" placeholder="Estado" autocomplete="off" class="input-form" id="estado" name="estado" value="{{ old('estado', $moto->estado ?? '') }}">
             @error('estado')
                 <div class="error-message varela">{{ $message }}</div>
             @enderror
         </label>
 
         <label class="w-75">
-            <input type="number" placeholder="Precio" required autocomplete="off" class="input-form" id="precio_moto" name="precio_moto" autocomplete="off" value="{{ old('precio_moto', $moto->precio_moto ?? '') }}">
+            <input type="number" placeholder="Precio" class="input-form" id="precio_moto" name="precio_moto" autocomplete="off" value="{{ old('precio_moto', $moto->precio_moto ?? '') }}">
             @error('precio_moto')
                 <div class="error-message varela">{{ $message }}</div>
             @enderror
         </label>
 
         <label class="w-75">
-            <input type="text" placeholder="Categoría" required class="input-form" id="id_categoria" name="id_categoria" autocomplete="off" value="{{ old('id_categoria') }}">
+            <input type="text" placeholder="Categoría" class="input-form" id="id_categoria" name="id_categoria" autocomplete="off" value="{{ old('id_categoria') }}">
             @error('id_categoria')
                 <div class="error-message varela">{{ $message }}</div>
             @enderror
         </label>
 
         <label class="w-75">
-            <input type="text" placeholder="Marca" required autocomplete="off" class="input-form" id="id_marca" name="id_marca" autocomplete="off" value="{{ old('id_marca') }}">
+            <input type="text" placeholder="Marca" class="input-form" id="id_marca" name="id_marca" autocomplete="off" value="{{ old('id_marca') }}">
             @error('id_marca')
                 <div class="error-message varela">{{ $message }}</div>
             @enderror
         </label>
 
         <label class="w-75">
-            <input type="text" placeholder="Descripcion" required autocomplete="off" class="input-form" id="descripcion_moto" name="descripcion_moto" autocomplete="off" value="{{ old('descripcion_moto', $moto->descripcion_moto ?? '') }}">
+            <input type="text" placeholder="Descripcion" class="input-form" id="descripcion_moto" name="descripcion_moto" autocomplete="off" value="{{ old('descripcion_moto', $moto->descripcion_moto ?? '') }}">
             @error('descripcion_moto')
                 <div class="error-message varela">{{ $message }}</div>
             @enderror

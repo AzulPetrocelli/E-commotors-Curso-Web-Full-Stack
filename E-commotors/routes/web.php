@@ -72,7 +72,7 @@ Route::get('/accion-accesorios',[AccesoriosController::class,'busqueda'])->name(
 Route::delete('/accesorios/{id}', [AccesoriosController::class, 'destroy'])->name('eliminarAccesorio');
 
 //Route -> Agregar Producto
-Route::post('/accion-accesorio/agregar', [AccesoriosController::class, 'store'])->name('agregar_accesorio');
+Route::post('/accion-accesorio/agregar', [AccesoriosController::class, 'store'])->name('agregarAccesorio');
 
 //Route -> form para agregar un producto
 Route::get('/accion-moto/agregar', [MotosController::class, 'create'])->name('accionMotoCreate');

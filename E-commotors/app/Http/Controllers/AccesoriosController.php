@@ -88,12 +88,12 @@ public function showItems()
     public function busqueda(Request $request)
 {
     $query = Accesorio::query(); // Constructor de consulta
-    
+
 
     if ($request->has('busqueda')) {
         $query->where('nombre_accesorio', 'like', '%' . $request->busqueda . '%'); // Agregar condición
     }
-    
+
     $accesorios = $query->get();
 
     return view('Productos.accionAccesorio', ['accesorios' => $accesorios]); // Retornar vista
@@ -119,8 +119,9 @@ public function destroy($id)
 
 public function store(Request $request)
 {
-    $request->validate(
-        [
+   // dd($request->all()); // Verifica si los datos llegan aquí
+
+    $request->validate([
             'nombre_accesorio' => 'required|string|max:255',
             'precio_accesorio' => 'required|numeric',
             'id_tipo' => 'required|exists:tipo_de_accesorio,nombre_tipo',
@@ -128,13 +129,10 @@ public function store(Request $request)
             'foto_accesorio' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ],
         [
-            'nombre_accesorio.required' => 'El campo "Nombre" es obligatorio.',
-            'precio_accesorio.required' => 'El campo "Precio" es obligatorio.',
-            'precio_accesorio.numeric' => 'El precio debe ser un número válido.',
-            'id_tipo.required' => 'El campo "Tipo" es obligatorio.',
-            'id_tipo.exists' => 'El tipo seleccionado no es válido.',
-            'descripcion_accesorio.required' => 'El campo "Descripción" es obligatorio.',
-            'foto_accesorio.image' => 'La imagen debe ser un archivo válido.',
+            'numeric' => 'El valor ingresado debe ser un número.',
+            'exists' => 'El tipo seleccionado no existe.',
+            'required' => 'El campo es obligatorio.',
+            'image' => 'El archivo ingresado no es una imagen.',
         ]
     );
 

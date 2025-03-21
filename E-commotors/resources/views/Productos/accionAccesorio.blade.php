@@ -5,57 +5,59 @@
     <!-- SOMBRA -->
     <div class="pantalla-gris {{ $errors->any() ? '' : 'visually-hidden' }}" style="z-index: 10"></div>
 
+
     <!-- FORMULARIO PARA AGREGAR PRODUCTO -->
-    <form id="form-agregar-producto" class=" {{ $errors->any() ? '' : 'visually-hidden' }} form-welcome  w-50 position-fixed start-50 translate-middle py-4 m-0" style="z-index: 1000; padding: 35px 0px; top: 56vh; overflow-y:auto; height:500px " action="{{ route('agregar_accesorio') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('agregarAccesorio') }}" method="POST" enctype="multipart/form-data" id="form-agregar-producto"
+        class=" {{ $errors->any() ? '' : 'visually-hidden' }} form-welcome centrar-fixed py-5" style="z-index: 1000;">
         @csrf
 
         <label class="w-75">
-            <input type="text" placeholder="Nombre" required autocomplete="off" class="input-form" id="nombre_accesorio" name="nombre_accesorio" value="{{ old('nombre_accesorio') }}">
+            <input type="text" value="{{ old('nombre_accesorio') }}" name="nombre_accesorio" id="nombre_accesorio" class="input-form" placeholder="Nombre" autocomplete="off" >
                 @error('nombre_accesorio')
-                    <div class="error-message varela text-danger">{{ $message }}</div>
+                    <span class="error-message varela">{{ $message }}</span>
                 @enderror
         </label>
 
         <label class="w-75">
-            <input type="number" placeholder="Precio" required autocomplete="off" class="input-form" id="precio_accesorio" name="precio_accesorio" autocomplete="off" value="{{ old('precio_accesorio', $accesorio->precio_accesorio ?? '') }}">
+            <input type="number" value="{{ old('precio_accesorio', $accesorio->precio_accesorio ?? '') }}" name="precio_accesorio" id="precio_accesorio" class="input-form" placeholder="Precio" autocomplete="off">
             @error('precio_accesorio')
-                <div class="error-message varela">{{ $message }}</div>
+                <span class="error-message varela">{{ $message }}</span>
             @enderror
         </label>
 
         <label class="w-75">
-            <input type="text" placeholder="Tipo" required class="input-form" id="id_tipo" name="id_tipo" autocomplete="off" value="{{ old('id_tipo') }}">
+            <input type="text" value="{{ old('id_tipo') }}" name="id_tipo" id="id_tipo" class="input-form" placeholder="Tipo" autocomplete="off">
             @error('id_tipo')
-                <div class="error-message varela">{{ $message }}</div>
+                <span class="error-message varela">{{ $message }}</span>
             @enderror
         </label>
 
 
         <label class="w-75">
-            <input type="text" placeholder="Descripcion" required autocomplete="off" class="input-form" id="descripcion_accesorio" name="descripcion_accesorio" autocomplete="off" value="{{ old('descripcion_accesorio', $accesorio->descripcion_accesorio ?? '') }}">
+            <input type="text" value="{{ old('descripcion_accesorio', $accesorio->descripcion_accesorio ?? '') }}" name="descripcion_accesorio"  id="descripcion_accesorio" class="input-form" placeholder="Descripcion" autocomplete="off">
             @error('descripcion_accesorio')
-                <div class="error-message varela">{{ $message }}</div>
+                <span class="error-message varela">{{ $message }}</span>
             @enderror
         </label>
 
         <label class="w-75">
             <label for="foto_accesorio" class="fs-5 varela">Imagen</label>
-            <input type="file"  class="form-control" id="foto_accesorio" name="foto_accesorio" style="background: var(--color-secundario);color: white; text-aling:center;">
+            <input type="file" class="form-control" name="foto_accesorio" id="foto_accesorio" style="background: var(--color-secundario);color: white; text-aling:center;">
             @error('foto_accesorio')
-                <div class="error-message varela">{{ $message }}</div>
+                <span class="error-message varela">{{ $message }}</span>
             @enderror
         </label>
 
         <div class="w-75 d-flex justify-content-end gap-2">
             <a href="#" class="boton-principal show">Cancelar</a>
-            <button type="submit" class="boton-principal">Crear Producto</button>
+            <button class="boton-principal">Crear Producto</button>
         </div>
     </form>
 
     <!-- FORMULARIO DE EDICION -->
 
-<form id="form-editar-producto" class="form-welcome visually-hidden w-50 position-absolute start-50 translate-middle py-4 m-0"
-    style="z-index: 11; padding: 35px 0px; top: 56vh;" action="" method="POST" enctype="multipart/form-data">
+<form action="" method="POST" enctype="multipart/form-data" id="form-editar-producto"
+    class="form-welcome form-welcome centrar-fixed py-5 visually-hidden" style="z-index: 11;">
     @csrf
     @method('PUT')
 

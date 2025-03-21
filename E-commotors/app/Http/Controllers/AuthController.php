@@ -17,9 +17,9 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6',
         ], [
-            "email.required" => "Falta ingresar el mail",
+            "email.required" => "Ingresar el mail",
             "email.email" => "El mail ingresado no es valido",
-            "password.required" => "Falta ingresar la contraseña",
+            "password.required" => "Ingresar la contraseña",
             "password.min" => "La contraseña debe tener al menos 6 caracteres"
         ]);
 

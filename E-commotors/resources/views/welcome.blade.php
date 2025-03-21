@@ -48,14 +48,14 @@
         <label for="" class="w-75">
             <input type="text" value="{{ old('email') }}" class="input-form position-relative z-2" placeholder="Usuario" autocomplete="off" name="email" id="">
             @error('email')
-                <div class="error-message varela">{{ $message }}</div>
+                <span class="error-message varela">{{ $message }}</span>
             @enderror
         </label>
 
         <label for="" class="w-75">
             <input type="password" class="input-form position-relative z-2" placeholder="Contraseña" name="password" autocomplete="off" id="">
             @error('password')
-                <div class="error-message varela">{{ $message }}</div>
+                <span class="error-message varela">{{ $message }}</span>
             @enderror
         </label>
 
