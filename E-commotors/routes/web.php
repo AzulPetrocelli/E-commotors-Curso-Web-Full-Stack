@@ -24,7 +24,7 @@ Route::get('/card', function () {
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('login');
 
 Route::get('/administracion', function () {
     return view('admin');
@@ -36,7 +36,7 @@ Route::get('/message', [MensajeController::class, 'index'])->name('message');
  //ROUTE -> vista de admin
 Route::get('admin',function(){
     return view('admin');
-});
+})->middleware("auth");
 
 /* Route::get('/productos-motos', function () {
     return view('productos');
@@ -58,10 +58,8 @@ Route::get('/accesorios/tipo/{id}', [AccesoriosController::class, 'filtrarPorTip
 Route::get('/repuestos/tipo/{id}', [RepuestosController::class, 'filtrarPorTipo'])->name('repuestos.filtrar');
 
 
-
-
 //Route -> muestro items
-Route::get('/accion-moto', [MotosController::class, 'showItems'])->name('accionMoto');
+Route::get('/accion-moto', [MotosController::class, 'showItems'])->name('accionMoto')->middleware("auth");
 
 //Route -> busco items
 Route::get('/accion-moto/search',[MotosController::class,'busqueda'])->name('busqueda.moto');
@@ -91,17 +89,17 @@ Route::put('/motos/{id}', [MotosController::class, 'update'])->name('editarMoto'
 
 
 //Route -> muestro items
-Route::get('/accion-accesorio',[AccesoriosController::class,'showItems'])->name('accionAccesorio');
+Route::get('/accion-accesorio',[AccesoriosController::class,'showItems'])->name('accionAccesorio')->middleware("auth");
 
 //Route -> accion repuesto
-Route::get('/accion-repuesto',[RepuestosController::class,'showItems'])->name('accionRepuesto');
+Route::get('/accion-repuesto',[RepuestosController::class,'showItems'])->name('accionRepuesto')->middleware("auth");
 
 //Route -> vista de las motos filtradas
 Route::post('/productos-motos#', [MotosController::class, 'filtrar']);
 
 
 //ROUTE -> vista de mensajes recibidos
-Route::get('/accion-mensaje',[AdminController::class,'mensajes']) -> name('accion-mensaje');
+Route::get('/accion-mensaje',[AdminController::class,'mensajes']) -> name('accion-mensaje')->middleware("auth");
 
 //
 Route::get('/accion-mensaje-sin_responder',[AdminController::class,'mensajesSinResponder']) -> name('accion-mensaje-sin-responder');
@@ -131,7 +129,7 @@ Route::get('/descargar-devoluciones', [FooterController::class, 'descargarDevolu
 Route::post('/enviar-mensaje', [MensajeController::class, 'store'])->name('mensaje.store');
 
 //ROUTE LOGUIN
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('log');
 
 
 //ROUTES PARA REPUESTOS

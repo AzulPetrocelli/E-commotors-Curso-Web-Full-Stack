@@ -41,7 +41,7 @@
     <title>Welcome</title>
 </head>
 <body style="background-color:var(--color-primario);">
-    <form action="{{ route('login') }}" method="POST" class="form-welcome w-25">
+    <form action="{{ route('log') }}" method="POST" class="form-welcome w-25">
         @csrf <!-- Token CSRF para proteger el formulario -->
         <img src="images/logo.png" alt="Logo E-commotors" class="w-100">
 
